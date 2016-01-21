@@ -14,6 +14,9 @@
 (global-set-key [f10] 'magit-status)
 (global-set-key (kbd "M-o") 'other-window)
 
+;; because I'm dumb
+(global-set-key (kbd "C-z") 'undo)
+
 (with-eval-after-load 'info
   (info-initialize)
   (add-to-list 'Info-directory-list
@@ -22,6 +25,14 @@
 
 ;; wind-move
 (windmove-default-keybindings)
+
+;; avy
+(avy-setup-default)
+(global-set-key (kbd "C-c a l") 'avy-goto-line)
+(global-set-key (kbd "C-c a c") 'avy-goto-char)
+(global-set-key (kbd "C-c a w") 'avy-goto-char)
+
+(add-hook 'prog-mode-hook #'aggressive-indent-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
