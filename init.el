@@ -13,6 +13,8 @@
 (global-set-key [f1] 'shell)
 (global-set-key [f10] 'magit-status)
 (global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "C-x C-e") 'eval-buffer)
+(global-set-key (kbd "C-w") 'backward-kill-word)
 
 ;; because I'm dumb
 (global-set-key (kbd "C-z") 'undo)
@@ -30,7 +32,7 @@
 (avy-setup-default)
 (global-set-key (kbd "C-c a l") 'avy-goto-line)
 (global-set-key (kbd "C-c a c") 'avy-goto-char)
-(global-set-key (kbd "C-c a w") 'avy-goto-char)
+(global-set-key (kbd "C-c a w") 'avy-goto-word-1)
 
 (add-hook 'prog-mode-hook #'aggressive-indent-mode)
 
@@ -42,15 +44,31 @@
  '(company-idle-delay 0.24)
  '(custom-safe-themes
    (quote
-    ("2da65cb7074c176ca0a33f06bcc83ef692c9175e41b6370f5e94eb5811d6ee3a" default))))
+    ("2da65cb7074c176ca0a33f06bcc83ef692c9175e41b6370f5e94eb5811d6ee3a" default)))
+ '(magit-commit-arguments (quote ("--all")))
+ '(rainbow-delimiters-max-face-count 8))
+
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+;; load other configuration files
+(load-file "~/.emacs.d/appearance.el")
+(load-file "~/.emacs.d/completion.el")
+(load-file "~/.emacs.d/pythonconfig.el")
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
-
-
-(load-file "~/.emacs.d/appearance.el")
-(load-file "~/.emacs.d/completion.el")
-(load-file "~/.emacs.d/pythonconfig.el")
+ '(rainbow-delimiters-depth-1-face ((t (:background "#6495ed" :foreground "#34342a"))))
+ '(rainbow-delimiters-depth-2-face ((t (:background "#5d478b" :foreground "#34342a"))))
+ '(rainbow-delimiters-depth-3-face ((t (:background "#8b0a50" :foreground "#34342a"))))
+ '(rainbow-delimiters-depth-4-face ((t (:background "#Ff1493" :foreground "#34342a"))))
+ '(rainbow-delimiters-depth-5-face ((t (:background "#Ff0000" :foreground "#34342a"))))
+ '(rainbow-delimiters-depth-6-face ((t (:background "#Ff4500" :foreground "#34342a"))))
+ '(rainbow-delimiters-depth-7-face ((t (:background "#Ffd700" :foreground "#34342a"))))
+ '(rainbow-delimiters-depth-8-face ((t (:background "#7cfc00" :foreground "#34342a"))))
+ '(rainbow-delimiters-mis-matched-face ((t (:background "#000000" :foreground "#ffff00"))))
+ '(rainbow-delimiters-mismatched-face ((t (:background "#000000" :foreground "#ffff00"))))
+ '(rainbow-delimiters-unmatched-face ((t (:background "#000000" :foreground "#ffff00")))))

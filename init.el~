@@ -13,6 +13,11 @@
 (global-set-key [f1] 'shell)
 (global-set-key [f10] 'magit-status)
 (global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "C-x C-e") 'eval-buffer)
+(global-set-key (kbd "C-w") 'backward-kill-word)
+
+;; because I'm dumb
+(global-set-key (kbd "C-z") 'undo)
 
 (with-eval-after-load 'info
   (info-initialize)
@@ -23,6 +28,14 @@
 ;; wind-move
 (windmove-default-keybindings)
 
+;; avy
+(avy-setup-default)
+(global-set-key (kbd "C-c a l") 'avy-goto-line)
+(global-set-key (kbd "C-c a c") 'avy-goto-char)
+(global-set-key (kbd "C-c a w") 'avy-goto-word-1)
+
+(add-hook 'prog-mode-hook #'aggressive-indent-mode)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -31,15 +44,14 @@
  '(company-idle-delay 0.24)
  '(custom-safe-themes
    (quote
-    ("2da65cb7074c176ca0a33f06bcc83ef692c9175e41b6370f5e94eb5811d6ee3a" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+    ("2da65cb7074c176ca0a33f06bcc83ef692c9175e41b6370f5e94eb5811d6ee3a" default)))
+ '(rainbow-delimiters-max-face-count 8))
 
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 
+;; load other configuration files
 (load-file "~/.emacs.d/appearance.el")
 (load-file "~/.emacs.d/completion.el")
 (load-file "~/.emacs.d/pythonconfig.el")
+
