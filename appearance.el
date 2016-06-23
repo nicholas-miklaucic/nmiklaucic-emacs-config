@@ -3,7 +3,7 @@
 (tool-bar-mode 0)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'monokai)
+(load-theme 'solarized-light)
 
 ;; font
 (set-face-attribute 'default nil :font "Hasklig 13")
@@ -72,23 +72,23 @@
 (add-hook 'prog-mode-hook 'linum-mode)
 
 ;; enable rainbow-mode in programming
-(add-hook 'prog-mode-hook 'rainbow-mode)
+;; (add-hook 'prog-mode-hook 'rainbow-mode)
 
-;; rainbow-delimiters config
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(rainbow-delimiters-depth-1-face ((t (:background "#00ccff" :foreground "#34342a"))))
- '(rainbow-delimiters-depth-2-face ((t (:background "#9400d3" :foreground "#34342a"))))
- '(rainbow-delimiters-depth-3-face ((t (:background "#Ff1493" :foreground "#34342a"))))
- '(rainbow-delimiters-depth-4-face ((t (:background "#Ff0000" :foreground "#34342a"))))
- '(rainbow-delimiters-depth-5-face ((t (:background "#Ff4500" :foreground "#34342a"))))
- '(rainbow-delimiters-depth-6-face ((t (:background "#Ffd700" :foreground "#34342a"))))
- '(rainbow-delimiters-depth-7-face ((t (:background "#7cfc00" :foreground "#34342a"))))
- '(rainbow-delimiters-depth-8-face ((t (:background "#44ff77" :foreground "#34342a"))))
- '(rainbow-delimiters-unmatched-face ((t (:background "#ffff00" :foreground "#000000"))))
- )
+;; ;; rainbow-delimiters config
+;; (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(rainbow-delimiters-depth-1-face ((t (:background "#00ccff" :foreground "#34342a"))))
+;;  '(rainbow-delimiters-depth-2-face ((t (:background "#9400d3" :foreground "#34342a"))))
+;;  '(rainbow-delimiters-depth-3-face ((t (:background "#Ff1493" :foreground "#34342a"))))
+;;  '(rainbow-delimiters-depth-4-face ((t (:background "#Ff0000" :foreground "#34342a"))))
+;;  '(rainbow-delimiters-depth-5-face ((t (:background "#Ff4500" :foreground "#34342a"))))
+;;  '(rainbow-delimiters-depth-6-face ((t (:background "#Ffd700" :foreground "#34342a"))))
+;;  '(rainbow-delimiters-depth-7-face ((t (:background "#7cfc00" :foreground "#34342a"))))
+;;  '(rainbow-delimiters-depth-8-face ((t (:background "#44ff77" :foreground "#34342a"))))
+;;  '(rainbow-delimiters-unmatched-face ((t (:background "#ffff00" :foreground "#000000"))))
+;;  )
 

@@ -2,7 +2,7 @@
 ;; setup packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
 ;; magit
@@ -34,7 +34,7 @@
 (global-set-key (kbd "C-c a c") 'avy-goto-char)
 (global-set-key (kbd "C-c a w") 'avy-goto-word-1)
 
-(add-hook 'prog-mode-hook #'aggressive-indent-mode)
+;; (add-hook 'prog-mode-hook #'aggressive-indent-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -44,7 +44,10 @@
  '(company-idle-delay 0.24)
  '(custom-safe-themes
    (quote
-    ("2da65cb7074c176ca0a33f06bcc83ef692c9175e41b6370f5e94eb5811d6ee3a" default)))
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "0ae52e74c576120c6863403922ee00340a3bf3051615674c4b937f9c99b24535" "2da65cb7074c176ca0a33f06bcc83ef692c9175e41b6370f5e94eb5811d6ee3a" default)))
+ '(exec-path
+   (quote
+    ("/usr/local/sbin" "/usr/local/bin" "/usr/sbin" "/usr/bin" "/sbin" "/bin" "/usr/games" "/usr/local/games" "/snap/bin" "/usr/lib/emacs/24.5/x86_64-linux-gnu" "~/.local/bin")))
  '(magit-commit-arguments (quote ("--all")))
  '(rainbow-delimiters-max-face-count 8))
 
@@ -72,3 +75,17 @@
  '(rainbow-delimiters-mis-matched-face ((t (:background "#000000" :foreground "#ffff00"))))
  '(rainbow-delimiters-mismatched-face ((t (:background "#000000" :foreground "#ffff00"))))
  '(rainbow-delimiters-unmatched-face ((t (:background "#000000" :foreground "#ffff00")))))
+
+(defvar bnb/really-kill-emacs nil)
+(defadvice kill-emacs (around bnb/really-exit activate)
+  "Only kill emacs if a prefix is set"
+  (if bnb/really-kill-emacs
+      ad-do-it)
+    (iconify-frame))
+
+(defun bnb/really-kill-emacs ()
+  (interactive)
+  (setq bnb/really-kill-emacs t)
+  (kill-emacs))
+
+(server-start)
