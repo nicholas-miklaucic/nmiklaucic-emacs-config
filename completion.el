@@ -30,5 +30,19 @@
 (helm-mode 1)
 
 ;; company
+(require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
+(global-set-key [C-tab] 'company-complete)
 
+;; for C/C++
+(require 'cc-mode)
+(setq company-backends (delete 'company-semantic company-backends))
+(define-key c-mode-map  [(tab)] 'company-complete)
+(define-key c++-mode-map  [(tab)] 'company-complete)
+(add-to-list 'company-backends 'company-c-headers)
+(require 'semantic)
+
+(global-semanticdb-minor-mode 1)
+(global-semantic-idle-scheduler-mode 1)
+
+(semantic-mode 1)

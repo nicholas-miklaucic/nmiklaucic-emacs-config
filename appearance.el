@@ -3,10 +3,17 @@
 (tool-bar-mode 0)
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'solarized-light)
+
+;; this is the cool bit--change themes on time of days
+(setq calendar-current-location-name "Charlotte, NC")
+(setq calendar-longitude -80.796)
+(setq calendar-latitude 35.153)
+(require 'theme-changer)
+(change-theme 'solarized-light 'monokai)
 
 ;; font
-(set-face-attribute 'default nil :font "Hasklig 13")
+(set-face-attribute 'default nil :font "Source Code Pro for Powerline 13")
+
 
 ;; pretty symbols in LaTeX
 (defvar pretty-alist
@@ -55,6 +62,11 @@
 	    
 (global-prettify-symbols-mode +1)
 
+(define-globalized-minor-mode my-global-rainbow-mode rainbow-mode
+  (lambda () (rainbow-mode 1)))
+
+(my-global-rainbow-mode 1)
+
 ;; prompts
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq confirm-nonexistent-file-or-buffer nil)
@@ -67,12 +79,8 @@
 
 ;; tooltips
 (tooltip-mode -1)
-(setq tooltip-use-echo-area t)
 
 (add-hook 'prog-mode-hook 'linum-mode)
-
-;; enable rainbow-mode in programming
-;; (add-hook 'prog-mode-hook 'rainbow-mode)
 
 ;; rainbow-delimiters config
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -92,3 +100,21 @@
  '(rainbow-delimiters-unmatched-face ((t (:background "#ffff00" :foreground "#000000"))))
  )
 
+;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
+;; (require 'powerline)
+;; (setq powerline-color1 "#657b83")
+;; (setq powerline-color2 "#839496")
+
+;; (set-face-attribute 'mode-line nil
+;;                     :foreground "#fdf6e3"
+;;                     :background "#859900"
+;;                     :box nil)
+;; (set-face-attribute 'mode-line-inactive nil
+;;                     :box nil)
+
+(sml/setup)
+
+(display-battery-mode 0)
+(display-time-mode 0)
+(line-number-mode 0)
+(column-number-mode 0)

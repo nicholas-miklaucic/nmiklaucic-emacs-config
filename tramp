@@ -1,27 +1,25 @@
-;; -*- emacs-lisp -*- <16/06/24 14:40:39 /home/nicholas/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <16/07/17 22:03:52 /home/nicholas/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
 ((["sudo" "root" "nicholas-Lenovo-G50-70" nil nil]
+  ("uname" "Linux 4.4.0-31-generic")
   ("locale" "LC_ALL=en_US.utf8")
-  ("uname" "Linux 4.4.0-24-generic")
   ("test" "test")
   ("remote-path"
    ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
   ("remote-shell" "/bin/sh")
   ("~root" "/root")
   ("file-exists" "test -e")
-  ("stat" "\\stat")
-  ("id" "/usr/bin/id")
-  ("gid-integer" 0)
-  ("gid-string" "root")
+  ("stat" nil)
   ("perl-file-spec" t)
   ("perl-cwd-realpath" t)
   ("perl" "\\perl")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 0)
+  ("gid-string" "root")
   ("readlink" "\\readlink")
   ("uid-integer" 0)
-  ("ls" "/bin/ls --color=never")
-  ("tmpdir" "/sudo:root@nicholas-Lenovo-G50-70:/tmp")
+  ("tmpdir" "/tmp")
   ("touch-t" t)
-  ("touch" "\\touch")
-  ("ls-dired" t)))
+  ("touch" "\\touch")))

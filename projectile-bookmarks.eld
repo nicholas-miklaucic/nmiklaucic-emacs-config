@@ -1,1 +1,1 @@
-("~/.emacs.d/")
+("~/.emacs.d/" "~/PAClubHub/" "~/programs/learning-c/" "~/programs/desktop-metamorphosis/" "/sudo:root@nicholas-Lenovo-G50-70:/usr/share/themes/Flat-Plat/gtk-3.0/" "/sudo:root@nicholas-Lenovo-G50-70:/usr/share/themes/Flat-Plat/gnome-shell/" "/usr/share/themes/Flat-Plat/gnome-shell/" "~/programs/firstgui/")
