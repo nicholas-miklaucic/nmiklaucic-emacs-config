@@ -1,0 +1,189 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file contains useful commands for working with types.\"\"\"" code nil nil [1 65])
+            ("TYPES" variable nil nil [67 212])
+            ("TYPE_EFFECTIVENESS" variable nil nil [436 1540])
+            ("read_type" function
+               (:documentation "Gets the type ID (integer 1-18) of the given string (\"Normal\" or \"FIGHTING\").
+    Raises ValueError if the type is not found."
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [1557 1563]))                  )
+                nil [1543 1741])
+            ("get_str" function
+               (:documentation "Returns the name of the given type ID, or a combo separated by hyphens if it's an
+    iterable."
+                :arguments 
+                  ( ("type_ids" variable nil (reparse-symbol function_parameters) [1755 1763]))                  )
+                nil [1743 2006])
+            ("get_effectiveness" function
+               (:documentation "Takes a type ID and a list of type ID's for the defending Pokemon and returns a multiplier
+    (0-4 for two-type defenders) depending on the type effectiveness."
+                :arguments 
+                  ( ("attacker" variable nil (reparse-symbol function_parameters) [2030 2038])
+                    ("defenders" variable nil (reparse-symbol function_parameters) [2040 2049]))                  )
+                nil [2008 2370])
+            ("weak_dict" function
+               (:documentation "Takes a list of type ID's and returns a dictionary of each type's effectiveness on the combined
+    defending types. For example, Ground and Flying is double-weak to Ice, so the returned
+    dictionary will map 15 to 4."
+                :arguments 
+                  ( ("types" variable nil (reparse-symbol function_parameters) [2386 2391]))                  )
+                nil [2372 2726])
+            ("weak_lists" function
+               (:documentation "Returns a list of lists representing the defensive profile of this type combination. There
+    are 4 lists: immune, resisted, normal, and super effective. Each one contains a list of all the
+    types that have that multiplier. For example, weak_lists([8, 17])[0] --> [1, 2, 14] because a
+    combined Dark-Ghost Pokemon is immune to Normal, Fighting, and Psychic."
+                :arguments 
+                  ( ("types" variable nil (reparse-symbol function_parameters) [2743 2748]))                  )
+                nil [2728 3425])
+            ("two_type_combos" function (:documentation "Returns a list of 2-tuples representing every 2-type combo, but no double types. Instead of
+    (1, 1), it just has (1).") nil [3427 3783])
+            ("coverage" function
+               (:documentation "Given a set of types, returns a list of 4 lists [immune, resist, normal, effective] that
+    represent the best type in the list against the target type."
+                :arguments 
+                  ( ("types" variable nil (reparse-symbol function_parameters) [3798 3803]))                  )
+                nil [3785 4273])
+            ("get_full_profile" function
+               (:documentation "Returns a list [immune, resist, normal, effective], where each entry is the number of
+    combined types that have that multiplier, but instead of using just the single types, it adds
+    every type combination."
+                :arguments 
+                  ( ("t" variable nil (reparse-symbol function_parameters) [4296 4297]))                  )
+                nil [4275 4812])
+            ("get_best_multiplier" function
+               (:documentation "Returns the best multiplier of the attacking types against the defensive types."
+                :arguments 
+                  ( ("attackers" variable nil (reparse-symbol function_parameters) [4838 4847])
+                    ("defenders" variable nil (reparse-symbol function_parameters) [4849 4858]))                  )
+                nil [4814 5020])
+            ("unresisted_coverages" function (:documentation "Returns a list of 2-tuples for every 2-type combination that has no weaknesses.") nil [5022 5401])
+            ("get_unresisted_partners" function
+               (:documentation "Returns a list of all types that have unresisted coverage with the input."
+                :arguments 
+                  ( ("t" variable nil (reparse-symbol function_parameters) [5431 5432]))                  )
+                nil [5403 5580])
+            ("get_best_partner" function
+               (:documentation "With a type combination's \"score\" being the sum of 5 points for super-effectiveness, 3 points for
+    neutral, and 0 points for resisted over every type combo, return the list of partners with the
+    highest \"score\".
+    "
+                :arguments 
+                  ( ("t" variable nil (reparse-symbol function_parameters) [5603 5604]))                  )
+                nil [5582 6224])
+            ("get_best_defensive_partners" function
+               (:documentation "With a type combo's \"score\" now being the sum of 8 points for an immunity, 5 points for resisting
+    and 3 points for neutral damage, and 0 points for super-effectiveness, return the partners with
+    the highest \"score\" for the given type."
+                :arguments 
+                  ( ("t" variable nil (reparse-symbol function_parameters) [6258 6259]))                  )
+                nil [6226 6747])
+            ("TOTAL_COVERAGES" variable nil nil [6749 6822])
+            ("TOTAL_DEFENSIVE" variable nil nil [6823 6898])
+            ("for" code nil nil [6901 7279]))          
+      :file "pokemon_types.py"
+      :pointmax 7279
+      :fsize 7278
+      :lastmodtime '(22521 52008 148534 206000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file has some useful stuff for working with the Collatz conjecture.\"\"\"" code nil nil [1 79])
+            ("numpy" include nil nil [82 100])
+            ("pandas" include nil nil [101 120])
+            ("matplotlib.pyplot" include nil nil [121 152])
+            ("collatz" function
+               (:documentation "Finds the next step in the Collatz sequence for n, modulo the modulus if not 0 and
+    given. There's actually one special case: if n is 0 and mod is an even positive integer, it will
+    return mod // 2 instead of whatever else. Calling this with 0 and 0 will return 0."
+                :arguments 
+                  ( ("n" variable nil (reparse-symbol function_parameters) [167 168])
+                    ("mod" variable nil (reparse-symbol function_parameters) [170 173]))                  )
+                nil [155 592])
+            ("residues" variable nil nil [594 619])
+            ("for" code nil nil [620 721])
+            ("orient_cycle" function
+               (:documentation "Takes a cycle and shifts it so its smallest element is first."
+                :arguments 
+                  ( ("cycle" variable nil (reparse-symbol function_parameters) [741 746]))                  )
+                nil [724 911])
+            ("get_cycles" function
+               (:documentation "Takes in an iterable of some mapping of the numbers 0-n where n+1 is the length of the
+    iterable. Returns a list of cycles (as tuples), such that mapping[k1] = k2, mapping[k2] = k3,
+    etc.
+    Right now, this algorithm is brutally inefficient, but it might improve.
+
+    "
+                :arguments 
+                  ( ("mapping" variable nil (reparse-symbol function_parameters) [928 935]))                  )
+                nil [913 1582])
+            ("printout" function (:arguments 
+              ( ("l" variable nil (reparse-symbol function_parameters) [1597 1598]))              ) nil [1584 1637])
+            ("pad" function (:arguments 
+              ( ("in_list" variable nil (reparse-symbol function_parameters) [1647 1654])
+                ("length" variable nil (reparse-symbol function_parameters) [1656 1662])
+                ("val" variable nil (reparse-symbol function_parameters) [1664 1667]))              ) nil [1639 1732])
+            ("cycles" variable nil nil [1734 1745])
+            ("for" code nil nil [1746 1853])
+            ("i" variable nil nil [1855 1860])
+            ("cycle_matrix" variable nil nil [1861 1890])
+            ("max_lens" variable nil nil [1891 1936])
+            ("max_len" variable nil nil [1937 1960])
+            ("for" code nil nil [1961 2262]))          
+      :file "collatz.py"
+      :pointmax 2349
+      :fsize 2297
+      :lastmodtime '(22613 50444 513467 348000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("requests" include nil nil [1 16])
+            ("json" include nil nil [17 28])
+            ("BASE_URL" variable nil nil [30 69])
+            ("i" variable nil nil [72 77])
+            ("while" code nil nil [78 322]))          
+      :file "get_obiwan.py"
+      :pointmax 322
+      :fsize 321
+      :lastmodtime '(22523 50430 571885 244000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file iteratively performs the following process on a number. List out the prime factors, and
+concatenate them in increasing order to make a new number. This simple process produces very large
+outputs very quickly, and has interesting behavior.\"\"\"" code nil nil [1 255])
+            ("prime" include nil nil [257 302])
+            ("next_iter" function
+               (:documentation "Concatenates the prime factors into a new number."
+                :arguments 
+                  ( ("num" variable nil (reparse-symbol function_parameters) [319 322]))                  )
+                nil [305 573])
+            ("chain" function
+               (:documentation "Continues iterating through the home-primes chain until it stops at a number, and returns the
+    whole chain. It may run forever!"
+                :arguments 
+                  ( ("num" variable nil (reparse-symbol function_parameters) [585 588]))                  )
+                nil [575 1014])
+            ("for" code nil nil [1016 1082]))          
+      :file "homeprimes.py"
+      :pointmax 1082
+      :fsize 1081
+      :lastmodtime '(22614 4949 249855 486000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "prime.py"
+      :fsize 2207
+      :lastmodtime '(22399 23508 0 0)))
+  :file "!home!nicholas!programs!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

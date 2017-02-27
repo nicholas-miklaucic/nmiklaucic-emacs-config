@@ -1,0 +1,4 @@
+/sudo:root@localhost.localdomain:/etc/bluetooth/audio.conf
+/tmp/#!sudo:root@localhost.localdomain:!etc!bluetooth!audio.conf#
+/home/nicholas/.pulse/client.conf
+/home/nicholas/.pulse/#client.conf#

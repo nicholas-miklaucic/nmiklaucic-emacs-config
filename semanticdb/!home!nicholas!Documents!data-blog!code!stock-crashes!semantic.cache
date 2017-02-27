@@ -1,0 +1,340 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file reads in the DJIA, performs basic cleanup, and then makes the time series available as
+a DataFrame. Caches a version in a file for easier reading that updates daily.\"\"\"" code nil nil [1 182])
+            ("time" include nil nil [185 196])
+            ("pathlib" include nil nil [197 221])
+            ("numpy" include nil nil [223 241])
+            ("pandas" include nil nil [242 261])
+            ("quandl" include nil nil [262 275])
+            ("DJIA_CACHE_PATHNAME" variable nil nil [277 316])
+            ("cachepath" variable nil nil [319 356])
+            ("get_stock_data" function
+               (:documentation "Gets the log-price of the good as a time series, where quandl_name is the Quandl identifier
+    for the dataset and cachepath is the Path object that represents a cache file."
+                :arguments 
+                  ( ("quandl_name" variable nil (reparse-symbol function_parameters) [378 389])
+                    ("cachepath" variable nil (reparse-symbol function_parameters) [391 400]))                  )
+                nil [359 1250])
+            ("djia" variable nil nil [1252 1307])
+            ("rhod" variable nil nil [1308 1365])
+            ("csco" variable nil nil [1366 1426]))          
+      :file "get_stock_data.py"
+      :pointmax 1427
+      :fsize 1426
+      :lastmodtime '(22697 49 560440 326000)
+      :unmatched-syntax '((INDENT_BLOCK 962 . 1135) (NEWLINE 961 . 962) (COLON 917 . 918) (TRY 709 . 712) (AS 913 . 915) (INDENT_BLOCK 1014 . 1187) (NEWLINE 1013 . 1014) (COLON 969 . 970) (TRY 761 . 764) (AS 965 . 967) (NAME 1360 . 1364) ($EOI 1367 . 1367) (INDENT_BLOCK 1014 . 1187) (NEWLINE 1013 . 1014) (COLON 969 . 970) (TRY 761 . 764) (AS 965 . 967) (INDENT_BLOCK 1014 . 1187) (NEWLINE 1013 . 1014) (COLON 969 . 970) (TRY 761 . 764) (AS 965 . 967) (INDENT_BLOCK 1014 . 1187) (NEWLINE 1013 . 1014) (COLON 969 . 970) (TRY 761 . 764) (AS 965 . 967) (NAME 1317 . 1321) ($EOI 1338 . 1338) (INDENT_BLOCK 1027 . 1200) (NEWLINE 1026 . 1027) (COLON 982 . 983) (TRY 761 . 764) (AS 978 . 980) (INDENT_BLOCK 1027 . 1200) (NEWLINE 1026 . 1027) (COLON 982 . 983) (TRY 761 . 764) (AS 978 . 980) (INDENT_BLOCK 1027 . 1200) (NEWLINE 1026 . 1027) (COLON 982 . 983) (TRY 761 . 764) (AS 978 . 980)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file has some useful code for working with time series, like being able to plot a model with
+the data it's looking at.
+
+\"\"\"" code nil nil [1 132])
+            ("numpy" include nil nil [135 153])
+            ("matplotlib.pyplot" include nil nil [154 185])
+            ("plot_data" function
+               (:documentation "Ax can be a subplot if desired. Plots the data using some sensible defaults.
+
+    Styles can be a list of matplotlib styles to use.
+    "
+                :arguments 
+                  ( ("dataset" variable nil (reparse-symbol function_parameters) [202 209])
+                    ("ax" variable nil (reparse-symbol function_parameters) [211 213])
+                    ("styles" variable nil (reparse-symbol function_parameters) [220 226]))                  )
+                nil [188 628])
+            ("plot_model" function
+               (:documentation "Modelfunc maps the integers 0-n -> some values. Dataset is a time series. If ax is provided, the
+    function will draw on that instead. Any styles (as a list) get passed to the central plot()
+    call. Kwargs get passed too.
+
+    "
+                :arguments 
+                  ( ("modelfunc" variable nil (reparse-symbol function_parameters) [649 658])
+                    ("dataset" variable nil (reparse-symbol function_parameters) [660 667])
+                    ("ax" variable nil (reparse-symbol function_parameters) [669 671])
+                    ("styles" variable nil (reparse-symbol function_parameters) [678 684])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [691 699]))                  )
+                nil [634 1452]))          
+      :file "conveniences.py"
+      :pointmax 1452
+      :fsize 1451
+      :lastmodtime '(22672 49564 492464 616000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file provides functions that are useful for several different methods of fitting the LPPL
+function, including a simple transformation that allows reduction from 7 nonlinear parameters to 4
+and a common error function.\"\"\"" code nil nil [1 229])
+            ("functools" include nil nil [231 260])
+            ("numpy" include nil nil [262 280])
+            ("sklearn.linear_model" include nil nil [281 330])
+            ("get_stock_data" include nil nil [332 363])
+            ("model_mse" function
+               (:documentation "Takes a function that maps the integers 0..n-1 to values and data with n entries and does
+    mean squared error."
+                :arguments 
+                  ( ("modelfunc" variable nil (reparse-symbol function_parameters) [380 389])
+                    ("data" variable nil (reparse-symbol function_parameters) [391 395]))                  )
+                nil [366 638])
+            ("lppl" function
+               (:documentation "Returns the monster expression
+    
+    A + B(t_c-t)^m + C(t_c-t)^m * cos(omega * log (t_c - t) - phi)
+
+    If t_c <= t, returns ValueError.
+    "
+                :arguments 
+                  ( ("a" variable nil (reparse-symbol function_parameters) [649 650])
+                    ("b" variable nil (reparse-symbol function_parameters) [652 653])
+                    ("c" variable nil (reparse-symbol function_parameters) [655 656])
+                    ("m" variable nil (reparse-symbol function_parameters) [658 659])
+                    ("omega" variable nil (reparse-symbol function_parameters) [661 666])
+                    ("phi" variable nil (reparse-symbol function_parameters) [668 671])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [673 676])
+                    ("t" variable nil (reparse-symbol function_parameters) [678 679]))                  )
+                nil [640 1048])
+            ("get_lppl_func" function
+               (:documentation "Returns a function that takes in a parameter t and returns the full LPPL."
+                :arguments 
+                  ( ("a" variable nil (reparse-symbol function_parameters) [1068 1069])
+                    ("b" variable nil (reparse-symbol function_parameters) [1071 1072])
+                    ("c" variable nil (reparse-symbol function_parameters) [1074 1075])
+                    ("m" variable nil (reparse-symbol function_parameters) [1077 1078])
+                    ("omega" variable nil (reparse-symbol function_parameters) [1080 1085])
+                    ("phi" variable nil (reparse-symbol function_parameters) [1087 1090])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [1092 1095]))                  )
+                nil [1050 1236])
+            ("reformulated_slaved_lppl" function
+               (:documentation "Uses a reformulated version of the LPPL that has four linear parameters. Returns a new
+    function that takes in an input t (0 <= t < t_c) and evaluates at that number."
+                :arguments 
+                  ( ("a" variable nil (reparse-symbol function_parameters) [1267 1268])
+                    ("b" variable nil (reparse-symbol function_parameters) [1270 1271])
+                    ("c1" variable nil (reparse-symbol function_parameters) [1273 1275])
+                    ("c2" variable nil (reparse-symbol function_parameters) [1277 1279])
+                    ("m" variable nil (reparse-symbol function_parameters) [1281 1282])
+                    ("omega" variable nil (reparse-symbol function_parameters) [1284 1289])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [1291 1294]))                  )
+                nil [1238 1778])
+            ("optimal_nonlinear_lppl" function
+               (:documentation "Given the three nonlinear parameters, uses linear regression to globally solve for the four
+    slaved linear variables and returns a tuple with the optimal LPPL function and its MSE. Data is
+    the time series to fit to. Returns a function that maps the integers 0..n-1 to a model of the
+    n-length input dataset.
+    "
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [1807 1811])
+                    ("m" variable nil (reparse-symbol function_parameters) [1813 1814])
+                    ("omega" variable nil (reparse-symbol function_parameters) [1816 1821])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [1823 1826]))                  )
+                nil [1780 2857])
+            ("naive_nonlinear_lppl" function
+               (:documentation "Uses the naive (comparatively) LPPL function to generate a less tractable LPPL."
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [2884 2888])
+                    ("m" variable nil (reparse-symbol function_parameters) [2890 2891])
+                    ("omega" variable nil (reparse-symbol function_parameters) [2893 2898])
+                    ("phi" variable nil (reparse-symbol function_parameters) [2900 2903])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [2905 2908]))                  )
+                nil [2859 3623]))          
+      :file "general_fit_funcs.py"
+      :pointmax 3623
+      :fsize 3622
+      :lastmodtime '(22676 6227 237144 375000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file creates several 3D plots of the LPPL cost function to illustrate its nonlinearity.\"\"\"" code nil nil [1 99])
+            ("matplotlib.pyplot" include nil nil [101 132])
+            ("numpy" include nil nil [133 151])
+            ("mpl_toolkits.mplot3d" include nil nil [152 191])
+            ("general_fit_funcs" include nil nil [193 256])
+            ("get_stock_data" include nil nil [257 288])
+            ("N_TICKS" variable nil nil [290 302])
+            ("test_data" variable nil nil [304 347])
+            ("fig" variable nil nil [349 367])
+            ("ax_m" variable nil nil [368 429])
+            ("omegas_1" variable nil nil [432 470])
+            ("t_cs1" variable nil nil [471 549])
+            ("error1" variable nil nil [551 651])
+            ("mesh1" variable nil nil [653 704])
+            ("x1, y1" code nil nil [705 719])
+            ("z1" variable nil nil [720 727])
+            ("for" code nil nil [728 848])
+            ("z1" variable nil nil [849 866])
+            ("ax_m" code nil nil [867 939])
+            ("ax_omega" variable nil nil [941 1009])
+            ("ms_1" variable nil nil [1012 1049])
+            ("t_cs2" variable nil nil [1050 1128])
+            ("error2" variable nil nil [1130 1221])
+            ("mesh2" variable nil nil [1223 1270])
+            ("x2, y2" code nil nil [1271 1285])
+            ("z2" variable nil nil [1286 1293])
+            ("for" code nil nil [1294 1414])
+            ("z2" variable nil nil [1415 1432])
+            ("ax_omega" code nil nil [1433 1509])
+            ("ax_tc" variable nil nil [1511 1576])
+            ("ms_2" variable nil nil [1578 1615])
+            ("omegas_2" variable nil nil [1616 1654])
+            ("error3" variable nil nil [1656 1753])
+            ("mesh3" variable nil nil [1755 1805])
+            ("x3, y3" code nil nil [1806 1820])
+            ("z3" variable nil nil [1821 1828])
+            ("for" code nil nil [1829 1949])
+            ("z3" variable nil nil [1950 1967])
+            ("ax_tc" code nil nil [1968 2041]))          
+      :file "plot_lppl_cost.py"
+      :pointmax 2042
+      :fsize 2041
+      :lastmodtime '(22673 30771 439044 981000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"Tries to model a 4D function using color as the last dimension.\"\"\"" code nil nil [1 70])
+            ("matplotlib.pyplot" include nil nil [73 104])
+            ("numpy" include nil nil [105 123])
+            ("seaborn" include nil nil [124 145])
+            ("mpl_toolkits.mplot3d" include nil nil [146 185])
+            ("general_fit_funcs" include nil nil [187 250])
+            ("get_stock_data" include nil nil [251 282])
+            ("test_data" variable nil nil [284 328])
+            ("N_TICKS" variable nil nil [331 342])
+            ("get_cost" function
+               (:documentation "The function we're plotting"
+                :arguments 
+                  ( ("params" variable nil (reparse-symbol function_parameters) [358 364]))                  )
+                nil [345 481])
+            ("ms" variable nil nil [483 518])
+            ("t_cs" variable nil nil [556 629])
+            ("points" variable nil nil [631 642])
+            ("for" code nil nil [643 759])
+            ("points" variable nil nil [760 785])
+            ("colors" variable nil nil [786 835])
+            ("fig" variable nil nil [837 855])
+            ("ax" variable nil nil [856 926])
+            ("p" variable nil nil [927 989])
+            ("plt" code nil nil [990 1005])
+            ("plt" code nil nil [1007 1017]))          
+      :file "plot_lppl_cost_color.py"
+      :pointmax 1018
+      :fsize 1017
+      :lastmodtime '(22674 23378 814747 265000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("" code nil nil [31 119])
+            ("get_stock_data" include nil nil [120 151])
+            ("plot_higher_d_functions" include nil nil [152 204])
+            ("test_data" variable nil nil [206 249])
+            ("plot_func_jagged" function (:arguments 
+              ( ("params" variable nil (reparse-symbol function_parameters) [273 280]))              ) nil [252 357])
+            ("plot_func_smoother" function (:arguments 
+              ( ("params" variable nil (reparse-symbol function_parameters) [382 389]))              ) nil [359 468])
+            ("m_bounds" variable nil nil [470 491])
+            ("omega_bounds" variable nil nil [492 514])
+            ("tc_bounds" variable nil nil [515 577])
+            ("phi_bounds" variable nil nil [578 607])
+            ("plot_3d_subplots" code nil nil [731 884]))          
+      :file "test_higher_dim_plots.py"
+      :pointmax 885
+      :fsize 884
+      :lastmodtime '(22676 6635 459047 151000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file provides all the utilty functions of the LPPL model. Actual fitting is left to other
+code.\"\"\"" code nil nil [1 107])
+            ("functools" include nil nil [109 138])
+            ("math" include nil nil [139 164])
+            ("lppl" function
+               (:documentation "Returns the monster expression
+    
+    A + B(t_c-t)^m + C(t_c-t)^m * cos(omega * log (t_c - t) - phi)
+
+    If t_c <= t, returns ValueError.
+    "
+                :arguments 
+                  ( ("a" variable nil (reparse-symbol function_parameters) [176 177])
+                    ("b" variable nil (reparse-symbol function_parameters) [179 180])
+                    ("c" variable nil (reparse-symbol function_parameters) [182 183])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [185 188])
+                    ("omega" variable nil (reparse-symbol function_parameters) [190 195])
+                    ("phi" variable nil (reparse-symbol function_parameters) [197 200])
+                    ("m" variable nil (reparse-symbol function_parameters) [202 203])
+                    ("t" variable nil (reparse-symbol function_parameters) [205 206]))                  )
+                nil [167 571])
+            ("get_lppl_func" function
+               (:documentation "Returns a function that takes in a parameter t and returns the full LPPL."
+                :arguments 
+                  ( ("a" variable nil (reparse-symbol function_parameters) [591 592])
+                    ("b" variable nil (reparse-symbol function_parameters) [594 595])
+                    ("c" variable nil (reparse-symbol function_parameters) [597 598])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [600 603])
+                    ("omega" variable nil (reparse-symbol function_parameters) [605 610])
+                    ("phi" variable nil (reparse-symbol function_parameters) [612 615])
+                    ("m" variable nil (reparse-symbol function_parameters) [617 618]))                  )
+                nil [573 759]))          
+      :file "lppl_model.py"
+      :pointmax 759
+      :fsize 758
+      :lastmodtime '(22673 21695 780652 980000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "derivatives_of_lppl.py"
+      :pointmax 1669
+      :fsize 1669
+      :lastmodtime '(22683 31791 267373 148000)
+      :unmatched-syntax nil)
+
+
+
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"Fits the LPPL with naive least-squares methods without any preprocessing or optimization.\"\"\"" code nil nil [1 96])
+            ("numpy" include nil nil [99 117])
+            ("scipy.optimize" include nil nil [118 139])
+            ("general_fit_funcs" include nil nil [141 175])
+            ("fit_basic_LPPL" function
+               (:documentation "Given a vector y taken to be the values at each point t=0, t=1, etc., fits an LPPL function
+    to that dataset and returns the optimal parameters (in a numpy array [A, B, C, m, omega, phi,
+    t_c. No slaving or other processing
+    is done, just straight curve-fitting."
+                :arguments 
+                  ( ("y" variable nil (reparse-symbol function_parameters) [838 839]))                  )
+                nil [819 1805]))          
+      :file "fit_basic_lppl.py"
+      :pointmax 1805
+      :fsize 1805
+      :lastmodtime '(22683 39292 115251 237000)
+      :unmatched-syntax nil)
+
+    (semanticdb-table "semanticdb-table"
+      :file "plot_higher_d_functions.py"
+      :fsize 2243
+      :lastmodtime '(22676 6616 462958 413000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "randomized_search_gradient_descent.py"
+      :pointmax 1
+      :fsize 0
+      :lastmodtime '(22683 17531 110623 34000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Documents!data-blog!code!stock-crashes!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,58 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("django.shortcuts" include nil nil [1 36])
+            ("django.http" include nil nil [37 82])
+            ("main" function (:arguments 
+              ( ("request" variable nil (reparse-symbol function_parameters) [165 172]))              ) nil [156 238])
+            ("result" function (:arguments 
+              ( ("request" variable nil (reparse-symbol function_parameters) [251 258]))              ) nil [240 741])
+            ("about" function (:arguments 
+              ( ("request" variable nil (reparse-symbol function_parameters) [753 760]))              ) nil [743 827]))          
+      :file "views.py"
+      :pointmax 827
+      :fsize 826
+      :lastmodtime '(22494 3909 577059 73000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("csv" include nil nil [1 11])
+            ("PIL" include nil nil [12 55])
+            ("requests" include nil nil [56 71])
+            ("COORDINATES" variable nil nil [98 116])
+            ("with" code nil nil [162 465])
+            ("class_search" function (:arguments 
+              ( ("course_name" variable nil (reparse-symbol function_parameters) [571 582])
+                ("section_number" variable nil (reparse-symbol function_parameters) [584 598]))              ) nil [554 815])
+            ("meeting_times" function (:arguments 
+              ( ("course" variable nil (reparse-symbol function_parameters) [835 841]))              ) nil [817 2550])
+            ("print_class" function (:arguments 
+              ( ("course" variable nil (reparse-symbol function_parameters) [2568 2574])
+                ("img" variable nil (reparse-symbol function_parameters) [2576 2579]))              ) nil [2552 3584])
+            ("iCal_to_Courses" function (:arguments 
+              ( ("url" variable nil (reparse-symbol function_parameters) [3606 3609]))              ) nil [3586 4346])
+            ("final_schedule" function (:arguments 
+              ( ("url" variable nil (reparse-symbol function_parameters) [4367 4370]))              ) nil [4348 4650]))          
+      :file "newschedule.py"
+      :pointmax 4937
+      :fsize 4936
+      :lastmodtime '(22494 4031 756878 812000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("main.newschedule" include nil nil [28 71]))          
+      :file "tests.py"
+      :pointmax 72
+      :fsize 71
+      :lastmodtime '(22494 2939 728401 322000)
+      :unmatched-syntax '(($EOI 72 . 72))))
+  :file "!home!nicholas!programs!picture-my-schedule!picture_my_schedule!main!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

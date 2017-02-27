@@ -1,0 +1,15 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file provides functions that work with the PokeAPI, an API that has data about Pokemon.\"\"\"" code nil nil [1 99]))          
+      :file "read_pokeapi.py"
+      :pointmax 101
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!arbok!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -5,14 +5,27 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
 ;; this is the cool bit--change themes on time of days
-(setq calendar-current-location-name "Charlotte, NC")
-(setq calendar-longitude -80.796)
-(setq calendar-latitude 35.153)
+;; other main locale: Andover, MA, 42.65 N, -71.13 E
+;; Charlotte NC is 35.22 N, -80.84 E
+(setq calendar-current-location-name "Andover MA")
+(setq calendar-longitude -71.13)
+(setq calendar-latitude 42.65)
 (require 'theme-changer)
-(change-theme 'solarized-light 'monokai)
+(change-theme 'base16-tomorrow 'base16-tomorrow-night)
 
 ;; font
-(set-face-attribute 'default nil :font "Source Code Pro for Powerline 13")
+(set-face-attribute 'default nil :font "Ubuntu Mono derivative Powerline 15")
+(setq line-spacing 0)
+
+(use-package spaceline
+  :init
+  (spaceline-spacemacs-theme)
+  (spaceline-helm-mode)
+  (setq powerline-active1 "#923232")
+  (setq powerline-active2 "#38535b")
+  (setq mode-line "#394939")
+
+  )
 
 
 ;; pretty symbols in LaTeX
@@ -80,6 +93,21 @@
 ;; tooltips
 (tooltip-mode -1)
 
+(use-package typo
+  :init
+  (typo-global-mode 1)
+  (add-hook 'text-mode-hook 'typo-mode))
+
+(use-package pretty-mode
+  :init
+  (global-pretty-mode t))
+
+(use-package focus
+  :init
+  (add-hook 'prog-mode-hook 'focus-mode)
+  :bind ("C-c c f" . focus-mode)
+  )
+
 (add-hook 'prog-mode-hook 'linum-mode)
 
 ;; rainbow-delimiters config
@@ -98,23 +126,7 @@
  '(rainbow-delimiters-depth-7-face ((t (:background "#7cfc00" :foreground "#34342a"))))
  '(rainbow-delimiters-depth-8-face ((t (:background "#44ff77" :foreground "#34342a"))))
  '(rainbow-delimiters-unmatched-face ((t (:background "#ffff00" :foreground "#000000"))))
+ '(mode-line ((t (:foreground "#ababcb" :background "#4d4d4d" :box nil))))
+ '(mode-line-inactive ((t (:foreground "#5e5e5e" :background "#2d2d2d" :box nil))))
  )
 
-;; (add-to-list 'load-path "~/.emacs.d/vendor/emacs-powerline")
-;; (require 'powerline)
-;; (setq powerline-color1 "#657b83")
-;; (setq powerline-color2 "#839496")
-
-;; (set-face-attribute 'mode-line nil
-;;                     :foreground "#fdf6e3"
-;;                     :background "#859900"
-;;                     :box nil)
-;; (set-face-attribute 'mode-line-inactive nil
-;;                     :box nil)
-
-(sml/setup)
-
-(display-battery-mode 0)
-(display-time-mode 0)
-(line-number-mode 0)
-(column-number-mode 0)

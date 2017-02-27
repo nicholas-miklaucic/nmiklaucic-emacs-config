@@ -1,0 +1,25 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("matplotlib.pyplot" include nil nil [123 154])
+            ("numpy" include nil nil [155 173])
+            ("pandas" include nil nil [174 193])
+            ("pandas" include nil nil [194 230])
+            ("sklearn.linear_model" include nil nil [231 280])
+            ("df" variable nil nil [283 331])
+            ("model" variable nil nil [332 358])
+            ("X" variable nil nil [359 395])
+            ("y" variable nil nil [396 411]))          
+      :file "main_code.py"
+      :pointmax 417
+      :fsize 427
+      :lastmodtime '(22518 42121 805720 318000)
+      :unmatched-syntax '((NAME 412 . 417) ($EOI 417 . 417) ($EOI 412 . 412))))
+  :file "!home!nicholas!Documents!andover!2016-2017!CSC-630!linear_regression!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

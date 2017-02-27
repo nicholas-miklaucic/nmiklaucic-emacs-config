@@ -1,0 +1,356 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("anagrams" include nil nil [1 16])
+            ("unittest" include nil nil [17 32])
+            ("TestAnagrams" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("test_empty_string" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [101 105]))                          )
+                        (reparse-symbol indented_block_body) [79 159])
+                    ("test_basic_words" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [185 189]))                          )
+                        (reparse-symbol indented_block_body) [164 353])
+                    ("test_blank" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [373 377]))                          )
+                        (reparse-symbol indented_block_body) [358 473])
+                    ("test_lowercase_basic_word" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [508 512]))                          )
+                        (reparse-symbol indented_block_body) [478 651]))                  
+                :type "class")
+                nil [35 690])
+            ("if" code nil nil [829 876]))          
+      :file "test_anagrams.py"
+      :pointmax 876
+      :fsize 875
+      :lastmodtime '(22635 65348 692451 607000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file provides Zyzzyva-like functionality for dealing with words: subanagrams, hooks, etc.\"\"\"" code nil nil [1 101])
+            ("anagrams" include nil nil [104 177])
+            ("wordlist_reader" include nil nil [178 221])
+            ("re" include nil nil [223 232])
+            ("does_anagram" function
+               (:documentation "Returns True if and only if query, with optional blanks, can anagram to word."
+                :arguments 
+                  ( ("query" variable nil (reparse-symbol function_parameters) [252 257])
+                    ("word" variable nil (reparse-symbol function_parameters) [259 263]))                  )
+                nil [235 1013])
+            ("subanagrams" function
+               (:documentation "Returns a list of every word that can be made from any subset of the letters, including ?'s
+    for blanks."
+                :arguments 
+                  ( ("word" variable nil (reparse-symbol function_parameters) [1031 1035])
+                    ("dictname" variable nil (reparse-symbol function_parameters) [1037 1045]))                  )
+                nil [1015 1888])
+            ("does_subanagram" function
+               (:documentation "Returns True if the query, with optional blanks, can match the given word."
+                :arguments 
+                  ( ("query" variable nil (reparse-symbol function_parameters) [1910 1915])
+                    ("word" variable nil (reparse-symbol function_parameters) [1917 1921]))                  )
+                nil [1890 2350])
+            ("regex_search" function
+               (:documentation "Returns all words that match the regex pattern, case-insensitive."
+                :arguments 
+                  ( ("pattern" variable nil (reparse-symbol function_parameters) [2369 2376])
+                    ("dictname" variable nil (reparse-symbol function_parameters) [2378 2386]))                  )
+                nil [2352 2644])
+            ("pattern_match" function
+               (:documentation "Simply searches for the pattern in the dictionary and returns a list of matches. ? is a
+    blank, and * is any number of letters."
+                :arguments 
+                  ( ("query" variable nil (reparse-symbol function_parameters) [2664 2669])
+                    ("dictname" variable nil (reparse-symbol function_parameters) [2671 2679]))                  )
+                nil [2646 3317])
+            ("does_pattern_match" function
+               (:documentation "Returns True if and only if the pattern described by query (with ? and/or *) matches word."
+                :arguments 
+                  ( ("query" variable nil (reparse-symbol function_parameters) [3342 3347])
+                    ("word" variable nil (reparse-symbol function_parameters) [3349 3353]))                  )
+                nil [3319 3773])
+            ("front_hooks" function
+               (:documentation "Given a literal word with just letters, finds all letters that can go in front of the
+    word, sorted alphabetically."
+                :arguments 
+                  ( ("word" variable nil (reparse-symbol function_parameters) [3791 3795])
+                    ("dictname" variable nil (reparse-symbol function_parameters) [3797 3805]))                  )
+                nil [3775 4036])
+            ("back_hooks" function
+               (:documentation "Given a literal word, finds all the letters that can be added to the back, sorted
+    alphabetically."
+                :arguments 
+                  ( ("word" variable nil (reparse-symbol function_parameters) [4053 4057])
+                    ("dictname" variable nil (reparse-symbol function_parameters) [4059 4067]))                  )
+                nil [4038 4281])
+            ("hooks" function
+               (:documentation "Given a literal word, returns a tuple (front, back) with both the front and back hooks of the
+    word."
+                :arguments 
+                  ( ("word" variable nil (reparse-symbol function_parameters) [4293 4297])
+                    ("dictname" variable nil (reparse-symbol function_parameters) [4299 4307]))                  )
+                nil [4283 4500])
+            ("length_in_range" function
+               (:documentation "Returns True if the word's length is between min_len and max_len, inclusive."
+                :arguments 
+                  ( ("min_len" variable nil (reparse-symbol function_parameters) [4522 4529])
+                    ("max_len" variable nil (reparse-symbol function_parameters) [4531 4538])
+                    ("word" variable nil (reparse-symbol function_parameters) [4540 4544]))                  )
+                nil [4502 4677])
+            ("only_contains_letters" function
+               (:documentation "Returns True if and only if there are no letters in the word outside of the iterable
+    letters."
+                :arguments 
+                  ( ("tiles" variable nil (reparse-symbol function_parameters) [4705 4710])
+                    ("word" variable nil (reparse-symbol function_parameters) [4712 4716]))                  )
+                nil [4679 4886])
+            ("contains_letters" function
+               (:documentation "Returns True if and only if every letter in tiles is in word."
+                :arguments 
+                  ( ("tiles" variable nil (reparse-symbol function_parameters) [4909 4914])
+                    ("word" variable nil (reparse-symbol function_parameters) [4916 4920]))                  )
+                nil [4888 5064]))          
+      :file "word_functions.py"
+      :pointmax 5064
+      :fsize 5063
+      :lastmodtime '(22636 9187 377892 280000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file exposes the word functions defined in word_functions.py and the anagram function
+defined in anagram.py into a web service that takes in a function name and a string and
+returns JSON output.\"\"\"" code nil nil [1 206])
+            ("wordlist_reader" include nil nil [209 231])
+            ("total_word_search" include nil nil [232 304])
+            ("flask" include nil nil [306 318])
+            ("app" variable nil nil [320 347])
+            ("make_int_if_int" function
+               (:documentation "If the string is a valid integer, returns the integral form of it, otherwise returns the
+    string."
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [370 376]))                  )
+                nil [350 598])
+            ("" code nil nil [610 661])
+            ("execute_query" function
+               (:documentation "Executes the given function on the query. Every function returns a JSON list of words unless it
+    is a predicate function, which returns True or False and has many argument separated by
+    hyphens. Uses the dictionary name given in the URL if it isn't a predicate function.
+    "
+                :arguments 
+                  ( ("dictname" variable nil (reparse-symbol function_parameters) [680 688])
+                    ("function" variable nil (reparse-symbol function_parameters) [690 698])
+                    ("query" variable nil (reparse-symbol function_parameters) [700 705]))                  )
+                nil [662 1312])
+            ("" code nil nil [1324 1356])
+            ("execute_master_search" function
+               (:documentation "Takes in a query string (underscores separate arguments, tildes separate different
+    predicates, and returns a JSON list of every word that meets the given criteria."
+                :arguments 
+                  ( ("dictname" variable nil (reparse-symbol function_parameters) [1383 1391])
+                    ("queries" variable nil (reparse-symbol function_parameters) [1393 1400]))                  )
+                nil [1357 1826])
+            ("" code nil nil [1838 1873])
+            ("list_valid_lexicons" function (:documentation "Lists all valid dictionary names as a JSON list.") nil [1874 2021]))          
+      :file "server.py"
+      :pointmax 2021
+      :fsize 2367
+      :lastmodtime '(22640 14127 469878 73000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "anagrams.py"
+      :fsize 3224
+      :lastmodtime '(22635 64698 830624 369000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file just provides a mechanism for parsing the definitions and syntax of the OWL2 word list
+and any others that may be collected. The goal is to simply type \"from wordlist_reader import
+wordlist; words = wordlist()\" and instantly gain access to a raw sorted list (alphabetical order)
+that contains every word in the OWL2 or any other desired dictionary.. There are other functions for
+getting definitions and word forms.
+
+\"\"\"" code nil nil [1 434])
+            ("functools" include nil nil [436 467])
+            ("pathlib" include nil nil [468 492])
+            ("re" include nil nil [493 502])
+            ("DICTIONARIES" variable nil nil [505 522])
+            ("for" code nil nil [523 622])
+            ("import_text_file" function
+               (:documentation "Given a lexicon name, strips the whitespace and splits into lines, returning a list in the
+    original order."
+                :arguments 
+                  ( ("dictname" variable nil (reparse-symbol function_parameters) [645 653]))                  )
+                nil [624 883])
+            ("" code nil nil [895 898])
+            ("wordlist" function
+               (:documentation "Returns a list of words that correspond to the given lexicon name."
+                :arguments 
+                  ( ("dictname" variable nil (reparse-symbol function_parameters) [985 993]))                  )
+                nil [972 1118])
+            ("gen_definitions" function
+               (:documentation "Given a text file with words and their definitions and word endings, generates a dictionary
+    mapping every valid word to a definition."
+                :arguments 
+                  ( ("filename" variable nil (reparse-symbol function_parameters) [1140 1148]))                  )
+                nil [1120 1735])
+            ("check" function
+               (:documentation "Case-insensitively checks a word. Returns True if it is valid, and False otherwise."
+                :arguments 
+                  ( ("word" variable nil (reparse-symbol function_parameters) [1837 1841])
+                    ("dictname" variable nil (reparse-symbol function_parameters) [1843 1851]))                  )
+                nil [1827 2001]))          
+      :file "wordlist_reader.py"
+      :pointmax 2001
+      :fsize 2000
+      :lastmodtime '(22636 72 560576 246000)
+      :unmatched-syntax '((NAME 1418 . 1422) (MULT 1424 . 1425)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("word_functions" include nil nil [1 22])
+            ("unittest" include nil nil [23 38])
+            ("TestWordFunctions" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("test_does_anagram" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [112 116]))                          )
+                        (reparse-symbol indented_block_body) [90 409])
+                    ("test_subanagrams" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [435 439]))                          )
+                        (reparse-symbol indented_block_body) [414 1712])
+                    ("test_does_subanagram" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1742 1746]))                          )
+                        (reparse-symbol indented_block_body) [1717 2210])
+                    ("test_regex_search" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2237 2241]))                          )
+                        (reparse-symbol indented_block_body) [2215 2654])
+                    ("test_pattern_match" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2682 2686]))                          )
+                        (reparse-symbol indented_block_body) [2659 3991])
+                    ("test_does_pattern_match" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4024 4028]))                          )
+                        (reparse-symbol indented_block_body) [3996 4455])
+                    ("test_front_hooks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4481 4485]))                          )
+                        (reparse-symbol indented_block_body) [4460 4825])
+                    ("test_back_hooks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4850 4854]))                          )
+                        (reparse-symbol indented_block_body) [4830 5149])
+                    ("test_hooks" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5169 5173]))                          )
+                        (reparse-symbol indented_block_body) [5154 5491])
+                    ("test_length_in_range" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5521 5525]))                          )
+                        (reparse-symbol indented_block_body) [5496 5801])
+                    ("test_contains_letters" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5832 5836]))                          )
+                        (reparse-symbol indented_block_body) [5806 6212])
+                    ("test_only_contains_letters" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6248 6252]))                          )
+                        (reparse-symbol indented_block_body) [6217 6657]))                  
+                :type "class")
+                nil [41 6657])
+            ("if" code nil nil [6658 6705]))          
+      :file "test_word_functions.py"
+      :pointmax 6705
+      :fsize 6704
+      :lastmodtime '(22636 9237 936230 861000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("total_word_search" include nil nil [1 49])
+            ("unittest" include nil nil [51 66])
+            ("TestTotalWordSearch" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("test_all" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [132 136]))                          
+                        :documentation "Can't think of any way to split this up!")
+                        (reparse-symbol indented_block_body) [119 825]))                  
+                :type "class")
+                nil [69 825])
+            ("if" code nil nil [826 873]))          
+      :file "test_total_word_search.py"
+      :pointmax 873
+      :fsize 872
+      :lastmodtime '(22636 11074 161710 416000)
+      :unmatched-syntax '((IF 826 . 828) ($EOI 857 . 857)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file tries to experimentally determine the time complexity of the current pattern matching
+for difficult inputs.\"\"\"" code nil nil [1 124])
+            ("matplotlib.pyplot" include nil nil [127 158])
+            ("timeit" include nil nil [159 172])
+            ("string" include nil nil [173 219])
+            ("word_functions" include nil nil [221 261])
+            ("get_time_ran_with_asterisks" function
+               (:documentation "Runs a pattern match on *A*B*C*D*... etc., and times the result."
+                :arguments 
+                  ( ("num_asterisks" variable nil (reparse-symbol function_parameters) [296 309]))                  )
+                nil [264 641])
+            ("print" code nil nil [642 679]))          
+      :file "time_pattern_matching.py"
+      :pointmax 680
+      :fsize 679
+      :lastmodtime '(22643 63462 123469 900000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("wordlist_reader" include nil nil [1 37])
+            ("string" include nil nil [38 72])
+            ("l" variable nil nil [74 80])
+            ("wl" variable nil nil [81 96])
+            ("for" code nil nil [98 257]))          
+      :file "test_efficiency.py"
+      :pointmax 267
+      :fsize 266
+      :lastmodtime '(22671 52346 613405 143000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!muzjiks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

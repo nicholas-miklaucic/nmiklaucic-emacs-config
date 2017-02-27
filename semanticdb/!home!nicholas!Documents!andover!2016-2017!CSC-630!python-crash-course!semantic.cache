@@ -1,0 +1,305 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("bubble_sort" include nil nil [1 36])
+            ("timeit" include nil nil [37 62])
+            ("random" include nil nil [63 89])
+            ("s" variable nil nil [91 161]))          
+      :file "time-sorting.py"
+      :pointmax 1443
+      :fsize 1442
+      :lastmodtime '(22491 32391 32689 52000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "bubble_sort.py"
+      :fsize 1448
+      :lastmodtime '(22490 50025 816455 233000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file provides several common string manipulation functions, some of which have
+implementations in the standard library. It is restricted to using the basic operators, however.\"\"\"" code nil nil [1 187])
+            ("string" include nil nil [189 233])
+            ("replace" function
+               (:documentation "Replaces all instances of sub with new in the string, and returns the replaced version.
+    NOTE: For elegance, I don't modify the string length while I iterate through it, but instead
+    recursively call replace() with progressively more substituted strings. This is slow, but gets
+    the point across.
+
+    Example Output:
+    >>> replace(\"abracadabra\", \"ab\", \"ba\")
+    'baracadbara'
+    >>> replace(\"hocus-pocus\", \"ocus\", \"oppy\")
+    'hoppy-poppy'
+    >>> replace(\"THE$KJ SIG$KJNAL AN$KJD T$KJH$KJE$KJ N$KJOI$KJS$KJE\", \"$KJ\", '')
+    'THE SIGNAL AND THE NOISE'
+    "
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [248 254])
+                    ("sub" variable nil (reparse-symbol function_parameters) [256 259])
+                    ("new" variable nil (reparse-symbol function_parameters) [261 264]))                  )
+                nil [236 1422])
+            ("count" function
+               (:documentation "Counts the number of instances of sub as a substring of count. Note that it does not require
+    distinct substrings: count(\"aaaa\", \"aaa\") returns 2.
+
+    Example output:
+    >>> count(\"123l23I23|23!23\", \"23\")
+    5
+    "
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [1434 1440])
+                    ("sub" variable nil (reparse-symbol function_parameters) [1442 1445]))                  )
+                nil [1424 1825])
+            ("longest" function
+               (:documentation "Returns the slice indices of the longest word in the string.
+    NOTE: I wasn't sure whether I was able to use .split(), so I omitted it.
+
+    Example output:
+    >>> longest(\"Four score and seven years ago,\")
+    (5, 10)
+    >>> longest(\"I am the Dread Pirate Roberts!\")
+    (22, 29)
+    >>> longest(\"No, I am your father!\")
+    (14, 20)
+    >>> longest(\"Boldly go where no man has gone before!\")
+    (0, 6)
+    "
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [1839 1845]))                  )
+                nil [1827 2985])
+            ("is_balanced" function
+               (:documentation "Returns True if the string's delimiters are properly balanced, including braces and
+    brackets. Try to do that with regex!
+
+    NOTE: This isn't purely a count, but a check to see that there are no \"hanging\" delimiters,
+    e.g., the string \"[{]}\" is invalid despite having 1 close for every open.
+
+    Example output:
+    >>> is_balanced(\")()(\")
+    False
+    >>> is_balanced(\"(8x + (46^3)) = 24\")
+    True
+    >>> is_balanced(\"[]{}()\")
+    True
+    >>> is_balanced(\"[print('nesting is tricky'])\")
+    False
+    >>> is_balanced(\"([{}])\")
+    True
+    "
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [3003 3009]))                  )
+                nil [2987 3885]))          
+      :file "standard-string-functions.py"
+      :pointmax 3885
+      :fsize 3884
+      :lastmodtime '(22489 41806 501731 512000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+This file performs basic statistical operations on lists of numbers.
+\"\"\"" code nil nil [1 77])
+            ("a" variable nil nil [79 158])
+            ("b" variable nil nil [159 231])
+            ("c" variable nil nil [232 307])
+            ("mean" function (:arguments 
+              ( ("l" variable nil (reparse-symbol function_parameters) [319 320]))              ) nil [310 350])
+            ("mode" function (:arguments 
+              ( ("l" variable nil (reparse-symbol function_parameters) [361 362]))              ) nil [352 474])
+            ("median" function (:arguments 
+              ( ("l" variable nil (reparse-symbol function_parameters) [487 488]))              ) nil [476 628])
+            ("d" code nil nil [949 962])
+            ("stdev" function
+               (:documentation "Returns the standard deviation of the list."
+                :arguments 
+                  ( ("l" variable nil (reparse-symbol function_parameters) [975 976]))                  )
+                nil [965 1159]))          
+      :file "stats.py"
+      :pointmax 1214
+      :fsize 1213
+      :lastmodtime '(22491 34699 264951 232000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file takes an input file, finds all doubled words, and writes those locations to a new text
+file.\"\"\"" code nil nil [1 109])
+            ("sys" include nil nil [112 122])
+            ("find_doubles" function
+               (:documentation "Takes in a a path for reading for doubled words and an out_path for printing the result to,
+    and finds all doubled words."
+                :arguments 
+                  ( ("in_path" variable nil (reparse-symbol function_parameters) [142 149])
+                    ("out_path" variable nil (reparse-symbol function_parameters) [151 159]))                  )
+                nil [125 1127])
+            ("if" code nil nil [1247 1505]))          
+      :file "doubled-words.py"
+      :pointmax 1505
+      :fsize 2105
+      :lastmodtime '(22500 4307 401742 181000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\" This file corresponds to problem 11 on the Python Crash Course for
+Phillips Academy CSC630 - Data Mining course
+
+For further directions, see the problem description in problem 11.
+
+\"\"\"" code nil nil [1 189])
+            ("itertools" include nil nil [248 275])
+            ("TicTacToe" type
+               (:documentation " This text is called the 'docstring' of your class.  It's the main
+    comment that describes how your class functions, its attributes and
+    methods.  It shows up in the Python interpretter if you type:
+    >>> help(TicTacToe)
+
+    (try it out!)
+
+    Check out your favorite references to see what should go in this docstring.
+    "
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\" This is the constructor for your class.  Unlike Java, you only
+        define one constructor for your class, but it can often take many
+        different kinds of arguments (Python's word for inputs).
+
+        Params:
+            self -- Python classes have a very-confusing-for-beginners
+                argument for each of their methods.  It's usually called
+                `self`, and it's a reference to the object itself.  Think of
+                it like `this` in Java, except you'll see that it needs to
+                be in the definition line for each (non-static) method you
+                define, and every time you refer to an attribute.
+            board -- multi-line string containing the board description,
+                including as its first line the game_id
+        \"\"\"" code nil (reparse-symbol indented_block_body) [888 1688])
+                            ("self, self" code nil (reparse-symbol indented_block_body) [1875 1924]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [866 870])
+                            ("board" variable nil (reparse-symbol function_parameters) [872 877]))                          
+                        :documentation " This is the constructor for your class.  Unlike Java, you only
+        define one constructor for your class, but it can often take many
+        different kinds of arguments (Python's word for inputs).
+
+        Params:
+            self -- Python classes have a very-confusing-for-beginners
+                argument for each of their methods.  It's usually called
+                `self`, and it's a reference to the object itself.  Think of
+                it like `this` in Java, except you'll see that it needs to
+                be in the definition line for each (non-static) method you
+                define, and every time you refer to an attribute.
+            board -- multi-line string containing the board description,
+                including as its first line the game_id
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [853 1955])
+                    ("make_board" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2005 2009])
+                            ("board_string" variable nil (reparse-symbol function_parameters) [2011 2023]))                          
+                        :documentation "Create the board, a 2-dimensional list.
+
+        Params:
+            board_string -- multi-line string containing the board description,
+                including as its first line the game_id
+
+        Return (CHANGED): A 2-tuple containing the game ID as an integer, and a 2-dimensional list
+            describing the state of the board.
+
+        ")
+                        (reparse-symbol indented_block_body) [1990 2911])
+                    ("is_game_over" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2933 2937]))                          
+                        :documentation "
+        Determine if the game is over.
+
+        Return:
+            1 if X has won, -1 if O has won, 2 if tie, 0 otherwise
+            (Or use whatever you want to use to describe the condition.
+            Methods with a name that sounds like a question usually can get
+            called from an if statement, and this one can:
+            >>> if my_game.is_game_over():
+            >>>     do_something()
+            Because 0 is False, and non-zero is True.
+            )
+        ")
+                        (reparse-symbol indented_block_body) [2916 4797])
+                    ("determine_turn" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4821 4825]))                          
+                        :documentation "
+        Determine whose turn it is, if possible.
+
+        This method assumes that the game is not over.
+
+        Return:
+            1 if X's turn, -1 if O's turn, 0 otherwise
+        ")
+                        (reparse-symbol indented_block_body) [4802 5290]))                  
+                :type "class")
+                nil [487 5290])
+            ("if" code nil nil [5292 7049]))          
+      :file "tictactoe.py"
+      :pointmax 7049
+      :fsize 7214
+      :lastmodtime '(22504 29106 936459 475000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file solves a seemingly simple but actually very difficult question by ignoring the
+difficult parts: are there more links to Wikipedia or non-Wikipedia links on the PA Wikipedia page?
+
+Hopefully if you're in the middle of a grading slump this file will brighten you up a little!
+\"\"\"" code nil nil [1 291])
+            ("re" include nil nil [294 303])
+            ("requests" include nil nil [304 319])
+            ("find_links" function
+               (:documentation "Returns a list of every string delimited by href=\" and the next \" character, supposedly
+    links."
+                :arguments 
+                  ( ("html" variable nil (reparse-symbol function_parameters) [337 341]))                  )
+                nil [322 973])
+            ("if" code nil nil [975 1643]))          
+      :file "webcrawling.py"
+      :pointmax 1643
+      :fsize 1642
+      :lastmodtime '(22504 26302 377121 692000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file solves Project Euler problem 8.\"\"\"" code nil nil [1 48])
+            ("functools" include nil nil [51 67])
+            ("operator" include nil nil [68 83])
+            ("ENORMOUS_NUMBER" variable nil nil [86 1149])
+            ("digits" variable nil nil [1179 1227])
+            ("product" function
+               (:documentation "Computes the product of the list nums."
+                :arguments 
+                  ( ("nums" variable nil (reparse-symbol function_parameters) [1242 1246]))                  )
+                nil [1230 1346])
+            ("products" variable nil nil [1348 1422])
+            ("print" code nil nil [1424 1444]))          
+      :file "project-euler-8.py"
+      :pointmax 1467
+      :fsize 1466
+      :lastmodtime '(22489 44213 834200 953000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Documents!andover!2016-2017!CSC-630!python-crash-course!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

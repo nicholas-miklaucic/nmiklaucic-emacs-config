@@ -1,0 +1,19 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("django.conf.urls" include nil nil [1 33])
+            ("django.contrib.auth.views" include nil nil [34 80])
+            ("urlpatterns" variable nil nil [83 180]))          
+      :file "urls.py"
+      :pointmax 181
+      :fsize 180
+      :lastmodtime '(22578 20764 686657 649000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!paclubhub!paclubhub!registration!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

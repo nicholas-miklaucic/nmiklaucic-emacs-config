@@ -1,0 +1,16 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "linear-regression-noise.py"
+      :pointmax 334
+      :fsize 255
+      :lastmodtime '(22515 55619 123457 873000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Documents!andover!2016-2017!CSC-630!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

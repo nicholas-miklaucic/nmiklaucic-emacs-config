@@ -1,0 +1,71 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+Nicholas Miklaucic
+
+Phillips Academy, Andover
+
+Senior-3
+\"\"\"" code nil nil [1 64])
+            ("RANKS" variable nil nil [67 90])
+            ("SUITS" variable nil nil [91 105])
+            ("read_card" function
+               (:documentation "Returns a tuple (rank, suit), from a string like 2H or KD."
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [122 128]))                  )
+                nil [108 272])
+            ("print_card" function
+               (:documentation "From a (rank, suit) tuple, prints a string like 2H or KD."
+                :arguments 
+                  ( ("tup" variable nil (reparse-symbol function_parameters) [289 292]))                  )
+                nil [274 404])
+            ("get_correct_play" function
+               (:documentation "Gets the lowest-ranking card that outranks the lead in the given suit, the lowest-ranked card
+    in a suit if there is no higher-ranking card, or the lowest-ranking card in the entire hand
+    otherwise. If there is a tie, plays suits in the order CDHS. Hand is a list of tuples (or any
+    iterable of iterables, and lead is a 2-tuple."
+                :arguments 
+                  ( ("hand" variable nil (reparse-symbol function_parameters) [427 431])
+                    ("lead" variable nil (reparse-symbol function_parameters) [433 437]))                  )
+                nil [406 1485])
+            ("main" function nil nil [1487 1761])
+            ("if" code nil nil [1762 1800]))          
+      :file "agram.py"
+      :pointmax 1800
+      :fsize 1799
+      :lastmodtime '(22609 60096 422754 508000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+Nicholas Miklaucic
+
+Philips Academy, Andover
+
+Senior-3
+\"\"\"" code nil nil [1 63])
+            ("read_board" function
+               (:documentation "Given a hex string, returns an 8x8 matrix with 0 for off and 1 for on."
+                :arguments 
+                  ( ("hex_str" variable nil (reparse-symbol function_parameters) [81 88]))                  )
+                nil [66 473])
+            ("find_move" function (:arguments 
+              ( ("board1" variable nil (reparse-symbol function_parameters) [489 495])
+                ("board2" variable nil (reparse-symbol function_parameters) [497 503]))              ) nil [475 1330])
+            ("original" variable nil nil [1331 1361])
+            ("for" code nil nil [1362 1447]))          
+      :file "lights_out.py"
+      :pointmax 1447
+      :fsize 1446
+      :lastmodtime '(22699 18943 828921 660000)
+      :unmatched-syntax '(($EOI 1447 . 1447))))
+  :file "!home!nicholas!programs!ACSL!2016-2017!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

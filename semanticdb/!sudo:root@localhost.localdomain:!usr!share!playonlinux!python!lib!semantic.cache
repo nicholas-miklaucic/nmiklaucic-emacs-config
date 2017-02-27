@@ -1,0 +1,63 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("string" include nil nil [104 134])
+            ("sys" include nil nil [104 134])
+            ("random" include nil nil [104 134])
+            ("os" include nil nil [104 134])
+            ("lib.playonlinux" include nil nil [135 176])
+            ("wx" include nil nil [135 176])
+            ("try" code nil nil [194 312])
+            ("os" variable nil nil [333 361])
+            ("os" variable nil nil [362 447])
+            ("os" variable nil nil [448 504])
+            ("os" variable nil nil [505 537])
+            ("os" variable nil nil [538 594])
+            ("os" variable nil nil [595 659])
+            ("os" variable nil nil [660 722])
+            ("os" variable nil nil [723 783])
+            ("homedir" variable nil nil [784 812])
+            ("os" variable nil nil [997 1034])
+            ("if" code nil nil [1058 1496])
+            ("if" code nil nil [1521 2553])
+            ("if" code nil nil [2566 3051])
+            ("os" variable nil nil [3069 3100])
+            ("archi" variable nil nil [3102 3151])
+            ("archi" variable nil nil [3152 3168])
+            ("if" code nil nil [3170 3323])
+            ("os" variable nil nil [3343 3397])
+            ("os" variable nil nil [3398 3451])
+            ("os" code nil nil [3452 3528])
+            ("os" variable nil nil [3529 3560])
+            ("os" variable nil nil [3569 3625])
+            ("try" code nil nil [3691 3781])
+            ("try" code nil nil [3799 3885])
+            ("if" code nil nil [3887 5026])
+            ("os" variable nil nil [5027 5073])
+            ("os" variable nil nil [5074 5134])
+            ("try" code nil nil [5135 5269])
+            ("os" variable nil nil [5274 5337])
+            ("playonlinux_env" variable nil nil [5339 5382])
+            ("playonlinux_rep" variable nil nil [5383 5428])
+            ("version" variable nil nil [5429 5460])
+            ("current_user" variable nil nil [5461 5494])
+            ("os" code nil nil [5496 5571])
+            ("if" code nil nil [5591 6128])
+            ("userAgent" code nil nil [6130 6180]))          
+      :file "Variables.py"
+      :pointmax 6181
+      :fsize 6180
+      :lastmodtime '(22654 51277)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "playonlinux.py"
+      :fsize 13406
+      :lastmodtime '(22523 29377)))
+  :file "!sudo:root@localhost.localdomain:!usr!share!playonlinux!python!lib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

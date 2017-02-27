@@ -1,0 +1,178 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+This file cleans up non-word and non-delimiter characters from a given string.
+
+Group: Austin Tuan, Gherardo Morona, Nicholas Miklaucic, Sam Xifaras
+Author: Nicholas Miklaucic
+\"\"\"" code nil nil [1 184])
+            ("string" include nil nil [186 228])
+            ("remove_junk" function
+               (:documentation "Removes all non-space whitespace and punctuation, and lowercases everything."
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [247 253]))                  )
+                nil [231 537])
+            ("cleanup" function
+               (:documentation "Removes all \"junk\" characters from a list: punctuation, numbers, uppercase letters,
+    etc. Treats everything as one line and removes all non-space whitespace."
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [551 557]))                  )
+                nil [539 1009]))          
+      :file "cleanup.py"
+      :pointmax 1009
+      :fsize 1008
+      :lastmodtime '(22490 54088 153171 603000)
+      :unmatched-syntax '((DEF 1011 . 1014) ($EOI 1015 . 1015)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+This file groups text by Porter vowels (aeiou and y after a consonant) and Porter consonants
+(everything else).
+
+Group: Gherardo Morona, Austin Tuan, Sam Xifaras, Nicholas Miklaucic
+Author: Nicholas Miklaucic
+\"\"\"" code nil nil [1 217])
+            ("re" include nil nil [220 229])
+            ("PORTER_VOWEL_RE" variable nil nil [232 287])
+            ("PORTER_CONSONANT_RE" variable nil nil [288 371])
+            ("MONSTER_RE" variable nil nil [372 441])
+            ("weight" function
+               (:documentation "Finds the Porter weight of a word."
+                :arguments 
+                  ( ("word" variable nil (reparse-symbol function_parameters) [455 459]))                  )
+                nil [444 849]))          
+      :file "porter-consonants.py"
+      :pointmax 849
+      :fsize 848
+      :lastmodtime '(22491 2535 701587 725000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("collections" include nil nil [56 87])
+            ("copy" include nil nil [88 113])
+            ("operator" include nil nil [114 129])
+            ("DEFAULT_LIST_STEMMED" variable nil nil [196 361])
+            ("\"\"\" Returns a list with the top N words replaced with their number of occurences \"\"\"" code nil nil [363 447])
+            ("bag_of_words" function (:arguments 
+              ( ("n" variable nil (reparse-symbol function_parameters) [634 635])
+                ("input_list_stemmed" variable nil (reparse-symbol function_parameters) [637 655]))              ) nil [617 1395])
+            ("nicholas_bag_of_words" function
+               (:documentation "See above."
+                :arguments 
+                  ( ("n" variable nil (reparse-symbol function_parameters) [1606 1607])
+                    ("input_list_stemmed" variable nil (reparse-symbol function_parameters) [1609 1627]))                  )
+                nil [1580 1711]))          
+      :file "bag_of_words.py"
+      :pointmax 1711
+      :fsize 1710
+      :lastmodtime '(22499 65397 81959 888000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("re" include nil nil [84 93])
+            ("nltk.corpus" include nil nil [94 127])
+            ("nltk.stem.porter" include nil nil [128 170])
+            ("\"\"\"
+This file cleans up non-word and non-delimiter characters from a given string.
+
+Group: Austin Tuan, Gherardo Morona, Nicholas Miklaucic, Sam Xifaras
+Author: Nicholas Miklaucic
+\"\"\"" code nil nil [197 380])
+            ("string" include nil nil [382 424])
+            ("remove_junk" function
+               (:documentation "Removes all non-space whitespace and punctuation, and lowercases everything."
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [443 449]))                  )
+                nil [427 733])
+            ("cleanup" function
+               (:documentation "Removes all \"junk\" characters from a list: punctuation, numbers, uppercase letters,
+    etc. Treats everything as one line and removes all non-space whitespace."
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [747 753]))                  )
+                nil [735 1205])
+            ("\"\"\"
+Currently, the email class accepts a list of lines as input to the constructor, but I could change it to just a string if it works better.
+\"\"\"" code nil nil [1235 1381])
+            ("Email" type
+               (:members 
+                  ( ("_field_re" variable nil (reparse-symbol indented_block_body) [1400 1444])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [1486 1506])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1515 1529])
+                            ("last_field" variable nil (reparse-symbol indented_block_body) [1539 1554])
+                            ("for" code nil (reparse-symbol indented_block_body) [1563 2031])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2040 2081])
+                            ("subject_words" variable nil (reparse-symbol indented_block_body) [2173 2237])
+                            ("body_words" variable nil (reparse-symbol indented_block_body) [2246 2304])
+                            ("print" code nil (reparse-symbol indented_block_body) [2313 2330])
+                            ("self" code nil (reparse-symbol indented_block_body) [2340 2387]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1464 1468])
+                            ("lines" variable nil (reparse-symbol function_parameters) [1470 1475]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [1451 2388])
+                    ("stem_words" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2408 2412])
+                            ("text" variable nil (reparse-symbol function_parameters) [2414 2418]))                          )
+                        (reparse-symbol indented_block_body) [2393 2703])
+                    ("get_stemmed_words" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2731 2735]))                          )
+                        (reparse-symbol indented_block_body) [2709 2772])
+                    ("parse_emails" function (:arguments 
+                      ( ("filename" variable nil (reparse-symbol function_parameters) [2867 2875]))                      ) (reparse-symbol indented_block_body) [2850 3255]))                  
+                :type "class")
+                nil [1382 3255])
+            ("emails" variable nil nil [3256 3309])
+            ("e" variable nil nil [3310 3323]))          
+      :file "email_class.py"
+      :pointmax 3324
+      :fsize 3323
+      :lastmodtime '(22500 2480 584317 664000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file ties everything together: given the Enron emails, outputs to a file containing, for
+every email, a length-N list containing the frequency of the top N words.
+
+Group: Sam, Gherardo, Nicholas
+Author: Nicholas\"\"\"" code nil nil [1 223])
+            ("email_class" include nil nil [226 255])
+            ("bag_of_words" include nil nil [256 275])
+            ("remove_duplicates" function
+               (:documentation "Returns a copy of l with all duplicates removed but order preserved."
+                :arguments 
+                  ( ("l" variable nil (reparse-symbol function_parameters) [300 301]))                  )
+                nil [278 487])
+            ("process_emails" function
+               (:documentation "Outputs to the given file a processed version of the Enron emails where each email is
+    replaced by a length-N list of the top N words with frequencies."
+                :arguments 
+                  ( ("n" variable nil (reparse-symbol function_parameters) [508 509])
+                    ("in_path" variable nil (reparse-symbol function_parameters) [516 523])
+                    ("out" variable nil (reparse-symbol function_parameters) [550 553]))                  )
+                nil [489 1146])
+            ("process_emails" code nil nil [1945 1961]))          
+      :file "main.py"
+      :pointmax 1962
+      :fsize 1961
+      :lastmodtime '(22500 87 1044 985000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Documents!andover!2016-2017!CSC-630!email-processing!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

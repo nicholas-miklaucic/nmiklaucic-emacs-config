@@ -1,0 +1,96 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file provides convenient functions for filling in crosswords squares.\"\"\"" code nil nil [1 81])
+            ("words" include nil nil [84 96])
+            ("string" include nil nil [97 129])
+            ("copy" include nil nil [130 155])
+            ("get_rarity" function
+               (:documentation "Gets a rough idea of how rare a letter is, as a number from 0 (most common) to 25 (least
+    common)."
+                :arguments 
+                  ( ("letter" variable nil (reparse-symbol function_parameters) [173 179]))                  )
+                nil [158 356])
+            ("fill_word" function
+               (:documentation "Given an iterable where any non-letter is treated as blank and letters might be filled in,
+    returns a list of all possible completions."
+                :arguments 
+                  ( ("iterable" variable nil (reparse-symbol function_parameters) [372 380]))                  )
+                nil [358 672])
+            ("verify" function
+               (:documentation "Given a filled matrix, returns True if it is a valid fill."
+                :arguments 
+                  ( ("matrix" variable nil (reparse-symbol function_parameters) [685 691]))                  )
+                nil [674 967])
+            ("fill_square" function
+               (:documentation "Fills the square in a valid configuration, such that every rightward and downward line is a valid
+    word. Squares is an nxn matrix that has some entries filled in (anything not a letter is
+    discounted). Returns None if no fill is viable, or the filled square otherwise.
+
+    "
+                :arguments 
+                  ( ("squares" variable nil (reparse-symbol function_parameters) [985 992]))                  )
+                nil [969 2619])
+            ("squares" variable nil nil [2621 2671])
+            ("print" code nil nil [2672 2699]))          
+      :file "filler.py"
+      :pointmax 2700
+      :fsize 2699
+      :lastmodtime '(22551 35817 439484 788000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file provides incredibly useful functions for searching through a list of words as quickly
+as possible.
+
+Importing this file causes it to make a ton of new files and stuff, and it takes a while. But after
+the first run, it should load fairly quickly, only loading in new files as needed.\"\"\"" code nil nil [1 299])
+            ("re" include nil nil [302 311])
+            ("string" include nil nil [312 346])
+            ("WORDLIST_PATH" variable nil nil [349 388])
+            ("LEN_FILES_BASE" variable nil nil [389 424])
+            ("read_wordlist" function
+               (:documentation "Returns a list of words from the path, ignoring all \"words\" with anything besides lowercase letters."
+                :arguments 
+                  ( ("path" variable nil (reparse-symbol function_parameters) [445 449]))                  )
+                nil [427 863])
+            ("WORDLIST" variable nil nil [865 891])
+            ("filter_wordlist" function
+               (:documentation "Returns a list, sorted alphabetically, of every word that matches the predicate function."
+                :arguments 
+                  ( ("pred" variable nil (reparse-symbol function_parameters) [914 918])
+                    ("wordlist" variable nil (reparse-symbol function_parameters) [920 928]))                  )
+                nil [894 1084])
+            ("regex_filter_wordlist" function
+               (:documentation "Returns a list, sorted alphabetically, of every word that fits the regex pattern."
+                :arguments 
+                  ( ("pattern" variable nil (reparse-symbol function_parameters) [1112 1119])
+                    ("wordlist" variable nil (reparse-symbol function_parameters) [1121 1129]))                  )
+                nil [1086 1320])
+            ("words_with_prefix" function
+               (:documentation "Returns all words with the given prefix, intelligently saving time over other string
+    filtering methods."
+                :arguments 
+                  ( ("pref" variable nil (reparse-symbol function_parameters) [1344 1348])
+                    ("wordlist" variable nil (reparse-symbol function_parameters) [1350 1358]))                  )
+                nil [1322 1882])
+            ("check" function
+               (:documentation "Returns True if the word is a word, ignoring case."
+                :arguments 
+                  ( ("word" variable nil (reparse-symbol function_parameters) [1894 1898])
+                    ("wordlist" variable nil (reparse-symbol function_parameters) [1900 1908]))                  )
+                nil [1884 2017]))          
+      :file "words.py"
+      :pointmax 2017
+      :fsize 2016
+      :lastmodtime '(22546 22243 865005 201000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!crosswords!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

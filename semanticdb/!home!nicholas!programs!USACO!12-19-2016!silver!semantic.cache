@@ -1,0 +1,64 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file quickly determines the number of haybales between two points on a one-dimensional
+line.\"\"\"" code nil nil [1 104])
+            ("with" code nil nil [107 340])
+            ("for" code nil nil [342 499])
+            ("with" code nil nil [500 613]))          
+      :file "countinghaybales.py"
+      :pointmax 613
+      :fsize 612
+      :lastmodtime '(22616 22992 769135 317000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file, given a big list of cities, finds any pairs like Flint, MI and Miami, FL whose state
+codes are the first two letters of the other city.\"\"\"" code nil nil [1 153])
+            ("find_special_pairs" function
+               (:documentation "Finds every special pair. citystates is a dictionary mapping state codes to city
+    lists. Returns the number of special pairs."
+                :arguments 
+                  ( ("citystates" variable nil (reparse-symbol function_parameters) [179 189]))                  )
+                nil [156 623])
+            ("with" code nil nil [625 911])
+            ("with" code nil nil [912 1011]))          
+      :file "citystates.py"
+      :pointmax 1011
+      :fsize 722
+      :lastmodtime '(22616 23360 621976 527000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file uses some interesting graph theory to determine which cow has the ability to reach the
+most cows in a directional system.\"\"\"" code nil nil [1 138])
+            ("adjacency_vec" function
+               (:documentation "Returns 1 if a_i * b_i = 1 for i in len(vec1) or len(vec2)."
+                :arguments 
+                  ( ("vec1" variable nil (reparse-symbol function_parameters) [159 163])
+                    ("vec2" variable nil (reparse-symbol function_parameters) [165 169]))                  )
+                nil [141 350])
+            ("adjacency_square" function
+               (:documentation "Like matrix multiplication, but only preserves 1 vs. 0."
+                :arguments 
+                  ( ("mat" variable nil (reparse-symbol function_parameters) [373 376]))                  )
+                nil [352 667])
+            ("most_connected" function (:arguments 
+              ( ("mat" variable nil (reparse-symbol function_parameters) [688 691]))              ) nil [669 1002])
+            ("with" code nil nil [1003 1419])
+            ("with" code nil nil [1421 1507]))          
+      :file "moocast.py"
+      :pointmax 1507
+      :fsize 1506
+      :lastmodtime '(22616 21168 438545 222000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!USACO!12-19-2016!silver!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

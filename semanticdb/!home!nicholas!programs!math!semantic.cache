@@ -1,0 +1,80 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"Testing out a theory about the Mertens function.
+https://www.reddit.com/r/math/comments/5guh46/can_someone_verify_if_ive_found_a_formula/\"\"\"" code nil nil [1 144])
+            ("functools" include nil nil [147 178])
+            ("numpy" include nil nil [179 197])
+            ("diophantine" include nil nil [198 227])
+            ("sympy" include nil nil [228 240])
+            ("" code nil nil [253 255])
+            ("mobius" function
+               (:documentation "Computes the Mobius function."
+                :arguments 
+                  ( ("n" variable nil (reparse-symbol function_parameters) [267 268]))                  )
+                nil [256 492])
+            ("mertens" function
+               (:documentation "Computes the Mertens function."
+                :arguments 
+                  ( ("n" variable nil (reparse-symbol function_parameters) [506 507]))                  )
+                nil [494 602])
+            ("gen_sols" function
+               (:documentation "Returns all positive integral x such that ax + b = k, b|a, b != 1, and a != 1."
+                :arguments 
+                  ( ("k" variable nil (reparse-symbol function_parameters) [617 618]))                  )
+                nil [604 1363])
+            ("custom_mertens_eqn_string" function
+               (:documentation "Returns a string containing a Mertens equation that is hopefully correct. Raises ValueError
+    if given a number with no equation (e.g., it's prime)"
+                :arguments 
+                  ( ("n" variable nil (reparse-symbol function_parameters) [1395 1396]))                  )
+                nil [1365 2065])
+            ("custom_mertens_eqn" function
+               (:documentation "Returns a tuple. The first element is a list of coefficients, the second value is a list of
+    arguments to the Mertens function (with the associated coefficients), and the third is their
+    sum.
+
+    If no solution can be given, returns None."
+                :arguments 
+                  ( ("n" variable nil (reparse-symbol function_parameters) [2090 2091]))                  )
+                nil [2067 2713])
+            ("custom_mertens_matrix" function
+               (:documentation "Returns a 2-tuple containing a matrix and an output vector that together are a linear system
+    of equations that have as their solutions the Mertens numbers from 1 to the width of the matrix.
+    Efficiently reduces to create a square matrix with every variable."
+                :arguments 
+                  ( ("n" variable nil (reparse-symbol function_parameters) [2741 2742]))                  )
+                nil [2715 3783])
+            ("reduce_matrix" function
+               (:documentation "Reduces the matrix to a square matrix that preserves at least one nonzero entry in every
+    column, and deletes the associated rows in vec. Modifies both in-place."
+                :arguments 
+                  ( ("mat" variable nil (reparse-symbol function_parameters) [3803 3806])
+                    ("vec" variable nil (reparse-symbol function_parameters) [3808 3811]))                  )
+                nil [3785 5004])
+            ("pprint_matrix" function
+               (:documentation "Prints a 2D matrix elegantly."
+                :arguments 
+                  ( ("mat" variable nil (reparse-symbol function_parameters) [5024 5027]))                  )
+                nil [5006 5156])
+            ("attempt_solutions" function
+               (:documentation "Attempts to return a list of Mertens function values by solving a system of equations."
+                :arguments 
+                  ( ("n" variable nil (reparse-symbol function_parameters) [5180 5181]))                  )
+                nil [5158 5451])
+            ("A, B" code nil nil [5565 5565])
+            ("for" code nil nil [5565 5565])
+            ("print" code nil nil [5565 5565]))          
+      :file "mertens.py"
+      :pointmax 5565
+      :fsize 5564
+      :lastmodtime '(22599 26650 669994 231000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!math!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,273 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This class creates a decision tree classifier for a given dataset.\"\"\"" code nil nil [2 74])
+            ("copy" include nil nil [76 101])
+            ("pandas" include nil nil [104 123])
+            ("node" include nil nil [124 145])
+            ("split" include nil nil [146 169])
+            ("tree" include nil nil [170 191])
+            ("DecisionTree" type
+               (:documentation "Represents a decision tree classifier."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Creates a decision tree that can be fit to data.\"\"\"" code nil (reparse-symbol indented_block_body) [296 350])
+                            ("self" variable nil (reparse-symbol indented_block_body) [359 375]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [281 285]))                          
+                        :documentation "Creates a decision tree that can be fit to data."
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [268 376])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [393 397]))                          
+                        :documentation "Ignores DataFrames, only prints splits.")
+                        (reparse-symbol indented_block_body) [381 744])
+                    ("gini" function
+                       (:documentation "Computes the Gini impurity of the given data, a class vector or matrix in 0's and 1's.
+        "
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [775 778])
+                            ("classes" variable nil (reparse-symbol function_parameters) [780 787]))                          
+                        :decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [749 1468])
+                    ("gen_splits" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1488 1492])
+                            ("data" variable nil (reparse-symbol function_parameters) [1494 1498])
+                            ("classes" variable nil (reparse-symbol function_parameters) [1500 1507]))                          
+                        :documentation "Given input data and a corresponding matrix of classes, returns a list of Split objects
+        corresponding to all the possible splits of that dataset at that time.")
+                        (reparse-symbol indented_block_body) [1473 2093])
+                    ("execute_split" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2116 2120])
+                            ("data" variable nil (reparse-symbol function_parameters) [2122 2126])
+                            ("classes" variable nil (reparse-symbol function_parameters) [2128 2135])
+                            ("split" variable nil (reparse-symbol function_parameters) [2137 2142]))                          
+                        :documentation "Given data with associated classes and split data, returns a tuple ((data_false, classes_false)
+        (data_true, classes_true)) with the entries that are false and the entries that satisfy the
+        split.
+        ")
+                        (reparse-symbol indented_block_body) [2098 2823])
+                    ("test_split" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2843 2847])
+                            ("data" variable nil (reparse-symbol function_parameters) [2849 2853])
+                            ("classes" variable nil (reparse-symbol function_parameters) [2855 2862])
+                            ("split" variable nil (reparse-symbol function_parameters) [2864 2869]))                          
+                        :documentation "Given data with associated classes and a split, returns the sum of the Gini impurity of
+        the child nodes of this split if it is effected.")
+                        (reparse-symbol indented_block_body) [2828 3151])
+                    ("create_split" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3173 3177])
+                            ("pos" variable nil (reparse-symbol function_parameters) [3179 3182]))                          
+                        :documentation "Given a position in the decision tree (1-based breadth-first indexing), first checks to see if
+        the data is pure. If it is, then it sets both children to None and stops. Otherwise, it
+        computes the split that minimizes the Gini impurity for each child node and executes it,
+        creating two new children that are the results of the split (left for false, right for
+        true).
+        ")
+                        (reparse-symbol indented_block_body) [3156 4550])
+                    ("recursively_create_splits" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4585 4589])
+                            ("pos" variable nil (reparse-symbol function_parameters) [4591 4594]))                          
+                        :documentation "For the current Node, recursively splits all of its children (generating them as it goes)
+        until all of the leaves are pure, returning None.")
+                        (reparse-symbol indented_block_body) [4555 5125])
+                    ("raw_fit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5142 5146])
+                            ("X" variable nil (reparse-symbol function_parameters) [5148 5149])
+                            ("y" variable nil (reparse-symbol function_parameters) [5151 5152]))                          
+                        :documentation "Fits a given input matrix to a given output vector using a decision tree. X should be a DataFrame
+        of numerical variables with any index or column names. y should be a vector or matrix with
+        the same height as X, as many columns as classes to predict, and each column should be a
+        list of 0's and 1's for a given class. Does no pruning.
+
+        ")
+                        (reparse-symbol indented_block_body) [5130 6029])
+                    ("predict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6046 6050])
+                            ("X" variable nil (reparse-symbol function_parameters) [6052 6053]))                          
+                        :documentation "Given an input vector with the required number of predictors, returns an output vector
+        y_hat representing the predicted classes for all of the classes it was fit to.")
+                        (reparse-symbol indented_block_body) [6034 7533]))                  
+                :type "class")
+                nil [194 7533]))          
+      :file "decision_tree.py"
+      :pointmax 7589
+      :fsize 10753
+      :lastmodtime '(22611 15915 153099 556000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file implements a subclass of DecisionTree that has one small caveat: when it makes a split,
+it chooses a random subset of the features it has to make a split with, thereby reducing the tree's
+tendency to be dominated by a few strong predictors.
+
+Team: Jocelyn, Kevin, Nicholas
+Author: Nicholas
+\"\"\"" code nil nil [1 307])
+            ("decision_tree" include nil nil [310 348])
+            ("split" include nil nil [349 372])
+            ("random" include nil nil [373 398])
+            ("RandomDecisionTree" type
+               (:documentation "A random forest decision learner."
+                :superclasses ("DecisionTree")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Initializes a RandomDecisionTree ready for fitting.\"\"\"" code nil (reparse-symbol indented_block_body) [517 574])
+                            ("super" code nil (reparse-symbol indented_block_body) [583 601]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [502 506]))                          
+                        :documentation "Initializes a RandomDecisionTree ready for fitting."
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [489 602])
+                    ("gen_splits" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [622 626])
+                            ("data" variable nil (reparse-symbol function_parameters) [628 632])
+                            ("classes" variable nil (reparse-symbol function_parameters) [634 641]))                          
+                        :documentation "Generates all possible splits using only the square root of the number of available
+        features.")
+                        (reparse-symbol indented_block_body) [607 1203])
+                    ("fit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1216 1220])
+                            ("X" variable nil (reparse-symbol function_parameters) [1222 1223])
+                            ("y" variable nil (reparse-symbol function_parameters) [1225 1226]))                          
+                        :documentation "Does no pruning, just the custom feature bagging. Fits the tree to predict the classes in
+        y given the features in X.")
+                        (reparse-symbol indented_block_body) [1208 1398]))                  
+                :type "class")
+                nil [401 1398]))          
+      :file "random_tree.py"
+      :pointmax 1398
+      :fsize 1397
+      :lastmodtime '(22607 9237 534617 115000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "node.py"
+      :fsize 2458
+      :lastmodtime '(22604 53426 321463 425000))
+    (semanticdb-table "semanticdb-table"
+      :file "split.py"
+      :fsize 1940
+      :lastmodtime '(22606 56763 631825 560000))
+    (semanticdb-table "semanticdb-table"
+      :file "tree.py"
+      :fsize 5542
+      :lastmodtime '(22604 54860 911825 572000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file just does some testing of the decision tree program.\"\"\"" code nil nil [1 69])
+            ("numpy" include nil nil [71 89])
+            ("pandas" include nil nil [90 109])
+            ("decision_tree" include nil nil [111 149])
+            ("fixed_nodes_decision_tree" include nil nil [150 210])
+            ("tree" include nil nil [211 232])
+            ("node" include nil nil [233 254])
+            ("sklearn" include nil nil [255 283])
+            ("sklearn.cross_validation" include nil nil [284 337])
+            ("iris" variable nil nil [340 367])
+            ("mat" variable nil nil [370 994])
+            ("df" variable nil nil [996 1275])
+            ("X" variable nil nil [1278 1357])
+            ("y" variable nil nil [1358 1386])
+            ("X" variable nil nil [1388 1482])
+            ("for" code nil nil [1483 1569])
+            ("y" variable nil nil [1570 1629])
+            ("tree" variable nil nil [1632 1817])
+            ("print_tree" function (:arguments 
+              ( ("t" variable nil (reparse-symbol function_parameters) [1835 1836]))              ) nil [1820 1888])
+            ("iris_x_train, iris_x_test, iris_y_train, iris_y_test" code nil nil [1979 2095])
+            ("iris_x_train" variable nil nil [2097 2166])
+            ("iris_x_test" variable nil nil [2167 2234])
+            ("iris_y_train" variable nil nil [2235 2286])
+            ("iris_y_test" variable nil nil [2287 2336])
+            ("acc_scores" variable nil nil [2338 2353])
+            ("for" code nil nil [2354 2559])
+            ("print" code nil nil [2594 2611]))          
+      :file "test_decision_tree.py"
+      :pointmax 2612
+      :fsize 2611
+      :lastmodtime '(22611 18528 603487 275000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file provides a decision tree class that allows the user to limit the number of nodes that
+the tree generates: useful for the \"elbow\" trick.\"\"\"" code nil nil [1 152])
+            ("node" include nil nil [154 175])
+            ("decision_tree" include nil nil [176 214])
+            ("FixedNodesDecisionTree" type
+               (:documentation "A decision tree with a fixed amount of splits."
+                :superclasses ("DecisionTree")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Num_nodes is the number of nodes allowed.\"\"\"" code nil (reparse-symbol indented_block_body) [339 386])
+                            ("self" variable nil (reparse-symbol indented_block_body) [395 421])
+                            ("self" variable nil (reparse-symbol indented_block_body) [430 449])
+                            ("super" code nil (reparse-symbol indented_block_body) [480 498]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [335 339])
+                            ("num_nodes" variable nil (reparse-symbol function_parameters) [341 350]))                          
+                        :documentation "Num_nodes is the number of nodes allowed."
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [322 521])
+                    ("not_overfit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [542 546])
+                            ("data" variable nil (reparse-symbol function_parameters) [548 552])
+                            ("classes" variable nil (reparse-symbol function_parameters) [554 561])
+                            ("split" variable nil (reparse-symbol function_parameters) [563 568]))                          
+                        :documentation "Does the parent's not_overfit and also checks if the global amount of nodes has increased
+        too far, in which case it returns False.")
+                        (reparse-symbol indented_block_body) [526 772])
+                    ("create_split" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [794 798])
+                            ("pos" variable nil (reparse-symbol function_parameters) [800 803])
+                            ("prune_func" variable nil (reparse-symbol function_parameters) [805 815]))                          
+                        :documentation "Does the super's version, and then increments curr_nodes.")
+                        (reparse-symbol indented_block_body) [777 2446]))                  
+                :type "class")
+                nil [217 2446]))          
+      :file "set_nodes_decision_tree.py"
+      :pointmax 2446
+      :fsize 1030
+      :lastmodtime '(22611 17041 85263 261000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!CSC-630!decision-tree!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

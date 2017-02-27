@@ -1,0 +1,292 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file implements logistic regression, really just a thin wrapper around the scikit_learn
+version of this.\"\"\"" code nil nil [1 116])
+            ("numpy" include nil nil [118 136])
+            ("text_preprocessor" include nil nil [138 170])
+            ("sklearn.linear_model" include nil nil [171 222])
+            ("LogisticRegressionCustom" type
+               (:documentation "A custom wrapper for logistic regression."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Sets C and stores the input data for now, uses the fit() method to train. input_data is a
+        TextProcessor object.\"\"\"" code nil (reparse-symbol indented_block_body) [359 484])
+                            ("self" variable nil (reparse-symbol indented_block_body) [493 530])
+                            ("self" variable nil (reparse-symbol indented_block_body) [539 561]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [327 331])
+                            ("input_data" variable nil (reparse-symbol function_parameters) [333 343])
+                            ("C" variable nil (reparse-symbol function_parameters) [345 346]))                          
+                        :documentation "Sets C and stores the input data for now, uses the fit() method to train. input_data is a
+        TextProcessor object."
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [314 562])
+                    ("fit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [575 579])
+                            ("response" variable nil (reparse-symbol function_parameters) [581 589])
+                            ("bigrams" variable nil (reparse-symbol function_parameters) [603 610]))                          
+                        :documentation "Fits to logistic regression. Response is the column name that contains the information to be fit
+        for, a column of 0's and 1's. If bigrams if false, does not additionally fit bigrams.
+        ")
+                        (reparse-symbol indented_block_body) [567 1340])
+                    ("vectorize" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1359 1363])
+                            ("input_text" variable nil (reparse-symbol function_parameters) [1365 1375]))                          
+                        :documentation "Processes text into a list equal in length to the number of features with the appropriate
+        counts, suitable for modelling.")
+                        (reparse-symbol indented_block_body) [1345 2276])
+                    ("predict_vector" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2300 2304])
+                            ("test" variable nil (reparse-symbol function_parameters) [2306 2310]))                          
+                        :documentation "Predicts using a column of length equal to the input model's features. Used internally as
+        a backend to predict.")
+                        (reparse-symbol indented_block_body) [2281 2527])
+                    ("predict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2544 2548])
+                            ("test" variable nil (reparse-symbol function_parameters) [2550 2554]))                          
+                        :documentation "Makes a prediction from a line of text, vectorizing along the way")
+                        (reparse-symbol indented_block_body) [2532 2694])
+                    ("predict_proba_vector" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2724 2728])
+                            ("test" variable nil (reparse-symbol function_parameters) [2730 2734]))                          
+                        :documentation "Makes a prediction but doesn't round to a decision yet, using a vector as input instead
+        of the more convenient option of just text.")
+                        (reparse-symbol indented_block_body) [2699 2977])
+                    ("predict_proba" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3000 3004])
+                            ("test" variable nil (reparse-symbol function_parameters) [3006 3010]))                          
+                        :documentation "Makes a probability estimate from a line of text.")
+                        (reparse-symbol indented_block_body) [2982 3140])
+                    ("conf_matrix" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3161 3165])
+                            ("test_data" variable nil (reparse-symbol function_parameters) [3167 3176])
+                            ("feature" variable nil (reparse-symbol function_parameters) [3178 3185])
+                            ("response" variable nil (reparse-symbol function_parameters) [3203 3211]))                          
+                        :documentation "Returns a confusion matrix for the given test data, in the form of a two-column matrix mapping
+        strings to 0 or 1, with a response column that the model doesn't look at. Returns a 2x2
+        confusion matrix [[TP, FN], [FP, TN]], where TP and TN are true positive and negative and FP
+        and FN are false positive and negative, respectively. Uses feature and response as the
+        column names, of the text and the answer respectively.
+
+        ")
+                        (reparse-symbol indented_block_body) [3145 4086]))                  
+                :type "class")
+                nil [225 4086])
+            ("lrc" variable nil nil [4088 4122])
+            ("lrc" code nil nil [4123 4132])
+            ("print" code nil nil [4133 4177]))          
+      :file "logistic_regression.py"
+      :pointmax 4178
+      :fsize 4177
+      :lastmodtime '(22554 44605 398348 938000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file provides a class for preprocessing text data, that is suitable for further use by
+machine learning classifiers or regression.\"\"\"" code nil nil [1 142])
+            ("numpy" include nil nil [145 163])
+            ("pandas" include nil nil [164 183])
+            ("nltk.corpus" include nil nil [184 217])
+            ("nltk" include nil nil [218 248])
+            ("string" include nil nil [249 281])
+            ("collections" include nil nil [282 313])
+            ("itertools" include nil nil [314 341])
+            ("STOPWORDS" variable nil nil [344 382])
+            ("TextProcessor" type
+               (:documentation "A class to preprocess text for a classifier."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Preprocesses the text and adds the important columns to the dataframe as binarized columns. Also
+        adds a processed_{} column, where {} is df_colname, that has the lists of stems, and a
+        similar bigrams_{} column for lists of bigrams. for each tweet. N controls the number of
+        words to consider (up to the total number of unique words, obviously), and bigram_N controls
+        the number of bigrams to consider (up to the total number of unique bigrams, similarly). The
+        stopwords parameter controls what words to ignore. It defaults to the NLTK English stopwords
+        list. DF is the DataFrame to process, and df_colname is the column name with the actual
+        tweets. Uses the Porter stemmer to stem words, so if you add stopwords make sure to add
+        that. The DataFrame is kept at self.df and is not copied, so this will modify your arguments
+        in-place.
+
+        \"\"\"" code nil (reparse-symbol indented_block_body) [563 1481])
+                            ("processed_name" variable nil (reparse-symbol indented_block_body) [1530 1580])
+                            ("df" variable nil (reparse-symbol indented_block_body) [1589 1642])
+                            ("bigram_name" variable nil (reparse-symbol indented_block_body) [1651 1705])
+                            ("df" variable nil (reparse-symbol indented_block_body) [1714 1764])
+                            ("df" variable nil (reparse-symbol indented_block_body) [1801 1892])
+                            ("count" variable nil (reparse-symbol indented_block_body) [1937 1993])
+                            ("features" variable nil (reparse-symbol indented_block_body) [2002 2051])
+                            ("for" code nil (reparse-symbol indented_block_body) [2060 2175])
+                            ("bigrams" variable nil (reparse-symbol indented_block_body) [2214 2328])
+                            ("for" code nil (reparse-symbol indented_block_body) [2337 2444])
+                            ("self" variable nil (reparse-symbol indented_block_body) [2479 2491]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [479 483])
+                            ("df" variable nil (reparse-symbol function_parameters) [485 487])
+                            ("df_colname" variable nil (reparse-symbol function_parameters) [489 499])
+                            ("N" variable nil (reparse-symbol function_parameters) [510 511])
+                            ("bigram_N" variable nil (reparse-symbol function_parameters) [518 526])
+                            ("stopwords" variable nil (reparse-symbol function_parameters) [533 542]))                          
+                        :documentation "Preprocesses the text and adds the important columns to the dataframe as binarized columns. Also
+        adds a processed_{} column, where {} is df_colname, that has the lists of stems, and a
+        similar bigrams_{} column for lists of bigrams. for each tweet. N controls the number of
+        words to consider (up to the total number of unique words, obviously), and bigram_N controls
+        the number of bigrams to consider (up to the total number of unique bigrams, similarly). The
+        stopwords parameter controls what words to ignore. It defaults to the NLTK English stopwords
+        list. DF is the DataFrame to process, and df_colname is the column name with the actual
+        tweets. Uses the Porter stemmer to stem words, so if you add stopwords make sure to add
+        that. The DataFrame is kept at self.df and is not copied, so this will modify your arguments
+        in-place.
+
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [466 2492])
+                    ("process" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2509 2513])
+                            ("string" variable nil (reparse-symbol function_parameters) [2515 2521]))                          
+                        :documentation "Returns a string, all lowercased, with all punctuation and numbers removed, and all
+        whitespace except spaces gone, as a list of stemmed words. Does not remove stopwords.")
+                        (reparse-symbol indented_block_body) [2497 2984])
+                    ("bigrams" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3001 3005])
+                            ("string" variable nil (reparse-symbol function_parameters) [3007 3013]))                          
+                        :documentation "From a random input string, robustly returns a list of pairs of stems separated by
+        spaces.")
+                        (reparse-symbol indented_block_body) [2989 3225])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3242 3246]))                          
+                        :documentation "Prints out some useful information.")
+                        (reparse-symbol indented_block_body) [3230 3563]))                  
+                :type "class")
+                nil [385 3563])
+            ("df" variable nil nil [3565 3691])
+            ("NUM_EXTERNAL_TWEET" variable nil nil [3693 3718])
+            ("new_df" variable nil nil [3719 3796])
+            ("tp" variable nil nil [3797 3851]))          
+      :file "text_preprocessor.py"
+      :pointmax 3852
+      :fsize 3851
+      :lastmodtime '(22551 65060 848691 578000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file implements a standard Naive Bayes Classifier from a pandas DataFrame.\"\"\"" code nil nil [1 86])
+            ("NaiveBayesClassifier" type
+               (:documentation "Classifies input data from previous training."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Processes the input data and fits a model. The input data should be a TextPreprocessor
+        class. Response is the column to predict: 1's or 0's only.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [234 402])
+                            ("self" variable nil (reparse-symbol indented_block_body) [411 428])
+                            ("self" variable nil (reparse-symbol indented_block_body) [437 453])
+                            ("self" variable nil (reparse-symbol indented_block_body) [462 486]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [191 195])
+                            ("text" variable nil (reparse-symbol function_parameters) [197 201])
+                            ("response" variable nil (reparse-symbol function_parameters) [203 211]))                          
+                        :documentation "Processes the input data and fits a model. The input data should be a TextPreprocessor
+        class. Response is the column to predict: 1's or 0's only.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [178 487])
+                    ("predict_proba_vector" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [517 521])
+                            ("input_data" variable nil (reparse-symbol function_parameters) [523 533])
+                            ("bigrams_data" variable nil (reparse-symbol function_parameters) [535 547])
+                            ("bigrams" variable nil (reparse-symbol function_parameters) [549 556]))                          
+                        :documentation "Like predict_vector, but returns a list of both \"probability values\", if you will.")
+                        (reparse-symbol indented_block_body) [492 1519])
+                    ("predict_vector" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1543 1547])
+                            ("input_data" variable nil (reparse-symbol function_parameters) [1549 1559])
+                            ("bigrams_data" variable nil (reparse-symbol function_parameters) [1561 1573])
+                            ("bigrams" variable nil (reparse-symbol function_parameters) [1575 1582]))                          
+                        :documentation "Returns 0 or 1 depending on the model it was initialized with, using Naive Bayes
+        Classification. input_data must be a list of processed stems. If bigrams is False, does not
+        fit using bigram data, and bigrams_data can be None or any such
+
+        ")
+                        (reparse-symbol indented_block_body) [1524 1986])
+                    ("predict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2003 2007])
+                            ("input_data" variable nil (reparse-symbol function_parameters) [2009 2019])
+                            ("bigrams" variable nil (reparse-symbol function_parameters) [2021 2028]))                          
+                        :documentation "Returns 0 or 1 from the prediction, using the model it was initialized with, using Naive Bayes
+        classification. input_data, unlike predict_vector, is a string.
+
+        ")
+                        (reparse-symbol indented_block_body) [1991 2368])
+                    ("predict_proba" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2391 2395])
+                            ("input_data" variable nil (reparse-symbol function_parameters) [2397 2407])
+                            ("bigrams" variable nil (reparse-symbol function_parameters) [2409 2416]))                          
+                        :documentation "Returns a list of two probabilities, the larger of which is the \"chosen\" one.")
+                        (reparse-symbol indented_block_body) [2373 2669])
+                    ("conf_matrix" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2690 2694])
+                            ("test_data" variable nil (reparse-symbol function_parameters) [2696 2705])
+                            ("feature" variable nil (reparse-symbol function_parameters) [2707 2714])
+                            ("response" variable nil (reparse-symbol function_parameters) [2732 2740])
+                            ("bigrams" variable nil (reparse-symbol function_parameters) [2754 2761]))                          
+                        :documentation "Returns a confusion matrix for the given test data, in the form of a two-column matrix mapping
+        strings to 0 or 1, with a response column that the model doesn't look at. Returns a 2x2
+        confusion matrix [[TP, FN], [FP, TN]], where TP and TN are true positive and negative and FP
+        and FN are false positive and negative, respectively. Uses feature and response as the
+        column names, of the text and the answer respectively.
+
+        ")
+                        (reparse-symbol indented_block_body) [2674 3638]))                  
+                :type "class")
+                nil [89 3638]))          
+      :file "naive_bayes_classifier.py"
+      :pointmax 3638
+      :fsize 3637
+      :lastmodtime '(22553 20151 219419 285000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Documents!andover!2016-2017!CSC-630!text-data-IIb!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

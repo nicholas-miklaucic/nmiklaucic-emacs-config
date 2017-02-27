@@ -1,0 +1,486 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file is incomplete: it just contains wrappers that allow dynamic generation of evaluation
+and gradient computation functions given a single operator.\"\"\"" code nil nil [1 161])
+            ("math" include nil nil [163 203])
+            ("operator" include nil nil [204 247])
+            ("Operators" type
+               (:documentation "A list of named ID's for operators that map to integers."
+                :members 
+                  ( ("ADD" variable nil (reparse-symbol indented_block_body) [393 400])
+                    ("SUB" variable nil (reparse-symbol indented_block_body) [405 412])
+                    ("MUL" variable nil (reparse-symbol indented_block_body) [417 424])
+                    ("DIV" variable nil (reparse-symbol indented_block_body) [429 436])
+                    ("POW" variable nil (reparse-symbol indented_block_body) [441 448])
+                    ("EXP" variable nil (reparse-symbol indented_block_body) [453 460])
+                    ("LOG" variable nil (reparse-symbol indented_block_body) [465 472])
+                    ("SIN" variable nil (reparse-symbol indented_block_body) [477 484])
+                    ("COS" variable nil (reparse-symbol indented_block_body) [489 496])
+                    ("TAN" variable nil (reparse-symbol indented_block_body) [501 509])
+                    ("CONST" variable nil (reparse-symbol indented_block_body) [514 524])
+                    ("ABS" variable nil (reparse-symbol indented_block_body) [529 537])
+                    ("\"\"\"Used for evaluating the values of constants.\"\"\"" code nil (reparse-symbol indented_block_body) [543 593])
+                    ("const" function (:arguments 
+                      ( ("args" variable nil (reparse-symbol function_parameters) [608 613]))                      ) (reparse-symbol indented_block_body) [598 710])
+                    ("OPERATOR_TYPES" variable nil (reparse-symbol indented_block_body) [715 756])
+                    ("FUNCS" variable nil (reparse-symbol indented_block_body) [761 835])
+                    ("MAGIC_METHOD_NAMES" variable nil (reparse-symbol indented_block_body) [840 920])
+                    ("STRING_FORMS" variable nil (reparse-symbol indented_block_body) [926 1112])
+                    ("TO_FUNCS" variable nil (reparse-symbol indented_block_body) [1122 1165])
+                    ("TO_MAGIC_NAMES" variable nil (reparse-symbol indented_block_body) [1170 1236])
+                    ("TO_STRING_FORMS" variable nil (reparse-symbol indented_block_body) [1241 1298])
+                    ("gradient_add" function
+                       (:documentation "Rules for gradients: 𝛁(x+y) = 𝛁x + 𝛁y"
+                        :arguments 
+                          ( ("x" variable nil (reparse-symbol function_parameters) [1321 1322])
+                            ("y" variable nil (reparse-symbol function_parameters) [1324 1325])
+                            ("inputvar" variable nil (reparse-symbol function_parameters) [1327 1335]))                          )
+                        (reparse-symbol indented_block_body) [1304 1447])
+                    ("gradient_sub" function
+                       (:documentation "Rules for gradients: 𝛁(x-y) = 𝛁x - 𝛁y"
+                        :arguments 
+                          ( ("x" variable nil (reparse-symbol function_parameters) [1469 1470])
+                            ("y" variable nil (reparse-symbol function_parameters) [1472 1473])
+                            ("inputvar" variable nil (reparse-symbol function_parameters) [1475 1483]))                          )
+                        (reparse-symbol indented_block_body) [1452 1595])
+                    ("gradient_mul" function
+                       (:documentation "Rules for gradients: 𝛁(xy) = x𝛁y + y𝛁x"
+                        :arguments 
+                          ( ("x" variable nil (reparse-symbol function_parameters) [1617 1618])
+                            ("y" variable nil (reparse-symbol function_parameters) [1620 1621])
+                            ("inputvar" variable nil (reparse-symbol function_parameters) [1623 1631]))                          )
+                        (reparse-symbol indented_block_body) [1600 1756])
+                    ("gradient_exp" function
+                       (:documentation "Rules for gradients: 𝛁(exp(x)) = 𝛁x * exp(x)"
+                        :arguments 
+                          ( ("x" variable nil (reparse-symbol function_parameters) [1778 1779])
+                            ("inputvar" variable nil (reparse-symbol function_parameters) [1781 1789]))                          )
+                        (reparse-symbol indented_block_body) [1761 1898])
+                    ("gradient_log" function
+                       (:documentation "Rules for gradients: 𝛁(log(x)) = 1/x * 𝛁x"
+                        :arguments 
+                          ( ("x" variable nil (reparse-symbol function_parameters) [1920 1921])
+                            ("inputvar" variable nil (reparse-symbol function_parameters) [1923 1931]))                          )
+                        (reparse-symbol indented_block_body) [1903 2031])
+                    ("gradient_pow" function
+                       (:documentation "Rules for gradients: 𝛁(x^y) = 𝛁(exp(log(x) * y))"
+                        :arguments 
+                          ( ("x" variable nil (reparse-symbol function_parameters) [2053 2054])
+                            ("y" variable nil (reparse-symbol function_parameters) [2056 2057])
+                            ("inputvar" variable nil (reparse-symbol function_parameters) [2059 2067]))                          )
+                        (reparse-symbol indented_block_body) [2036 2294])
+                    ("gradient_reciprocal" function
+                       (:documentation "Rules for gradients: 𝛁(x^-1) = -(x^-2) * 𝛁x"
+                        :arguments 
+                          ( ("x" variable nil (reparse-symbol function_parameters) [2323 2324])
+                            ("inputvar" variable nil (reparse-symbol function_parameters) [2326 2334]))                          )
+                        (reparse-symbol indented_block_body) [2299 2445])
+                    ("gradient_div" function
+                       (:documentation "Rules for gradients: 𝛁(x/y) = ((y𝛁x - x𝛁y) / y^2)"
+                        :arguments 
+                          ( ("x" variable nil (reparse-symbol function_parameters) [2467 2468])
+                            ("y" variable nil (reparse-symbol function_parameters) [2470 2471])
+                            ("inputvar" variable nil (reparse-symbol function_parameters) [2473 2481]))                          )
+                        (reparse-symbol indented_block_body) [2450 2632])
+                    ("gradient_sin" function
+                       (:documentation "Rules for gradients: 𝛁(sin(x)) = 𝛁x * cos(x)"
+                        :arguments 
+                          ( ("x" variable nil (reparse-symbol function_parameters) [2654 2655])
+                            ("inputvar" variable nil (reparse-symbol function_parameters) [2657 2665]))                          )
+                        (reparse-symbol indented_block_body) [2637 2773])
+                    ("gradient_cos" function
+                       (:documentation "Rules for gradients: 𝛁(cos(x)) = 𝛁x * -sin(x)"
+                        :arguments 
+                          ( ("x" variable nil (reparse-symbol function_parameters) [2795 2796])
+                            ("inputvar" variable nil (reparse-symbol function_parameters) [2798 2806]))                          )
+                        (reparse-symbol indented_block_body) [2778 2921])
+                    ("gradient_tan" function
+                       (:documentation "Rules for gradients: 𝛁(tan(x)) = 𝛁x/(cos^2 x)"
+                        :arguments 
+                          ( ("x" variable nil (reparse-symbol function_parameters) [2943 2944])
+                            ("inputvar" variable nil (reparse-symbol function_parameters) [2946 2954]))                          )
+                        (reparse-symbol indented_block_body) [2926 3071])
+                    ("gradient_abs" function (:arguments 
+                      ( ("x" variable nil (reparse-symbol function_parameters) [3093 3094])
+                        ("inputvar" variable nil (reparse-symbol function_parameters) [3096 3104]))                      ) (reparse-symbol indented_block_body) [3076 3284])
+                    ("gradient_const" function (:arguments 
+                      ( ("x" variable nil (reparse-symbol function_parameters) [3316 3317])
+                        ("inputvar" variable nil (reparse-symbol function_parameters) [3319 3327]))                      ) (reparse-symbol indented_block_body) [3297 3347])
+                    ("GRAD_FUNCS" variable nil (reparse-symbol indented_block_body) [3352 3553])
+                    ("TO_GRADIENT_FUNCS" variable nil (reparse-symbol indented_block_body) [3559 3616]))                  
+                :type "class")
+                nil [304 3617]))          
+      :file "eval_and_grad.py"
+      :pointmax 3617
+      :fsize 3697
+      :lastmodtime '(22658 37467 169940 284000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("eval_and_grad" include nil nil [16 51])
+            ("Variable" type
+               (:members 
+                  ( ("wengert" variable nil (reparse-symbol indented_block_body) [95 107])
+                    ("inputs" variable nil (reparse-symbol indented_block_body) [112 123])
+                    ("clear_wengert" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [259 262]))                          )
+                        (reparse-symbol indented_block_body) [224 512])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [566 590])
+                            ("self" variable nil (reparse-symbol indented_block_body) [599 623]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [530 534])
+                            ("operator" variable nil (reparse-symbol function_parameters) [536 544])
+                            ("operands" variable nil (reparse-symbol function_parameters) [546 555]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [517 624])
+                    ("__add__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [641 645])
+                            ("other" variable nil (reparse-symbol function_parameters) [647 652]))                          )
+                        (reparse-symbol indented_block_body) [629 707])
+                    ("__sub__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [724 728])
+                            ("other" variable nil (reparse-symbol function_parameters) [730 735]))                          )
+                        (reparse-symbol indented_block_body) [712 790])
+                    ("__mul__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [856 860])
+                            ("other" variable nil (reparse-symbol function_parameters) [862 867]))                          )
+                        (reparse-symbol indented_block_body) [844 922])
+                    ("__truediv__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [943 947])
+                            ("other" variable nil (reparse-symbol function_parameters) [949 954]))                          )
+                        (reparse-symbol indented_block_body) [927 1009])
+                    ("__pow__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1026 1030])
+                            ("other" variable nil (reparse-symbol function_parameters) [1032 1037]))                          )
+                        (reparse-symbol indented_block_body) [1014 1092])
+                    ("__radd__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1110 1114])
+                            ("other" variable nil (reparse-symbol function_parameters) [1116 1121]))                          )
+                        (reparse-symbol indented_block_body) [1097 1176])
+                    ("__rsub__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1194 1198])
+                            ("other" variable nil (reparse-symbol function_parameters) [1200 1205]))                          )
+                        (reparse-symbol indented_block_body) [1181 1260])
+                    ("__rmul__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1278 1282])
+                            ("other" variable nil (reparse-symbol function_parameters) [1284 1289]))                          )
+                        (reparse-symbol indented_block_body) [1265 1344])
+                    ("__rtruediv__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1366 1370])
+                            ("other" variable nil (reparse-symbol function_parameters) [1372 1377]))                          )
+                        (reparse-symbol indented_block_body) [1349 1432])
+                    ("__rpow__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1450 1454])
+                            ("other" variable nil (reparse-symbol function_parameters) [1456 1461]))                          )
+                        (reparse-symbol indented_block_body) [1437 1516])
+                    ("exp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1529 1533]))                          
+                        :documentation "Returns exp x")
+                        (reparse-symbol indented_block_body) [1521 1609])
+                    ("log" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1622 1626]))                          
+                        :documentation "Returns log x")
+                        (reparse-symbol indented_block_body) [1614 1702])
+                    ("sin" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1715 1719]))                          
+                        :documentation "Returns sin x")
+                        (reparse-symbol indented_block_body) [1707 1795])
+                    ("cos" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1808 1812]))                          
+                        :documentation "Returns cos x")
+                        (reparse-symbol indented_block_body) [1800 1888])
+                    ("tan" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1901 1905]))                          
+                        :documentation "Returns tan x")
+                        (reparse-symbol indented_block_body) [1893 1981])
+                    ("partial" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1998 2002])
+                            ("inputvar" variable nil (reparse-symbol function_parameters) [2004 2012]))                          )
+                        (reparse-symbol indented_block_body) [1986 2177])
+                    ("gradient" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2195 2199]))                          
+                        :documentation "Returns the partial derivative for every input variable as a list.")
+                        (reparse-symbol indented_block_body) [2182 2351])
+                    ("grad" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2365 2369]))                          
+                        :documentation "Equivalent to gradient()")
+                        (reparse-symbol indented_block_body) [2356 2442])
+                    ("_eval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2457 2461]))                          )
+                        (reparse-symbol indented_block_body) [2447 2647])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2665 2669]))                          )
+                        (reparse-symbol indented_block_body) [2652 2700])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2718 2722]))                          )
+                        (reparse-symbol indented_block_body) [2705 2818])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2835 2839]))                          )
+                        (reparse-symbol indented_block_body) [2823 3087]))                  
+                :type "class")
+                nil [54 3087]))          
+      :file "variable.py"
+      :pointmax 3087
+      :fsize 4685
+      :lastmodtime '(22658 37467 168940 281000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("variable" include nil nil [21 50])
+            ("InputVariable" type
+               (:superclasses ("Variable")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Initialval is the value of this variable at the start.\"\"\"" code nil (reparse-symbol indented_block_body) [131 191])
+                            ("self" variable nil (reparse-symbol indented_block_body) [200 242])
+                            ("Variable" code nil (reparse-symbol indented_block_body) [251 286])
+                            ("Variable" code nil (reparse-symbol indented_block_body) [295 323]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [102 106])
+                            ("initialval" variable nil (reparse-symbol function_parameters) [108 118]))                          
+                        :documentation "Initialval is the value of this variable at the start."
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [89 324])
+                    ("_eval" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [339 343]))                          )
+                        (reparse-symbol indented_block_body) [329 502])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [624 628]))                          )
+                        (reparse-symbol indented_block_body) [612 676])
+                    ("partial" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [693 697])
+                            ("inputvar" variable nil (reparse-symbol function_parameters) [699 707]))                          )
+                        (reparse-symbol indented_block_body) [681 920])
+                    ("__eq__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [936 940])
+                            ("other" variable nil (reparse-symbol function_parameters) [942 947]))                          )
+                        (reparse-symbol indented_block_body) [925 1007])
+                    ("__call__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1025 1029]))                          )
+                        (reparse-symbol indented_block_body) [1012 1089]))                  
+                :type "class")
+                nil [53 1089]))          
+      :file "inputvariable.py"
+      :pointmax 1089
+      :fsize 1091
+      :lastmodtime '(22658 27148 232266 363000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("inputvariable" include nil nil [1 40])
+            ("variable" include nil nil [41 70])
+            ("eval_and_grad" include nil nil [71 106])
+            ("logisticregression" include nil nil [107 156])
+            ("numpy" include nil nil [158 176])
+            ("pandas" include nil nil [177 196])
+            ("runtest" function nil nil [199 423])
+            ("runtest2" function nil nil [425 584])
+            ("runtest3" function nil nil [586 726])
+            ("runtest4" function nil nil [728 1098])
+            ("data" variable nil nil [1100 1194])
+            ("X" variable nil nil [1195 1228])
+            ("y" variable nil nil [1229 1251])
+            ("logreg" variable nil nil [1253 1282])
+            ("cost" variable nil nil [1284 1307]))          
+      :file "test_variable.py"
+      :pointmax 1308
+      :fsize 1310
+      :lastmodtime '(22658 37331 266456 810000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file implements a LogisticRegression class that uses scikit_learn's interface to make a
+classification.\"\"\"" code nil nil [1 115])
+            ("inputvariable" include nil nil [118 157])
+            ("LogisticRegression" type
+               (:documentation "Attempts to classify data by linear separation."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [306 310]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [291 295]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [278 318])
+                    ("_cost_entropy" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [784 788])
+                            ("X" variable nil (reparse-symbol function_parameters) [790 791])
+                            ("y" variable nil (reparse-symbol function_parameters) [793 794]))                          
+                        :documentation "Computes the cross-entropy, defined as the sum of p(i|t)*log_2(p(i|t)) for all nodes. Returns a
+        Variable that supports taking the gradient.
+        ")
+                        (reparse-symbol indented_block_body) [766 1365])
+                    ("fit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1382 1386])
+                            ("X" variable nil (reparse-symbol function_parameters) [1388 1389])
+                            ("y" variable nil (reparse-symbol function_parameters) [1391 1392]))                          
+                        :documentation "Fits a model to the given input matrix and output vector.")
+                        (reparse-symbol indented_block_body) [1374 1467]))                  
+                :type "class")
+                nil [190 1467]))          
+      :file "logistic_regression.py"
+      :pointmax 1476
+      :fsize 1475
+      :lastmodtime '(22657 1748 166436 371000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("9" code nil nil [1 2])
+            ("numpy" include nil nil [3 21])
+            ("variable" include nil nil [23 52])
+            ("inputvariable" include nil nil [53 92])
+            ("matplotlib.pyplot" include nil nil [93 124])
+            ("math" include nil nil [125 153])
+            ("LogisticRegression" type
+               (:members 
+                  ( ("LEARNING_RATE" variable nil (reparse-symbol indented_block_body) [186 205])
+                    ("MAX_EPOCHS" variable nil (reparse-symbol indented_block_body) [210 226])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [287 302])
+                            ("self" variable nil (reparse-symbol indented_block_body) [311 330])
+                            ("self" variable nil (reparse-symbol indented_block_body) [339 381])
+                            ("self" variable nil (reparse-symbol indented_block_body) [390 409]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [249 253])
+                            ("decision_boundary" variable nil (reparse-symbol function_parameters) [255 272]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [236 410])
+                    ("_logistic" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [437 441])
+                            ("x" variable nil (reparse-symbol function_parameters) [443 444]))                          )
+                        (reparse-symbol indented_block_body) [423 483])
+                    ("linear_version" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [507 511])
+                            ("sample" variable nil (reparse-symbol function_parameters) [513 519])
+                            ("coefs" variable nil (reparse-symbol function_parameters) [521 526]))                          )
+                        (reparse-symbol indented_block_body) [488 690])
+                    ("normalize_and_direct" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [724 728])
+                            ("vec" variable nil (reparse-symbol function_parameters) [730 733])
+                            ("learning_rate" variable nil (reparse-symbol function_parameters) [735 748]))                          )
+                        (reparse-symbol indented_block_body) [699 814])
+                    ("model" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [833 837])
+                            ("sample" variable nil (reparse-symbol function_parameters) [839 845])
+                            ("coefs" variable nil (reparse-symbol function_parameters) [847 852]))                          )
+                        (reparse-symbol indented_block_body) [823 921])
+                    ("decision" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [943 947])
+                            ("sample" variable nil (reparse-symbol function_parameters) [949 955])
+                            ("coefs" variable nil (reparse-symbol function_parameters) [957 962]))                          )
+                        (reparse-symbol indented_block_body) [930 1034])
+                    ("_generate_cost_func" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1063 1067])
+                            ("samples" variable nil (reparse-symbol function_parameters) [1069 1076])
+                            ("truevals" variable nil (reparse-symbol function_parameters) [1078 1086])
+                            ("coefs" variable nil (reparse-symbol function_parameters) [1088 1093]))                          )
+                        (reparse-symbol indented_block_body) [1039 1366])
+                    ("fit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1387 1391])
+                            ("X" variable nil (reparse-symbol function_parameters) [1393 1394])
+                            ("y" variable nil (reparse-symbol function_parameters) [1396 1397]))                          )
+                        (reparse-symbol indented_block_body) [1379 2608]))                  
+                :type "class")
+                nil [155 2608]))          
+      :file "logisticregression.py"
+      :pointmax 3215
+      :fsize 3217
+      :lastmodtime '(22658 38876 620364 550000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!CSC-630!gradient-computation!CS-Gradients-Logistic-Regression-2017!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

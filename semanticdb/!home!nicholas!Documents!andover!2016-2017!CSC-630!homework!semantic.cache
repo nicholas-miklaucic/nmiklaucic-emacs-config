@@ -1,0 +1,90 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file uses some webscraping to get the current menu for Paresky.\"\"\"" code nil nil [1 75])
+            ("bs4" include nil nil [78 107])
+            ("requests" include nil nil [108 123])
+            ("PARESKY_URL" variable nil nil [126 224])
+            ("r" variable nil nil [259 279])
+            ("soup" variable nil nil [280 316]))          
+      :file "today_menu.py"
+      :pointmax 319
+      :fsize 4060
+      :lastmodtime '(22499 14871 786723 673000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("__future__" include nil nil [1 38])
+            ("random" include nil nil [77 103])
+            ("NUMBER_OF_SHUFFLES" variable nil nil [122 145])
+            ("scores" variable nil nil [252 374])
+            ("ALL_SCORES" code nil nil [376 423])
+            ("mean" function (:arguments 
+              ( ("data_list" variable nil (reparse-symbol function_parameters) [435 444]))              ) nil [426 490])
+            ("TEST_MEAN" code nil nil [491 549])
+            ("averages" variable nil nil [551 564])
+            ("new_scores" variable nil nil [663 689])
+            ("for" code nil nil [716 1304]))          
+      :file "shuffling.py"
+      :pointmax 1665
+      :fsize 1705
+      :lastmodtime '(22504 34969 335348 670000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file provides a class that can fit a line to a set of points, represented as a numpy
+array.\"\"\"" code nil nil [1 103])
+            ("numpy" include nil nil [106 124])
+            ("LinearRegression" type
+               (:documentation "A class that performs linear regression on an input dataset."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Initializes the class. X is an n x 2 numpy array representing the input x_i elements, and y is an
+        n-dimensional numpy array that is a vector with each y-value.\"\"\"" code nil (reparse-symbol indented_block_body) [261 434])
+                            ("self" variable nil (reparse-symbol indented_block_body) [444 454])
+                            ("self" variable nil (reparse-symbol indented_block_body) [463 473]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [240 244])
+                            ("X" variable nil (reparse-symbol function_parameters) [246 247])
+                            ("y" variable nil (reparse-symbol function_parameters) [249 250]))                          
+                        :documentation "Initializes the class. X is an n x 2 numpy array representing the input x_i elements, and y is an
+        n-dimensional numpy array that is a vector with each y-value."
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [227 474])
+                    ("fit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [487 491]))                          
+                        :documentation "Returns a 2-tuple (m, b) such that the line y = mx + b is the line of best fit.")
+                        (reparse-symbol indented_block_body) [479 863])
+                    ("rmse" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [877 881]))                          
+                        :documentation "Gets the root-mean-square error of the regression.")
+                        (reparse-symbol indented_block_body) [868 1173])
+                    ("r_squared" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1192 1196]))                          
+                        :documentation "Gets the coefficient of determination for the dataset.")
+                        (reparse-symbol indented_block_body) [1178 1434]))                  
+                :type "class")
+                nil [127 1434]))          
+      :file "linear_regression.py"
+      :pointmax 1434
+      :fsize 1433
+      :lastmodtime '(22516 1024 593214 473000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Documents!andover!2016-2017!CSC-630!homework!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

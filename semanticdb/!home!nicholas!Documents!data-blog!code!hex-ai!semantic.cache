@@ -1,0 +1,115 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file describes a board in the game of Hex. By \"board\" I mean a rhombic board of a specified
+size, not other shapes.\"\"\"" code nil nil [1 127])
+            ("string" include nil nil [129 163])
+            ("colorama" include nil nil [165 180])
+            ("numpy" include nil nil [181 199])
+            ("colorama" code nil nil [201 230])
+            ("Board" type
+               (:documentation "A (rhombic) board in the game of Hex."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Makes a new board with the given dimensions. Red is defined as the player that is trying to span
+        the height of the board, and Blue spanning the width. The edges are playable, not borders of
+        all red or all blue as sometimes drawn.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [347 607])
+                            ("self" variable nil (reparse-symbol indented_block_body) [616 634])
+                            ("self" variable nil (reparse-symbol indented_block_body) [643 663])
+                            ("self" variable nil (reparse-symbol indented_block_body) [672 710]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [311 315])
+                            ("width" variable nil (reparse-symbol function_parameters) [317 322])
+                            ("height" variable nil (reparse-symbol function_parameters) [327 333]))                          
+                        :documentation "Makes a new board with the given dimensions. Red is defined as the player that is trying to span
+        the height of the board, and Blue spanning the width. The edges are playable, not borders of
+        all red or all blue as sometimes drawn.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [298 711])
+                    ("from_existing_position" function
+                       (:documentation "Given a 2D numpy matrix of any size, initializes a board to fit that matrix."
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [760 763])
+                            ("board" variable nil (reparse-symbol function_parameters) [765 770]))                          
+                        :decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [716 1051])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1069 1073]))                          )
+                        (reparse-symbol indented_block_body) [1056 1133])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1150 1154]))                          )
+                        (reparse-symbol indented_block_body) [1138 1586])
+                    ("place_piece" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1607 1611])
+                            ("is_red" variable nil (reparse-symbol function_parameters) [1613 1619])
+                            ("x" variable nil (reparse-symbol function_parameters) [1621 1622])
+                            ("y" variable nil (reparse-symbol function_parameters) [1624 1625])
+                            ("err_on_replace" variable nil (reparse-symbol function_parameters) [1627 1641]))                          
+                        :documentation "Places a piece in the given location using 1-indexed coordinates (y is the row and x is the
+        column, so (1, 1) would be the lower-left and (3, 2) would be one step up and two to the
+        right. If is_red, places a red piece (value -1), otherwise plays with value -1.
+
+        If err_on_replace, raises a ValueError if the move would overwrite a different non-empty
+        value.
+        ")
+                        (reparse-symbol indented_block_body) [1591 2420])
+                    ("coords_to_string" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2446 2450])
+                            ("x" variable nil (reparse-symbol function_parameters) [2452 2453])
+                            ("y" variable nil (reparse-symbol function_parameters) [2455 2456]))                          
+                        :documentation "Returns a string with the Hex notational convenience described by the (x, y) point given. The
+        column is now denoted as a letter (a ValueError will be raised if the width of the board is
+        greater than 26), and the height is now 1-index descending the board. The top left is a1;
+        the square one to the right and two down is b3.
+        ")
+                        (reparse-symbol indented_block_body) [2425 3026])
+                    ("string_to_coords" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3052 3056])
+                            ("string" variable nil (reparse-symbol function_parameters) [3058 3064]))                          
+                        :documentation "Returns the (x, y) tuple that the string describes. Uses a Hex notational system where
+        letters are columns a-z left-to-right and the rows are 1-n top-to-bottom, so a1 is the top
+        left corner. The letter must come first, but case is ignored.")
+                        (reparse-symbol indented_block_body) [3031 3830])
+                    ("make_move_from_str" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3858 3862])
+                            ("is_red" variable nil (reparse-symbol function_parameters) [3864 3870])
+                            ("string" variable nil (reparse-symbol function_parameters) [3872 3878])
+                            ("err_on_replace" variable nil (reparse-symbol function_parameters) [3880 3894]))                          
+                        :documentation "Given a Hex coordinate string (like \"a3\") and the color, places the piece, raising
+        ValueError if there is an occupied square in that place and err_on_replace is True.")
+                        (reparse-symbol indented_block_body) [3835 4172]))                  
+                :type "class")
+                nil [233 4172])
+            ("a" variable nil nil [4174 4365])
+            ("b" variable nil nil [4366 4401]))          
+      :file "board.py"
+      :pointmax 4402
+      :fsize 4407
+      :lastmodtime '(22704 45844 922297 974000)
+      :unmatched-syntax nil)
+)
+  :file "!home!nicholas!Documents!data-blog!code!hex-ai!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

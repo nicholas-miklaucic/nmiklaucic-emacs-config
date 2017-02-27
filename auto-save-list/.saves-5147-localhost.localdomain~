@@ -1,0 +1,4 @@
+/sudo:root@localhost.localdomain:/usr/lib/systemd/system/disable-touchscreen.service
+/tmp/#!sudo:root@localhost.localdomain:!usr!lib!systemd!system!disable-touchscreen.service#
+/home/nicholas/bin/disable-touchscreen
+/home/nicholas/bin/#disable-touchscreen#

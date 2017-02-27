@@ -1,0 +1,405 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file provides a base Tree class for use with the DecisionTree class. It is simply a root
+node (which has children, which have children, etc.), with some useful functions for doing things
+you might want to do with a tree structure.
+
+Team: Jocelyn, Kevin, Nicholas
+Author: Nicholas
+\"\"\"" code nil nil [1 292])
+            ("itertools" include nil nil [295 322])
+            ("Tree" type
+               (:documentation "Represents a binary tree."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Takes in a root node with children, who have children, and so on.  Traverses the node to build
+        the tree, so make sure that you don't have an infinite loop!
+        \"\"\"" code nil (reparse-symbol indented_block_body) [416 594])
+                            ("self" variable nil (reparse-symbol indented_block_body) [603 624])
+                            ("self" code nil (reparse-symbol indented_block_body) [633 661]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [390 394])
+                            ("root_node" variable nil (reparse-symbol function_parameters) [396 405]))                          
+                        :documentation "Takes in a root node with children, who have children, and so on.  Traverses the node to build
+        the tree, so make sure that you don't have an infinite loop!
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [377 662])
+                    ("__calculate_node_list" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [693 697]))                          
+                        :documentation "Internal method for reconstructing the nodes list when a change happens.")
+                        (reparse-symbol indented_block_body) [667 1277])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1294 1298]))                          
+                        :documentation "Prints out a basic string representation.")
+                        (reparse-symbol indented_block_body) [1282 1387])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1405 1409]))                          
+                        :documentation "Basic repr. Skips the recursive Node repr, as that could be EXTREMELY long.")
+                        (reparse-symbol indented_block_body) [1392 1556])
+                    ("breadth_first_iterable" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1588 1592]))                          
+                        :documentation "Returns an iterator over the tree in breadth_first order. There might a a lot of None
+        values, because the entire tree is filled until the deepest node.")
+                        (reparse-symbol indented_block_body) [1561 1801])
+                    ("__iter__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1819 1823]))                          
+                        :documentation "Trying to iterate over this class should return the nodes in breadth_first order. Lots of
+        Nones galore!")
+                        (reparse-symbol indented_block_body) [1806 1984])
+                    ("__getitem__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2005 2009])
+                            ("i" variable nil (reparse-symbol function_parameters) [2011 2012]))                          )
+                        (reparse-symbol indented_block_body) [1989 2044])
+                    ("__depth_first_next" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2072 2076])
+                            ("i" variable nil (reparse-symbol function_parameters) [2078 2079]))                          
+                        :documentation "Internal method for depth_first_iterable. Takes a 1-index to the nodes list and goes
+        through the following recursive step: if the node has children, return the left child's
+        result and the right child's result combined, with the current node at the beginning. If the
+        node is a leaf, return itself.")
+                        (reparse-symbol indented_block_body) [2049 2632])
+                    ("depth_first_iterable" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2662 2666]))                          
+                        :documentation "Returns an iterator over the tree in depth_first order. For example, a complete 3-deep binary
+        tree numbered breadth-first 1, 2, 3, 4, 5, 6, 7 (1 -> 2 -> 4 is the left edge, for
+        clarity) would return an iterator over the nodes in the order 1, 2, 4, 5, 3, 6, 7.
+
+        ")
+                        (reparse-symbol indented_block_body) [2637 3223])
+                    ("set_child" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3242 3246])
+                            ("position" variable nil (reparse-symbol function_parameters) [3248 3256])
+                            ("direction" variable nil (reparse-symbol function_parameters) [3258 3267])
+                            ("child" variable nil (reparse-symbol function_parameters) [3269 3274]))                          
+                        :documentation "Sets a child at a given point on the tree (using breadth-first indexing). Child is the Node to
+        add (or None to remove a child), position is the index of the parent, and direction is 0 for
+        left side or 1 for right side. Raises ValueError if you attempt to delete a parent.
+
+        As always, breadth-first indexing means 1-indexed as well.
+
+        ")
+                        (reparse-symbol indented_block_body) [3228 4023])
+                    ("index" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4075 4079])
+                            ("node_val" variable nil (reparse-symbol function_parameters) [4081 4089]))                          
+                        :documentation "Gets the 1-indexed index of a given node value, the topmost furthest to the left if there
+        are multiple. Ignores the children. Returns None if nothing was found.")
+                        (reparse-symbol indented_block_body) [4065 4407])
+                    ("search_all" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4427 4431])
+                            ("node_val" variable nil (reparse-symbol function_parameters) [4433 4441]))                          
+                        :documentation "Returns a list of all node indexes (1-indexed breadth-first) that have the given node value,
+        ordered top-down and left-to-right.
+
+        ")
+                        (reparse-symbol indented_block_body) [4412 4758])
+                    ("get_rows" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4776 4780]))                          
+                        :documentation "Gets a list of lists, where each list is the next-deepest row. Does not fill gaps with
+        None values.")
+                        (reparse-symbol indented_block_body) [4763 5192])
+                    ("get_row" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5209 5213])
+                            ("row_depth" variable nil (reparse-symbol function_parameters) [5215 5224]))                          
+                        :documentation "Gets a list of all the nodes at a given height, where 0 is the root node. Does not fill
+        gaps with None values. Wraps get_rows")
+                        (reparse-symbol indented_block_body) [5197 5417])
+                    ("depth" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5432 5436]))                          
+                        :documentation "Returns the length of the longest walk down the tree.")
+                        (reparse-symbol indented_block_body) [5422 5543]))                  
+                :type "class")
+                nil [325 5543]))          
+      :file "tree.py"
+      :pointmax 5543
+      :fsize 5542
+      :lastmodtime '(22604 54860 911825 572000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file implements a Node, a very simple class that simply has a left and a right child (both
+Nodes or None), and a value.
+
+Team: Jocelyn, Kevin, Nicholas
+Author: Nicholas
+\"\"\"" code nil nil [1 181])
+            ("functools" include nil nil [183 219])
+            ("Node" type
+               (:documentation "A Node of a tree."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Represents a node of a binary tree.  Val is the value this Node has: can be anything but should
+        probably be hashable. Left and right are child Nodes, or None if this Node currently has no
+        child there.\"\"\"" code nil (reparse-symbol indented_block_body) [275 497])
+                            ("self" variable nil (reparse-symbol indented_block_body) [506 520])
+                            ("self" variable nil (reparse-symbol indented_block_body) [529 545])
+                            ("self" variable nil (reparse-symbol indented_block_body) [554 572]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [363 367])
+                            ("val" variable nil (reparse-symbol function_parameters) [369 372])
+                            ("left" variable nil (reparse-symbol function_parameters) [374 378])
+                            ("right" variable nil (reparse-symbol function_parameters) [380 385]))                          
+                        :documentation "Represents a node of a binary tree.  Val is the value this Node has: can be anything but should
+        probably be hashable. Left and right are child Nodes, or None if this Node currently has no
+        child there."
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [350 694])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [711 715]))                          
+                        :documentation "Gives the Node's value and the values of its children.")
+                        (reparse-symbol indented_block_body) [699 829])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1449 1453]))                          
+                        :documentation "Gives the possible constructor.")
+                        (reparse-symbol indented_block_body) [1436 1594])
+                    ("children" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1612 1616]))                          
+                        :documentation "Returns a tuple (L, R) of children, if both exist, otherwise just the one that does, or (). Note
+        that this only returns a truthy value if the node has children: very useful!
+        ")
+                        (reparse-symbol indented_block_body) [1599 2039])
+                    ("__eq__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2215 2219])
+                            ("other" variable nil (reparse-symbol function_parameters) [2221 2226]))                          
+                        :documentation "Uses the value, not the children, in comparison.")
+                        (reparse-symbol indented_block_body) [2204 2329])
+                    ("__le__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2345 2349])
+                            ("other" variable nil (reparse-symbol function_parameters) [2351 2356]))                          
+                        :documentation "Uses the value, not the children, in comparison.")
+                        (reparse-symbol indented_block_body) [2334 2459]))                  
+                :type "class")
+                nil [305 2459]))          
+      :file "node.py"
+      :pointmax 2459
+      :fsize 2458
+      :lastmodtime '(22604 53426 321463 425000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This is a class for encoding a split at a node of a decision tree in a class. That way, we can
+represent more than one kind of split as both a class method function that splits data, and as a
+logical condition in a human-readable format.
+
+Team: Jocelyn, Kevin, Nicholas
+Author: Nicholas
+\"\"\"" code nil nil [1 294])
+            ("Split" type
+               (:documentation "Represents a decision tree split. For now, this is just a less-than-or-equal-to test with a
+    given value, but it could be extended in the future."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Val is the value that the split checks for <= relation to: for example, val=3.6 would make a
+        Split to test x <= 3.6 for some input x. Predictor_name is the name of the predictor to
+        test: for example, in a decision tree with a predictor y_1, you could use \"y_1\" as the
+        predictorname to check if y_1 <= 3.6.
+
+        \"\"\"" code nil (reparse-symbol indented_block_body) [523 868])
+                            ("self" variable nil (reparse-symbol indented_block_body) [877 913])
+                            ("self" variable nil (reparse-symbol indented_block_body) [922 936]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [487 491])
+                            ("predictor_name" variable nil (reparse-symbol function_parameters) [493 507])
+                            ("val" variable nil (reparse-symbol function_parameters) [509 512]))                          
+                        :documentation "Val is the value that the split checks for <= relation to: for example, val=3.6 would make a
+        Split to test x <= 3.6 for some input x. Predictor_name is the name of the predictor to
+        test: for example, in a decision tree with a predictor y_1, you could use \"y_1\" as the
+        predictorname to check if y_1 <= 3.6.
+
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [474 937])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [954 958]))                          
+                        :documentation "No explanation needed!")
+                        (reparse-symbol indented_block_body) [942 1076])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1094 1098]))                          
+                        :documentation "Also no explanation needed.")
+                        (reparse-symbol indented_block_body) [1081 1224])
+                    ("split" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1239 1243])
+                            ("x" variable nil (reparse-symbol function_parameters) [1245 1246])
+                            ("predictor_matrix" variable nil (reparse-symbol function_parameters) [1248 1264])
+                            ("use_iloc" variable nil (reparse-symbol function_parameters) [1266 1274]))                          
+                        :documentation "Predictor_matrix must be a DataFrame with the given predictor name in it. X is then the index row
+        to use for splitting, or, if use_iloc is True, the numerical index of a row (starting at
+        0). Returns the result of the split applied to that particular entry.
+        ")
+                        (reparse-symbol indented_block_body) [1229 1941]))                  
+                :type "class")
+                nil [297 1941]))          
+      :file "split.py"
+      :pointmax 1941
+      :fsize 1940
+      :lastmodtime '(22606 56763 631825 560000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This class creates a decision tree classifier for a given dataset.\"\"\"" code nil nil [2 74])
+            ("copy" include nil nil [76 101])
+            ("pandas" include nil nil [104 123])
+            ("node" include nil nil [124 145])
+            ("split" include nil nil [146 169])
+            ("tree" include nil nil [170 191])
+            ("DecisionTree" type
+               (:documentation "Represents a decision tree classifier."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Creates a decision tree that can be fit to data.\"\"\"" code nil (reparse-symbol indented_block_body) [249 303])
+                            ("self" variable nil (reparse-symbol indented_block_body) [312 328]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [281 285]))                          
+                        :documentation "Creates a decision tree that can be fit to data."
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [268 376])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [393 397]))                          
+                        :documentation "Ignores DataFrames, only prints splits.")
+                        (reparse-symbol indented_block_body) [381 454])
+                    ("gen_splits" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1488 1492])
+                            ("data" variable nil (reparse-symbol function_parameters) [1494 1498])
+                            ("classes" variable nil (reparse-symbol function_parameters) [1500 1507]))                          
+                        :documentation "Given input data and a corresponding matrix of classes, returns a list of Split objects
+        corresponding to all the possible splits of that dataset at that time.")
+                        (reparse-symbol indented_block_body) [1473 2093])
+                    ("execute_split" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2116 2120])
+                            ("data" variable nil (reparse-symbol function_parameters) [2122 2126])
+                            ("classes" variable nil (reparse-symbol function_parameters) [2128 2135])
+                            ("split" variable nil (reparse-symbol function_parameters) [2137 2142]))                          
+                        :documentation "Given data with associated classes and split data, returns a tuple ((data_false, classes_false)
+        (data_true, classes_true)) with the entries that are false and the entries that satisfy the
+        split.
+        ")
+                        (reparse-symbol indented_block_body) [2098 2823])
+                    ("test_split" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2843 2847])
+                            ("data" variable nil (reparse-symbol function_parameters) [2849 2853])
+                            ("classes" variable nil (reparse-symbol function_parameters) [2855 2862])
+                            ("split" variable nil (reparse-symbol function_parameters) [2864 2869]))                          
+                        :documentation "Given data with associated classes and a split, returns the sum of the Gini impurity of
+        the child nodes of this split if it is effected.")
+                        (reparse-symbol indented_block_body) [2828 3151])
+                    ("create_split" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3173 3177])
+                            ("pos" variable nil (reparse-symbol function_parameters) [3179 3182]))                          
+                        :documentation "Given a position in the decision tree (1-based breadth-first indexing), first checks to see if
+        the data is pure. If it is, then it sets both children to None and stops. Otherwise, it
+        computes the split that minimizes the Gini impurity for each child node and executes it,
+        creating two new children that are the results of the split (left for false, right for
+        true).
+        ")
+                        (reparse-symbol indented_block_body) [3156 4550])
+                    ("recursively_create_splits" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4585 4589])
+                            ("pos" variable nil (reparse-symbol function_parameters) [4591 4594]))                          
+                        :documentation "For the current Node, recursively splits all of its children (generating them as it goes)
+        until all of the leaves are pure, returning None.")
+                        (reparse-symbol indented_block_body) [4555 5125])
+                    ("raw_fit" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5142 5146])
+                            ("X" variable nil (reparse-symbol function_parameters) [5148 5149])
+                            ("y" variable nil (reparse-symbol function_parameters) [5151 5152]))                          
+                        :documentation "Fits a given input matrix to a given output vector using a decision tree. X should be a DataFrame
+        of numerical variables with any index or column names. y should be a vector or matrix with
+        the same height as X, as many columns as classes to predict, and each column should be a
+        list of 0's and 1's for a given class. Does no pruning.
+
+        ")
+                        (reparse-symbol indented_block_body) [5130 6029])
+                    ("predict" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6046 6050])
+                            ("X" variable nil (reparse-symbol function_parameters) [6052 6053]))                          
+                        :documentation "Given an input vector with the required number of predictors, returns an output vector
+        y_hat representing the predicted classes for all of the classes it was fit to.")
+                        (reparse-symbol indented_block_body) [6034 7533]))                  
+                :type "class")
+                nil [194 7534]))          
+      :file "decision_tree.py"
+      :pointmax 7589
+      :fsize 7588
+      :lastmodtime '(22606 56667 304309 10000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!CSC-630!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

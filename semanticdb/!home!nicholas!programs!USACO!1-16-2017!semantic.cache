@@ -1,0 +1,70 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This program finds the Nth letter in a recursively generated sequence
+F(s) -> s + R-CIRC(s)
+\"\"\"" code nil nil [1 99])
+            ("find_index" function
+               (:documentation "N is a numerical index (1-indexed) representing the position of the desired character. Calculates
+    the expansion of s until it contains the Nth position and then returns what it is at that
+    position."
+                :arguments 
+                  ( ("s" variable nil (reparse-symbol function_parameters) [117 118])
+                    ("n" variable nil (reparse-symbol function_parameters) [120 121]))                  )
+                nil [102 1033])
+            ("with" code nil nil [1035 1134])
+            ("with" code nil nil [1135 1213]))          
+      :file "cow-code.py"
+      :pointmax 1213
+      :fsize 1212
+      :lastmodtime '(22653 30599 806784 731000)
+      :unmatched-syntax '((WITH 1035 . 1039) ($EOI 1067 . 1067) ($EOI 1033 . 1033)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file tells Bessie how to win a game of HPS (or RPS) if she's omniscient but lazy.\"\"\"" code nil nil [1 93])
+            ("determine_optimal_wins" function
+               (:documentation "Given an iterable of the numbers 0, 1, or 2, determines the optimal win count if you
+    can only switch moves once."
+                :arguments 
+                  ( ("plays" variable nil (reparse-symbol function_parameters) [123 128]))                  )
+                nil [96 1138])
+            ("with" code nil nil [1140 1280])
+            ("with" code nil nil [1282 1374]))          
+      :file "hps.py"
+      :pointmax 1374
+      :fsize 1373
+      :lastmodtime '(22653 31866 409967 234000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file determines the smallest stage that can host a production of Cowpelia.\"\"\"" code nil nil [1 86])
+            ("compute_time" function
+               (:documentation "Given a size K and a list of cows with dancing times, computes the time needed for all of
+    them to dance given K cows at once."
+                :arguments 
+                  ( ("k" variable nil (reparse-symbol function_parameters) [106 107])
+                    ("cow_times" variable nil (reparse-symbol function_parameters) [109 118]))                  )
+                nil [89 741])
+            ("optimal_k" function
+               (:documentation "Computes the smallest amount of concurrent dancers to finish the ballet in time max_time."
+                :arguments 
+                  ( ("cow_times" variable nil (reparse-symbol function_parameters) [757 766])
+                    ("max_time" variable nil (reparse-symbol function_parameters) [768 776]))                  )
+                nil [743 1119])
+            ("with" code nil nil [1121 1311])
+            ("with" code nil nil [1312 1407]))          
+      :file "cow-ballet.py"
+      :pointmax 1407
+      :fsize 1406
+      :lastmodtime '(22653 32732 352216 989000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!USACO!1-16-2017!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

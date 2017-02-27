@@ -1,0 +1,830 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("unittest" include nil nil [1 16])
+            ("board" include nil nil [18 41])
+            ("TestBoard" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("setUp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [95 99]))                          )
+                        (reparse-symbol indented_block_body) [85 127])
+                    ("test_default_board_generation" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [170 174]))                          )
+                        (reparse-symbol indented_block_body) [136 304])
+                    ("test_custom_board_generation" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [342 346]))                          )
+                        (reparse-symbol indented_block_body) [309 575])
+                    ("test_rotation" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [598 602]))                          )
+                        (reparse-symbol indented_block_body) [580 1337]))                  
+                :type "class")
+                nil [44 1337])
+            ("if" code nil nil [1339 1386]))          
+      :file "test_board.py"
+      :pointmax 1386
+      :fsize 1385
+      :lastmodtime '(22687 59381 295190 540000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"Plays a simple text game of 2048.\"\"\"" code nil nil [1 40])
+            ("board" include nil nil [42 65])
+            ("b" variable nil nil [67 78])
+            ("b" code nil nil [80 99])
+            ("while" code nil nil [101 308])
+            ("print" code nil nil [309 331]))          
+      :file "play-2048.py"
+      :pointmax 332
+      :fsize 331
+      :lastmodtime '(22687 58193 765164 974000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This class represents the game state of a 2048 game in progress, intentionally made as general as
+possible to accomodate variations on the game.\"\"\"" code nil nil [1 151])
+            ("copy" include nil nil [154 179])
+            ("random" include nil nil [180 205])
+            ("numpy" include nil nil [207 225])
+            ("make_move" include nil nil [227 243])
+            ("Board" type
+               (:documentation "A 2048 game board with tiles on it."
+                :members 
+                  ( ("UP" variable nil (reparse-symbol indented_block_body) [310 316])
+                    ("RIGHT" variable nil (reparse-symbol indented_block_body) [321 330])
+                    ("DOWN" variable nil (reparse-symbol indented_block_body) [335 343])
+                    ("LEFT" variable nil (reparse-symbol indented_block_body) [348 356])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Initializes a 2048 game board of the given width and height. If board is not None, it is
+        interpreted as a list of rows (of shape (height, width)) that contain numerical values
+        (which should probably be powers of 2, but perhaps wouldn't need to be), interspersed with
+        zeroes to denote empty squares.
+
+        \"\"\"" code nil (reparse-symbol indented_block_body) [425 763])
+                            ("if" code nil (reparse-symbol indented_block_body) [773 902])
+                            ("if" code nil (reparse-symbol indented_block_body) [911 1260])
+                            ("self, self" code nil (reparse-symbol indented_block_body) [1269 1311]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [379 383])
+                            ("width" variable nil (reparse-symbol function_parameters) [385 390])
+                            ("height" variable nil (reparse-symbol function_parameters) [394 400])
+                            ("board" variable nil (reparse-symbol function_parameters) [404 409]))                          
+                        :documentation "Initializes a 2048 game board of the given width and height. If board is not None, it is
+        interpreted as a list of rows (of shape (height, width)) that contain numerical values
+        (which should probably be powers of 2, but perhaps wouldn't need to be), interspersed with
+        zeroes to denote empty squares.
+
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [366 1312])
+                    ("__repr__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1330 1334]))                          )
+                        (reparse-symbol indented_block_body) [1317 1424])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1441 1445]))                          )
+                        (reparse-symbol indented_block_body) [1429 1523])
+                    ("game_status" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1552 1556])
+                            ("goal" variable nil (reparse-symbol function_parameters) [1558 1562]))                          
+                        :documentation "Determines if the game has ended. If the game is continuing, returns 0. Otherwise,
+        returns -1 for a loss (defined as no valid moves) and 1 for a win (defined as any position
+        with the goal tile or a larger one on the board).")
+                        (reparse-symbol indented_block_body) [1536 2438])
+                    ("get_tile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2456 2460])
+                            ("x" variable nil (reparse-symbol function_parameters) [2462 2463])
+                            ("y" variable nil (reparse-symbol function_parameters) [2465 2466]))                          
+                        :documentation "Returns the tile at (x, y) (where 0 means nothing is there), and the coordinate system
+        has (0, 0) at the lower-left corner.")
+                        (reparse-symbol indented_block_body) [2443 2674])
+                    ("set_tile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2692 2696])
+                            ("x" variable nil (reparse-symbol function_parameters) [2698 2699])
+                            ("y" variable nil (reparse-symbol function_parameters) [2701 2702])
+                            ("num" variable nil (reparse-symbol function_parameters) [2704 2707])
+                            ("force_replace" variable nil (reparse-symbol function_parameters) [2711 2724]))                          
+                        :documentation "Adds a tile with the given numerical value at the given x-y coordinate, in a coordinate system
+        where (0, 0) is the lower-left corner and x is horizontal. If force_replace is True, no
+        error will be raised if the tile is already occupied: if it is False, a ValueError will
+        occur.
+
+        ")
+                        (reparse-symbol indented_block_body) [2679 3269])
+                    ("can_combine" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3290 3294])
+                            ("tile1" variable nil (reparse-symbol function_parameters) [3296 3301])
+                            ("tile2" variable nil (reparse-symbol function_parameters) [3303 3308]))                          
+                        :documentation "Determines if tile1 and tile2 can match or merge together. In standard 2048, this is
+        simply equality, with an added check so that 0 never combines.")
+                        (reparse-symbol indented_block_body) [3274 3574])
+                    ("combine" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3591 3595])
+                            ("tile1" variable nil (reparse-symbol function_parameters) [3597 3602])
+                            ("tile2" variable nil (reparse-symbol function_parameters) [3604 3609]))                          
+                        :documentation "Adds together two tiles and returns the numerical value of the new tile. Override this to
+        change how tiles are added together. Uses the can_combine method to check for the
+        possibility to match: in standard 2048, that is simply equality, although it will never let
+        0 combine.")
+                        (reparse-symbol indented_block_body) [3579 4094])
+                    ("rotate" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4110 4114])
+                            ("num_clockwise_turns" variable nil (reparse-symbol function_parameters) [4116 4135]))                          
+                        :documentation "Rotates the board with the given amount of clockwise turns, so 4 turns does nothing and 3
+        turns is one counter-clockwise turn. Example turning once:
+
+        -  -  2  4        -  -  -  -
+        -  2  16 8        -  4  -  2
+        -  -  2  4   ==>  2  2  16 2
+        -  4  2  32       32 4  8  4
+
+        If necessary, width and height will change to reflect the new board.
+
+        Additionally, this method accepts negative numbers and will do the specified amount of
+        counter-clockwise turns if the number is negative.
+        ")
+                        (reparse-symbol indented_block_body) [4099 5046])
+                    ("make_move" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5065 5069])
+                            ("direction" variable nil (reparse-symbol function_parameters) [5071 5080]))                          
+                        :documentation "Shifts the board in the given direction, and merges any tiles that can be merged in the given
+        direction. May not do anything. Direction is a number 0-3 representing up, right, down, and
+        left respectively (clockwise), which can be replaced by the constant variables UP, DOWN,
+        LEFT, and RIGHT from this class. Returns 1 if the given move does something, and 0
+        otherwise.
+
+        Implemented in Cython for speed.
+        ")
+                        (reparse-symbol indented_block_body) [5051 5607])
+                    ("show_move" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5626 5630])
+                            ("direction" variable nil (reparse-symbol function_parameters) [5632 5641]))                          
+                        :documentation "Returns a new tuple (board, did_change) that are a new copied Board with the given
+        directional move made and a 1-0 flag if the given move changed anything. It is a stateless
+        alternative to make_move.")
+                        (reparse-symbol indented_block_body) [5612 5968])
+                    ("add_random_tile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5993 5997])
+                            ("tiles" variable nil (reparse-symbol function_parameters) [5999 6004])
+                            ("weights" variable nil (reparse-symbol function_parameters) [6013 6020]))                          
+                        :documentation "Adds a tile in a randomly chosen unoccupied position according to the given weighted selection of
+        tiles. If the board is full, does nothing. Returns None.
+
+        The default is how the original 2048 (gabrielcirulli.github.io/2048/) does it:
+        there's a 90% of getting a 2, but a 10% chance of getting a 4.
+
+        ")
+                        (reparse-symbol indented_block_body) [5973 7156]))                  
+                :type "class")
+                nil [246 7156]))          
+      :file "board.py"
+      :pointmax 7156
+      :fsize 8436
+      :lastmodtime '(22703 6096 710680 251000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This class is a generalized interface that represents any algorithm or strategy for playing
+2048. The default is simply printing the board to stdout and asking for help from the user!\"\"\"" code nil nil [1 190])
+            ("game" include nil nil [193 228])
+            ("AI" type
+               (:documentation "An AI that plays 2048 of some variety."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Kwargs get passed to a Game constructor.\"\"\"" code nil (reparse-symbol indented_block_body) [332 378])
+                            ("self" variable nil (reparse-symbol indented_block_body) [387 407]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [307 311])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [313 321]))                          
+                        :documentation "Kwargs get passed to a Game constructor."
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [294 408])
+                    ("play_move" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [427 431])
+                            ("board" variable nil (reparse-symbol function_parameters) [433 438]))                          
+                        :documentation "Given a board, makes a move. Where the magic happens.")
+                        (reparse-symbol indented_block_body) [413 585])
+                    ("play_game_to_completion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [618 622])
+                            ("game" variable nil (reparse-symbol function_parameters) [624 628])
+                            ("tiles" variable nil (reparse-symbol function_parameters) [630 635])
+                            ("weights" variable nil (reparse-symbol function_parameters) [644 651]))                          
+                        :documentation "Given a starting position in a game, makes moves until the game is completed. Returns the
+        game's status at completion. After the game, implements the after_game_hook.")
+                        (reparse-symbol indented_block_body) [590 1007])
+                    ("per_move_callback" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1042 1046]))                          
+                        :documentation "Code to be executed after every move")
+                        (reparse-symbol indented_block_body) [1020 1113])
+                    ("after_game_hook" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1138 1142])
+                            ("game" variable nil (reparse-symbol function_parameters) [1144 1148]))                          
+                        :documentation "Given a completed game, does whatever.")
+                        (reparse-symbol indented_block_body) [1118 1217])
+                    ("score_trials" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1239 1243])
+                            ("width" variable nil (reparse-symbol function_parameters) [1245 1250])
+                            ("height" variable nil (reparse-symbol function_parameters) [1254 1260])
+                            ("goal" variable nil (reparse-symbol function_parameters) [1264 1268])
+                            ("n_games" variable nil (reparse-symbol function_parameters) [1275 1282])
+                            ("tiles" variable nil (reparse-symbol function_parameters) [1288 1293])
+                            ("weights" variable nil (reparse-symbol function_parameters) [1302 1309]))                          
+                        :documentation "Returns the percentage of games that ended in victory given a certain amount of
+        trials. Tiles and weights regulate random drops.")
+                        (reparse-symbol indented_block_body) [1222 1706]))                  
+                :type "class")
+                nil [231 1706]))          
+      :file "ai.py"
+      :pointmax 1706
+      :fsize 1705
+      :lastmodtime '(22703 30607 872672 775000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file has a class that allows someone to play a complete 2048 game with full game history.\"\"\"" code nil nil [1 101])
+            ("os" include nil nil [103 112])
+            ("random" include nil nil [113 138])
+            ("numpy" include nil nil [140 158])
+            ("board" include nil nil [160 183])
+            ("verboseprint" include nil nil [184 210])
+            ("Game" type
+               (:documentation "A game of 2048."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Initializes a game with the given board. If board_obj is None, initializes a board with the given
+        width, height, and optional numpy array for the actual squares. If board_obj is given, uses
+        that instead: use this for subclasses of Board.
+
+        Goal is the desired end tile to use for checking. If this is None, will play until a loss.
+
+        \"\"\"" code nil (reparse-symbol indented_block_body) [341 710])
+                            ("if" code nil (reparse-symbol indented_block_body) [719 843])
+                            ("self" variable nil (reparse-symbol indented_block_body) [852 899])
+                            ("self" variable nil (reparse-symbol indented_block_body) [937 954])
+                            ("self" variable nil (reparse-symbol indented_block_body) [963 979])
+                            ("self" variable nil (reparse-symbol indented_block_body) [989 1005])
+                            ("self" variable nil (reparse-symbol indented_block_body) [1015 1042]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [268 272])
+                            ("width" variable nil (reparse-symbol function_parameters) [274 279])
+                            ("height" variable nil (reparse-symbol function_parameters) [283 289])
+                            ("board" variable nil (reparse-symbol function_parameters) [293 298])
+                            ("board_obj" variable nil (reparse-symbol function_parameters) [305 314])
+                            ("goal" variable nil (reparse-symbol function_parameters) [321 325]))                          
+                        :documentation "Initializes a game with the given board. If board_obj is None, initializes a board with the given
+        width, height, and optional numpy array for the actual squares. If board_obj is given, uses
+        that instead: use this for subclasses of Board.
+
+        Goal is the desired end tile to use for checking. If this is None, will play until a loss.
+
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [255 1043])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1060 1064]))                          )
+                        (reparse-symbol indented_block_body) [1048 1098])
+                    ("update_history" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1122 1126])
+                            ("spawns" variable nil (reparse-symbol function_parameters) [1128 1134])
+                            ("move_list" variable nil (reparse-symbol function_parameters) [1136 1145]))                          
+                        :documentation "Given a list of spawns and moves, takes turns spawning a tile at the given location, and
+        making the desired move.")
+                        (reparse-symbol indented_block_body) [1103 1504])
+                    ("make_move" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1523 1527])
+                            ("direction" variable nil (reparse-symbol function_parameters) [1529 1538]))                          
+                        :documentation "Direction is 0-3 clockwise from the top (0 = UP, 1 = RIGHT, etc.). Makes a move, saves it to the
+        history, and updates the board. Stalling moves return 0 and do not update the history; moves
+        that change something return 1.
+        ")
+                        (reparse-symbol indented_block_body) [1509 2097])
+                    ("game_status" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2118 2122]))                          
+                        :documentation "Returns 0 if game is still going on, 1 for victory, and -1 for loss.")
+                        (reparse-symbol indented_block_body) [2102 2319])
+                    ("add_random_tile" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2344 2348])
+                            ("tiles" variable nil (reparse-symbol function_parameters) [2350 2355])
+                            ("weights" variable nil (reparse-symbol function_parameters) [2364 2371]))                          
+                        :documentation "Adds a new tile at a randomly chosen empty spot according to the given tiles and
+        corresponding weights. The default is the original 2048's default: 90% chance of a 2, and
+        10% chance of a four. Logs in history so the game can be replayed.
+
+        Does not wrap the Board's class, because this needs to be stored. Instead, manually sets a
+        new tile.")
+                        (reparse-symbol indented_block_body) [2324 3418])
+                    ("play" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3432 3436])
+                            ("move_generation_func" variable nil (reparse-symbol function_parameters) [3438 3458])
+                            ("tiles" variable nil (reparse-symbol function_parameters) [3460 3465])
+                            ("weights" variable nil (reparse-symbol function_parameters) [3474 3481]))                          
+                        :documentation "Make a single move using the given move generation function, and then adds a new random
+        tile. Returns the current game status after the move and placement. The function takes in a
+        Board and returns 0-3. If the move does nothing, does not add a tile. The defaults are the
+        2048 default random tile placements.")
+                        (reparse-symbol indented_block_body) [3423 4062])
+                    ("play_to_completion" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4090 4094])
+                            ("move_generation_func" variable nil (reparse-symbol function_parameters) [4096 4116])
+                            ("per_move_callback" variable nil (reparse-symbol function_parameters) [4118 4135])
+                            ("tiles" variable nil (reparse-symbol function_parameters) [4142 4147])
+                            ("weights" variable nil (reparse-symbol function_parameters) [4156 4163]))                          
+                        :documentation "Given a function that takes in the current board position and returns a move, continues play
+        until the game is over, returning the game status. Tiles and weights get passed to
+        add_random_tile.
+        
+        permove_callback is an optional function that is called after every move. It is used for model-training purposes.
+        ")
+                        (reparse-symbol indented_block_body) [4067 4793])
+                    ("get_all_boards" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4817 4821]))                          
+                        :documentation "Returns a list of Boards in order of play, from first to last.")
+                        (reparse-symbol indented_block_body) [4798 5150])
+                    ("print_boards" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5172 5176]))                          
+                        :documentation "Prints the boards in order of appearance in history.")
+                        (reparse-symbol indented_block_body) [5155 5463])
+                    ("__write_data" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5485 5489])
+                            ("outfile" variable nil (reparse-symbol function_parameters) [5491 5498]))                          )
+                        (reparse-symbol indented_block_body) [5468 6230])
+                    ("save" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6244 6248])
+                            ("filename" variable nil (reparse-symbol function_parameters) [6250 6258]))                          
+                        :documentation "Saves this game to a file as a newline-separated list of WASD with info at the beginning.
+        ")
+                        (reparse-symbol indented_block_body) [6235 6459])
+                    ("append" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6475 6479])
+                            ("filename" variable nil (reparse-symbol function_parameters) [6481 6489])
+                            ("sep" variable nil (reparse-symbol function_parameters) [6491 6494]))                          
+                        :documentation "Appends this game to an already-existing file, adding `sep` in between games")
+                        (reparse-symbol indented_block_body) [6464 6800])
+                    ("open" function
+                       (:typemodifiers ("static")
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("filename" variable nil (reparse-symbol function_parameters) [6832 6840]))                          
+                        :documentation "Generates a Game from the given filename.")
+                        (reparse-symbol indented_block_body) [6805 7821])
+                    ("open_from_text" function
+                       (:typemodifiers ("static")
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("text" variable nil (reparse-symbol function_parameters) [7863 7867]))                          
+                        :documentation "Generates a Game object from the given string")
+                        (reparse-symbol indented_block_body) [7826 8736])
+                    ("open_batch" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("filename" variable nil (reparse-symbol function_parameters) [8774 8782])
+                            ("sep" variable nil (reparse-symbol function_parameters) [8784 8787]))                          
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [8741 9005]))                  
+                :type "class")
+                nil [213 9005])
+            ("input_player" function (:arguments 
+              ( ("board" variable nil (reparse-symbol function_parameters) [9024 9029]))              ) nil [9007 9127])
+            ("random_play" function (:arguments 
+              ( ("board" variable nil (reparse-symbol function_parameters) [9145 9150]))              ) nil [9129 9184]))          
+      :file "game.py"
+      :pointmax 9184
+      :fsize 9183
+      :lastmodtime '(22704 41327 616813 487000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This extends the AI class to make an AI that uses a generalized heuristic function with normal
+tree-style search.\"\"\"" code nil nil [1 120])
+            ("numpy" include nil nil [123 141])
+            ("ai" include nil nil [143 160])
+            ("TreeSearchAI" type
+               (:documentation "An AI that tries to maximize a heuristic cost function that looks into the future. It also
+    intelligently saves games so you can see it play."
+                :superclasses ("AI")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Cost_func takes in a numpy matrix and returns a value such that higher values indicate a worse
+        position. If save_games is True, saves every game. Ply is the number of moves to look
+        forward. It must be at least 1.
+
+        Memoizing the cost function could be helpful.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [410 708])
+                            ("self" variable nil (reparse-symbol indented_block_body) [717 743])
+                            ("self" variable nil (reparse-symbol indented_block_body) [752 780])
+                            ("self" variable nil (reparse-symbol indented_block_body) [789 803])
+                            ("self" variable nil (reparse-symbol indented_block_body) [812 833]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [359 363])
+                            ("cost_func" variable nil (reparse-symbol function_parameters) [365 374])
+                            ("ply" variable nil (reparse-symbol function_parameters) [376 379])
+                            ("save_games" variable nil (reparse-symbol function_parameters) [383 393]))                          
+                        :documentation "Cost_func takes in a numpy matrix and returns a value such that higher values indicate a worse
+        position. If save_games is True, saves every game. Ply is the number of moves to look
+        forward. It must be at least 1.
+
+        Memoizing the cost function could be helpful.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [346 834])
+                    ("__helper_play" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [857 861])
+                            ("board" variable nil (reparse-symbol function_parameters) [863 868])
+                            ("ply" variable nil (reparse-symbol function_parameters) [870 873]))                          
+                        :documentation "Looks the given amount ahead and returns the tuple (move, cost) indicating the best
+        choice. Used as a recursive backbone for play().")
+                        (reparse-symbol indented_block_body) [839 1675])
+                    ("play_move" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1694 1698])
+                            ("board" variable nil (reparse-symbol function_parameters) [1700 1705]))                          
+                        :documentation "Searches into the future of all possible game states and finds the outcome that best
+        minimizes the cost function, assuming that the spawner of tiles is adversarial: that is,
+        that the tile spawns are designed to be as difficult as possible. Ply is the number of moves
+        to look ahead. Returns a number 0-3 indicating the best move.")
+                        (reparse-symbol indented_block_body) [1680 2129])
+                    ("after_game_hook" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2154 2158])
+                            ("game" variable nil (reparse-symbol function_parameters) [2160 2164]))                          )
+                        (reparse-symbol indented_block_body) [2134 2321]))                  
+                :type "class")
+                nil [163 2321])
+            ("neg_square_cost_function" function
+               (:documentation "Returns the negative of the sum of the squares of the value of each tile, a way to encourage
+    matching. Matches lost boards as 10^10 cost so you avoid them, and won boards as -10^10 so you
+    get to them!"
+                :arguments 
+                  ( ("board" variable nil (reparse-symbol function_parameters) [2405 2410]))                  )
+                nil [2376 2799]))          
+      :file "tree_search_ai.py"
+      :pointmax 2959
+      :fsize 2924
+      :lastmodtime '(22703 6096 737680 397000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("distutils.core" include nil nil [1 33])
+            ("Cython.Build" include nil nil [35 69])
+            ("setup" code nil nil [71 122]))          
+      :file "setup.py"
+      :pointmax 123
+      :fsize 121
+      :lastmodtime '(22703 6102 858713 419000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+Defines utility to easily print verbosely and save all printouts to a log file at the same time.
+\"\"\"" code nil nil [1 105])
+            ("datetime" include nil nil [107 136])
+            ("PRINT_STATUS" variable nil nil [138 161])
+            ("PRINT_INFO" variable nil nil [162 181])
+            ("PRINT_WARNING" variable nil nil [182 209])
+            ("PRINT_ERROR" variable nil nil [210 233])
+            ("PRINT_FATAL" variable nil nil [234 259])
+            ("PRINT_SUCCESS" variable nil nil [260 285])
+            ("PRINT_FAIL" variable nil nil [286 305])
+            ("PRINT_OK" variable nil nil [306 321])
+            ("PRINT_DEBUG" variable nil nil [322 343])
+            ("VerbosePrint" type
+               (:members 
+                  ( ("LOGFILE" variable nil (reparse-symbol indented_block_body) [369 387])
+                    ("QUIET" variable nil (reparse-symbol indented_block_body) [392 403])
+                    ("DEBUG" variable nil (reparse-symbol indented_block_body) [408 419]))                  
+                :type "class")
+                nil [345 1033])
+            ("vprint" function (:arguments 
+              ( ("string" variable nil (reparse-symbol function_parameters) [1046 1052])
+                ("msg" variable nil (reparse-symbol function_parameters) [1054 1057])
+                ("logfile" variable nil (reparse-symbol function_parameters) [1070 1077])
+                ("end" variable nil (reparse-symbol function_parameters) [1084 1087])
+                ("prefix" variable nil (reparse-symbol function_parameters) [1094 1100])
+                ("debug" variable nil (reparse-symbol function_parameters) [1107 1112]))              ) nil [1035 1215])
+            ("vprint_np" function
+               (:documentation "
+    Same as vprint, but never adds the prefix (_np for 'no prefix')
+    "
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [1230 1236])
+                    ("logfile" variable nil (reparse-symbol function_parameters) [1238 1245])
+                    ("end" variable nil (reparse-symbol function_parameters) [1252 1255])
+                    ("debug" variable nil (reparse-symbol function_parameters) [1262 1267]))                  )
+                nil [1216 1443]))          
+      :file "verboseprint.py"
+      :pointmax 1443
+      :fsize 1442
+      :lastmodtime '(22704 41327 617813 492000)
+      :unmatched-syntax '((INDENT_BLOCK 532 . 1033) (NEWLINE 531 . 532) (AT 425 . 426) (PRINT 446 . 451) (COLON 530 . 531)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+** Use train_nnet.py in favor of this.
+\"\"\"" code nil nil [1 47])
+            ("cProfile" include nil nil [50 65])
+            ("itertools" include nil nil [66 82])
+            ("os" include nil nil [83 92])
+            ("pstats" include nil nil [93 106])
+            ("time" include nil nil [107 118])
+            ("shutil" include nil nil [119 146])
+            ("numpy" include nil nil [148 166])
+            ("game" include nil nil [168 189])
+            ("nnet" include nil nil [190 220])
+            ("verboseprint" include nil nil [221 247])
+            ("main" function nil nil [250 1023])
+            ("PROFILE" variable nil nil [1155 1168])
+            ("if" code nil nil [1169 1479]))          
+      :file "test_ai.py"
+      :pointmax 1479
+      :fsize 1478
+      :lastmodtime '(22704 41327 617813 492000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+Defines our implementation of a Q-learning neural network class.
+\"\"\"" code nil nil [1 73])
+            ("itertools" include nil nil [75 91])
+            ("math" include nil nil [139 150])
+            ("operator" include nil nil [151 166])
+            ("os" include nil nil [167 176])
+            ("pickle" include nil nil [177 190])
+            ("random" include nil nil [191 204])
+            ("time" include nil nil [205 216])
+            ("numpy" include nil nil [218 236])
+            ("theano" include nil nil [237 250])
+            ("theano.sandbox.cuda.nnet" include nil nil [251 282])
+            ("theano.tensor" include nil nil [283 308])
+            ("ai" include nil nil [310 327])
+            ("game" include nil nil [328 349])
+            ("verboseprint" include nil nil [350 376])
+            ("QLearningNNet" type
+               (:superclasses ("AI")
+                :members 
+                  ( ("__init_nnet" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [425 429]))                          )
+                        (reparse-symbol indented_block_body) [409 2859])
+                    ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"
+        Initializes the class.
+
+        Keyword args:
+        - save_dir specifies the directory where things like game history and neural network snapshots will be saved.
+        - lazy can be used to delay creation of the neural network to the first time that it is used. Mostly for internal use.
+        \"\"\"" code nil (reparse-symbol indented_block_body) [2972 3286])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3296 3312])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3321 3345])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3354 3378])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3387 3410])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3614 3639])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3649 3687])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3696 3732])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3742 3800])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3809 3832])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3842 3903])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3913 3933])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3942 3964])
+                            ("self" variable nil (reparse-symbol indented_block_body) [3973 3995])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4005 4028])
+                            ("if" code nil (reparse-symbol indented_block_body) [4085 4158])
+                            ("if" code nil (reparse-symbol indented_block_body) [4166 4263])
+                            ("" code nil (reparse-symbol indented_block_body) [4372 4572])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4644 4666])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4675 4694])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4703 4719])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4728 4744])
+                            ("self" variable nil (reparse-symbol indented_block_body) [4754 4819])
+                            ("if" code nil (reparse-symbol indented_block_body) [4828 4959]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2877 2881])
+                            ("save_dir" variable nil (reparse-symbol function_parameters) [2883 2891])
+                            ("lazy" variable nil (reparse-symbol function_parameters) [2900 2904])
+                            ("exp_replay_size" variable nil (reparse-symbol function_parameters) [2912 2927])
+                            ("exp_batch_size" variable nil (reparse-symbol function_parameters) [2933 2947])
+                            ("goal" variable nil (reparse-symbol function_parameters) [2952 2956]))                          
+                        :documentation "
+        Initializes the class.
+
+        Keyword args:
+        - save_dir specifies the directory where things like game history and neural network snapshots will be saved.
+        - lazy can be used to delay creation of the neural network to the first time that it is used. Mostly for internal use.
+        "
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2864 4959])
+                    ("reward" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4975 4979])
+                            ("board" variable nil (reparse-symbol function_parameters) [4981 4986]))                          
+                        :documentation "The basic reward function that describes the \"winning\" conditions. In this case, it
+        incentivizes leaving squares empty, getting a new highest tile, and matching tiles.")
+                        (reparse-symbol indented_block_body) [4964 5542])
+                    ("train_on_batch" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5566 5570])
+                            ("batch" variable nil (reparse-symbol function_parameters) [5572 5577]))                          
+                        :documentation "Given a batch of tuples in the form (s_n, a, s_n+1, r_n+1), performs gradient descent to
+        train the model. Returns None.")
+                        (reparse-symbol indented_block_body) [5547 6402])
+                    ("train_on_games" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6426 6430])
+                            ("games" variable nil (reparse-symbol function_parameters) [6432 6437])
+                            ("n_training_boards" variable nil (reparse-symbol function_parameters) [6439 6456]))                          
+                        :documentation "Picks a given amount of random positions from the given list of games, and then uses each
+        of those positions to train the model. Returns None.")
+                        (reparse-symbol indented_block_body) [6407 7217])
+                    ("save_state" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7245 7249])
+                            ("filename" variable nil (reparse-symbol function_parameters) [7251 7259]))                          
+                        :documentation "
+        Saves necessary data to filename
+        ")
+                        (reparse-symbol indented_block_body) [7230 7547])
+                    ("restore_state" function
+                       (:typemodifiers ("static")
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("filename" variable nil (reparse-symbol function_parameters) [7588 7596]))                          
+                        :documentation "
+        Loads state from filename
+        ")
+                        (reparse-symbol indented_block_body) [7552 7759])
+                    ("__setstate__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [7781 7785])
+                            ("state" variable nil (reparse-symbol function_parameters) [7787 7792]))                          )
+                        (reparse-symbol indented_block_body) [7764 8018])
+                    ("__getstate__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8040 8044]))                          )
+                        (reparse-symbol indented_block_body) [8023 8129])
+                    ("play_move" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8148 8152])
+                            ("board" variable nil (reparse-symbol function_parameters) [8154 8159]))                          
+                        :documentation "If self.in_training is True, uses epsilon to determine whether to make a random move or a
+        calculated one. If False, always makes a calculated move.")
+                        (reparse-symbol indented_block_body) [8134 8523])
+                    ("predict_play_move" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [8554 8558])
+                            ("board" variable nil (reparse-symbol function_parameters) [8560 8565]))                          
+                        :documentation "Attempts to play the best move according to the current model.")
+                        (reparse-symbol indented_block_body) [8532 9329])
+                    ("training_play_move" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9357 9361])
+                            ("board" variable nil (reparse-symbol function_parameters) [9363 9368]))                          
+                        :documentation "Depending on epsilon, has a probability to either play a random move or play the move
+        that the model thinks is best.")
+                        (reparse-symbol indented_block_body) [9334 9658])
+                    ("after_game_hook" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [9683 9687])
+                            ("game" variable nil (reparse-symbol function_parameters) [9689 9693]))                          )
+                        (reparse-symbol indented_block_body) [9663 10180])
+                    ("print_report" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [10202 10206]))                          )
+                        (reparse-symbol indented_block_body) [10185 11063]))                  
+                :type "class")
+                nil [379 11063]))          
+      :file "nnet.py"
+      :pointmax 11063
+      :fsize 11062
+      :lastmodtime '(22704 41327 616813 487000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"Runs a round of training where the bot plays lots and lots of games, and then reads them all in
+again to learn from its mistakes. Saves the net's data to a file afterwards.\"\"\"" code nil nil [1 179])
+            ("nnet" include nil nil [182 193])
+            ("N_GAMES" variable nil nil [217 229])
+            ("N_EPOCHS" variable nil nil [230 243])
+            ("N_TRAINING_BOARDS" variable nil nil [244 267])
+            ("agent" variable nil nil [270 298])
+            ("for" code nil nil [301 699])
+            ("agent" code nil nil [701 737])
+            ("print" code nil nil [738 752])
+            ("g" variable nil nil [754 764])
+            ("agent" variable nil nil [765 790])
+            ("agent" code nil nil [791 823])
+            ("g" code nil nil [824 840]))          
+      :file "train_nnet.py"
+      :pointmax 841
+      :fsize 840
+      :lastmodtime '(22703 28578 561490 30000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!CSC-630!deep-2048-shredder!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

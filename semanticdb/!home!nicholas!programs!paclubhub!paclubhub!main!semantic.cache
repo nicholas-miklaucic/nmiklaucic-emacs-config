@@ -1,0 +1,254 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("main.models" include nil nil [1 47])
+            ("django.contrib.auth.models" include nil nil [48 98])
+            ("rest_framework" include nil nil [99 137])
+            ("SubjectSerializer" type
+               (:documentation "Represents a Subject."
+                :superclasses ("serializers.HyperlinkedModelSerializer")
+                :members 
+                  ( ("Meta" type
+                       (:members 
+                          ( ("model" variable nil (reparse-symbol indented_block_body) [261 276])
+                            ("fields" variable nil (reparse-symbol indented_block_body) [285 322]))                          
+                        :type "class")
+                        (reparse-symbol indented_block_body) [241 323]))                  
+                :type "class")
+                nil [140 323])
+            ("MessageSerializer" type
+               (:documentation "Represents a Message from a club to its members."
+                :superclasses ("serializers.HyperlinkedModelSerializer")
+                :members 
+                  ( ("Meta" type
+                       (:members 
+                          ( ("model" variable nil (reparse-symbol indented_block_body) [473 488])
+                            ("fields" variable nil (reparse-symbol indented_block_body) [497 551]))                          
+                        :type "class")
+                        (reparse-symbol indented_block_body) [453 552]))                  
+                :type "class")
+                nil [325 552])
+            ("UserSerializer" type
+               (:superclasses ("serializers.HyperlinkedModelSerializer")
+                :members 
+                  ( ("Meta" type
+                       (:members 
+                          ( ("model" variable nil (reparse-symbol indented_block_body) [641 653]))                          
+                        :type "class")
+                        (reparse-symbol indented_block_body) [621 710]))                  
+                :type "class")
+                nil [554 710])
+            ("GroupSerializer" type
+               (:superclasses ("serializers.HyperlinkedModelSerializer")
+                :members 
+                  ( ("Meta" type
+                       (:members 
+                          ( ("model" variable nil (reparse-symbol indented_block_body) [799 812])
+                            ("fields" variable nil (reparse-symbol indented_block_body) [821 845]))                          
+                        :type "class")
+                        (reparse-symbol indented_block_body) [779 846]))                  
+                :type "class")
+                nil [712 846])
+            ("ClubSerializer" type
+               (:documentation "Represents a Club with members, description, info, etc."
+                :superclasses ("serializers.HyperlinkedModelSerializer")
+                :members 
+                  ( ("Meta" type
+                       (:members 
+                          ( ("model" variable nil (reparse-symbol indented_block_body) [1005 1017])
+                            ("fields" variable nil (reparse-symbol indented_block_body) [1026 1174]))                          
+                        :type "class")
+                        (reparse-symbol indented_block_body) [985 1175]))                  
+                :type "class")
+                nil [848 1175]))          
+      :file "serializers.py"
+      :pointmax 1175
+      :fsize 1174
+      :lastmodtime '(22579 33309 146175 404000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("django.conf.urls" include nil nil [1 42])
+            ("rest_framework" include nil nil [43 77])
+            ("views" include nil nil [85 97])
+            ("router" variable nil nil [99 131])
+            ("router" code nil nil [132 176])
+            ("router" code nil nil [177 227])
+            ("router" code nil nil [228 278])
+            ("router" code nil nil [279 323])
+            ("router" code nil nil [324 370]))          
+      :file "urls.py"
+      :pointmax 512
+      :fsize 511
+      :lastmodtime '(22579 22136 701449 118000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("rest_framework" include nil nil [1 49])
+            ("serializers" include nil nil [57 75])
+            ("django.contrib.auth.models" include nil nil [76 126])
+            ("models" include nil nil [162 175])
+            ("main.permissions" include nil nil [176 247])
+            ("SubjectViewSet" type
+               (:documentation "API endpoint that allows viewing Subjects."
+                :superclasses ("viewsets.ReadOnlyModelViewSet")
+                :members 
+                  ( ("queryset" variable nil (reparse-symbol indented_block_body) [361 400])
+                    ("serializer_class" variable nil (reparse-symbol indented_block_body) [405 453]))                  
+                :type "class")
+                nil [250 454])
+            ("ClubViewSet" type
+               (:documentation "API endpoint that allows viewing and editing Clubs."
+                :superclasses ("viewsets.ModelViewSet")
+                :members 
+                  ( ("queryset" variable nil (reparse-symbol indented_block_body) [565 601])
+                    ("serializer_class" variable nil (reparse-symbol indented_block_body) [606 651])
+                    ("permission_classes" variable nil (reparse-symbol indented_block_body) [656 736]))                  
+                :type "class")
+                nil [456 737])
+            ("MessageViewSet" type
+               (:documentation "API endpoint that allows viewing Messages."
+                :superclasses ("viewsets.ModelViewSet")
+                :members 
+                  ( ("queryset" variable nil (reparse-symbol indented_block_body) [842 881])
+                    ("serializer_class" variable nil (reparse-symbol indented_block_body) [886 934])
+                    ("permission_classes" variable nil (reparse-symbol indented_block_body) [939 1023]))                  
+                :type "class")
+                nil [739 1024])
+            ("UserViewSet" type
+               (:documentation "API endpoint that allows viewing Users."
+                :superclasses ("viewsets.ReadOnlyModelViewSet")
+                :members 
+                  ( ("queryset" variable nil (reparse-symbol indented_block_body) [1131 1160])
+                    ("serializer_class" variable nil (reparse-symbol indented_block_body) [1165 1210]))                  
+                :type "class")
+                nil [1026 1211])
+            ("GroupViewSet" type
+               (:documentation "
+    API endpoint that allows groups to be viewed or edited.
+    "
+                :superclasses ("viewsets.ModelViewSet")
+                :members 
+                  ( ("queryset" variable nil (reparse-symbol indented_block_body) [1336 1366])
+                    ("serializer_class" variable nil (reparse-symbol indented_block_body) [1371 1417]))                  
+                :type "class")
+                nil [1213 1418]))          
+      :file "views.py"
+      :pointmax 1418
+      :fsize 1417
+      :lastmodtime '(22579 33284 453054 92000)
+      :unmatched-syntax '((FROM 155 . 159) (PERIOD 160 . 161) (FROM 50 . 54) (PERIOD 55 . 56) (NAME 1215 . 1233) (NEWLINE 1236 . 1237) (FROM 155 . 159) (PERIOD 160 . 161) (FROM 50 . 54) (PERIOD 55 . 56)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("django.contrib.auth.models" include nil nil [1 44])
+            ("django.db.models" include nil nil [45 110])
+            ("django.db.models" include nil nil [111 185])
+            ("django.db.models" include nil nil [186 219])
+            ("Subject" type
+               (:superclasses ("Model")
+                :members 
+                  ( ("name" variable nil (reparse-symbol indented_block_body) [277 308])
+                    ("icon_href" variable nil (reparse-symbol indented_block_body) [313 349])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [367 371]))                          
+                        :documentation "Simply outputs the name of the subject.")
+                        (reparse-symbol indented_block_body) [355 453])
+                    ("get_icon_class" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [477 481]))                          
+                        :documentation "Outputs the class to attach to an icon to make it the icon for this subject, e.g.,
+        \".flaticon-demo\".
+        ")
+                        (reparse-symbol indented_block_body) [458 660]))                  
+                :type "class")
+                nil [251 660])
+            ("Club" type
+               (:superclasses ("Model")
+                :members 
+                  ( ("leaders" variable nil (reparse-symbol indented_block_body) [685 740])
+                    ("members" variable nil (reparse-symbol indented_block_body) [745 800])
+                    ("name" variable nil (reparse-symbol indented_block_body) [805 837])
+                    ("subject" variable nil (reparse-symbol indented_block_body) [842 897])
+                    ("meetingtime" variable nil (reparse-symbol indented_block_body) [902 931])
+                    ("meetinglocale" variable nil (reparse-symbol indented_block_body) [936 977])
+                    ("meetinglength" variable nil (reparse-symbol indented_block_body) [982 1009])
+                    ("email" variable nil (reparse-symbol indented_block_body) [1014 1034])
+                    ("description" variable nil (reparse-symbol indented_block_body) [1039 1079])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1097 1101]))                          
+                        :documentation "Simply outputs the name of the club.")
+                        (reparse-symbol indented_block_body) [1085 1180]))                  
+                :type "class")
+                nil [662 1180])
+            ("Message" type
+               (:superclasses ("Model")
+                :members 
+                  ( ("subject" variable nil (reparse-symbol indented_block_body) [1208 1242])
+                    ("text" variable nil (reparse-symbol indented_block_body) [1247 1281])
+                    ("club" variable nil (reparse-symbol indented_block_body) [1286 1335])
+                    ("authors" variable nil (reparse-symbol indented_block_body) [1340 1395])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1413 1417]))                          )
+                        (reparse-symbol indented_block_body) [1401 1448]))                  
+                :type "class")
+                nil [1182 1448]))          
+      :file "models.py"
+      :pointmax 1448
+      :fsize 1447
+      :lastmodtime '(22579 15095 170394 62000)
+      :unmatched-syntax '(($EOI 1448 . 1448)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("rest_framework" include nil nil [1 39])
+            ("IsLeaderOrReadOnly" type
+               (:documentation "Only allows leaders of a club to edit its page."
+                :superclasses ("permissions.BasePermission")
+                :members 
+                  ( ("has_object_permission" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [185 189])
+                            ("request" variable nil (reparse-symbol function_parameters) [191 198])
+                            ("view" variable nil (reparse-symbol function_parameters) [200 204])
+                            ("obj" variable nil (reparse-symbol function_parameters) [206 209]))                          )
+                        (reparse-symbol indented_block_body) [159 398]))                  
+                :type "class")
+                nil [42 398])
+            ("IsSenderOrReceiverOnly" type
+               (:documentation "Only allows the people in a message to edit the page."
+                :superclasses ("permissions.BasePermission")
+                :members 
+                  ( ("has_object_permission" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [553 557])
+                            ("request" variable nil (reparse-symbol function_parameters) [559 566])
+                            ("view" variable nil (reparse-symbol function_parameters) [568 572])
+                            ("obj" variable nil (reparse-symbol function_parameters) [574 577]))                          )
+                        (reparse-symbol indented_block_body) [527 796]))                  
+                :type "class")
+                nil [400 796]))          
+      :file "permissions.py"
+      :pointmax 796
+      :fsize 795
+      :lastmodtime '(22579 31988 966816 913000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!paclubhub!paclubhub!main!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

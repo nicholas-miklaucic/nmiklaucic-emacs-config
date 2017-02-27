@@ -1,0 +1,2 @@
+/sudo:root@localhost.localdomain:/etc/dnf/dnf.conf
+/tmp/#!sudo:root@localhost.localdomain:!etc!dnf!dnf.conf#

@@ -1,0 +1,50 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file determines the minimal number of letters for each letter of the alphabet to be able to
+spell any combination with N words out of a list.\"\"\"" code nil nil [1 153])
+            ("string" include nil nil [155 201])
+            ("get_letter_counts" function
+               (:documentation "Returns a 26-long list containing the number for each letter of the alphabet. Words is a list
+    of tuples describing each side of a block."
+                :arguments 
+                  ( ("words" variable nil (reparse-symbol function_parameters) [226 231]))                  )
+                nil [204 636])
+            ("with" code nil nil [638 790])
+            ("with" code nil nil [791 936]))          
+      :file "blockgame.py"
+      :pointmax 936
+      :fsize 935
+      :lastmodtime '(22616 12183 73277 362000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file enlarges a given ASCII picture by a given factor.\"\"\"" code nil nil [1 66])
+            ("stretch_string" function
+               (:documentation "Duplicates every character in the string K times."
+                :arguments 
+                  ( ("string" variable nil (reparse-symbol function_parameters) [88 94])
+                    ("K" variable nil (reparse-symbol function_parameters) [96 97]))                  )
+                nil [69 262])
+            ("get_new_picture" function
+               (:documentation "Expands the picture (as a list of strings) so it is K times larger in both directions."
+                :arguments 
+                  ( ("lines" variable nil (reparse-symbol function_parameters) [284 289])
+                    ("K" variable nil (reparse-symbol function_parameters) [291 292]))                  )
+                nil [264 531])
+            ("with" code nil nil [533 686])
+            ("with" code nil nil [687 813]))          
+      :file "cowsignal.py"
+      :pointmax 813
+      :fsize 812
+      :lastmodtime '(22616 13421 430064 819000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!USACO!12-19-2016!bronze!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

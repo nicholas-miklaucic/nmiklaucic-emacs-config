@@ -1,0 +1,36 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"picture_my_schedule URL Configuration
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/1.10/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.conf.urls import url, include
+    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
+\"\"\"" code nil nil [1 653])
+            ("django.conf.urls" include nil nil [654 686])
+            ("django.contrib" include nil nil [687 719])
+            ("main" include nil nil [720 742])
+            ("urlpatterns" variable nil nil [744 938]))          
+      :file "urls.py"
+      :pointmax 939
+      :fsize 938
+      :lastmodtime '(22494 655 964854 370000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!picture-my-schedule!picture_my_schedule!picture_my_schedule!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

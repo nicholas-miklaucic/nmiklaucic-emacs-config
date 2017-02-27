@@ -1,0 +1,31 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file provides functions that interface with PokeAPI.\"\"\"" code nil nil [1 64])
+            ("json" include nil nil [66 77])
+            ("requests" include nil nil [78 93])
+            ("user_agent" variable nil nil [96 216])
+            ("POKEAPI_BASE_URL" variable nil nil [219 264])
+            ("get_resource" function
+               (:documentation "Gets the resource of the given type with the given ID (an integer) from PokeAPI, returning a
+    dictionary containing the request parsed from JSON. If the resource could not be found, returns
+    ValueError.
+
+    "
+                :arguments 
+                  ( ("resource_type" variable nil (reparse-symbol function_parameters) [284 297])
+                    ("resource_id" variable nil (reparse-symbol function_parameters) [299 310]))                  )
+                nil [267 829]))          
+      :file "read_pokeapi.py"
+      :pointmax 829
+      :fsize 828
+      :lastmodtime '(22521 37286 81842 305000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!geomancy!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

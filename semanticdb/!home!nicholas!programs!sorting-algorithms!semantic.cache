@@ -1,0 +1,258 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file implements everyone's favorite sorting algorithm, the bubble sort! It simply iterates
+through the input list, transposing pairs that are badly ordered, until it has an iteration with no
+transpositions. It is O(n^2), but it's cool!
+\"\"\"" code nil nil [1 248])
+            ("operator" include nil nil [250 265])
+            ("bubble_sort" function
+               (:documentation "Given a list l, sorts the list in_place, returning None.  If the two optional parameters are
+    provided, they replace the default Python functions < and == for use in comparison.
+
+    If descending is True, the sort will go high-low. Otherwise, it will go low-high.
+    "
+                :arguments 
+                  ( ("l" variable nil (reparse-symbol function_parameters) [284 285])
+                    ("gt_func" variable nil (reparse-symbol function_parameters) [287 294])
+                    ("eq_func" variable nil (reparse-symbol function_parameters) [308 315])
+                    ("descending" variable nil (reparse-symbol function_parameters) [329 339]))                  )
+                nil [268 1011]))          
+      :file "bubble_sort.py"
+      :pointmax 1011
+      :fsize 1010
+      :lastmodtime '(22614 65031 122150 31000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file provides convenience functions to time and test a sorting function against worst-case,
+average-case, and best-case scenarios of sorting a permutation of (1..n).\"\"\"" code nil nil [1 177])
+            ("random" include nil nil [180 206])
+            ("timeit" include nil nil [207 232])
+            ("test_worst_case" function
+               (:documentation "Tests the algorithm's running time for the usual worst-case: reverse order, averaging over the
+    given number of iterations in each set, for a total sets * iterations count. N is the size of
+    the list being tested. Prints to stdout if print_stdout is True. Returns the minimum time of the sum of each set.
+
+    "
+                :arguments 
+                  ( ("alg" variable nil (reparse-symbol function_parameters) [255 258])
+                    ("n" variable nil (reparse-symbol function_parameters) [260 261])
+                    ("iterations" variable nil (reparse-symbol function_parameters) [268 278])
+                    ("sets" variable nil (reparse-symbol function_parameters) [282 286])
+                    ("print_stdout" variable nil (reparse-symbol function_parameters) [290 302]))                  )
+                nil [235 1100])
+            ("test_average_case" function
+               (:documentation "Tests the algorithm's running time for the average-case, testing the given amount (iterations *
+    sets) of random permutations of the integers 1-n. Prints to stdout if print_stdout is True.. Returns the minimum time
+    taken over the sum of the iterations in each set.
+    "
+                :arguments 
+                  ( ("alg" variable nil (reparse-symbol function_parameters) [1124 1127])
+                    ("n" variable nil (reparse-symbol function_parameters) [1129 1130])
+                    ("iterations" variable nil (reparse-symbol function_parameters) [1137 1147])
+                    ("sets" variable nil (reparse-symbol function_parameters) [1151 1155])
+                    ("print_stdout" variable nil (reparse-symbol function_parameters) [1159 1171]))                  )
+                nil [1102 2047])
+            ("test_best_case" function
+               (:documentation "Tests the algorithm's running time for the usual best-case: sorted order, averaging over the
+    given number of iterations in each set, for a total sets * iterations count. N is the size of
+    the list being tested. Prints to stdout if print_stdout is True. Returns the minimum time of the
+    sum time of each set of iterations.
+
+    "
+                :arguments 
+                  ( ("alg" variable nil (reparse-symbol function_parameters) [2068 2071])
+                    ("n" variable nil (reparse-symbol function_parameters) [2073 2074])
+                    ("iterations" variable nil (reparse-symbol function_parameters) [2081 2091])
+                    ("sets" variable nil (reparse-symbol function_parameters) [2095 2099])
+                    ("print_stdout" variable nil (reparse-symbol function_parameters) [2103 2115]))                  )
+                nil [2049 2951])
+            ("test_sorting" function
+               (:documentation "Returns a 3-tuple of worst-case, average-case, and best-case times respectively. Each time is the
+    default parameters for the above functions (the best run of 5 with the numbers from 1 to
+    1000). Worst case is assumed to be reverse sort order, but that often isn't the case, so treat
+    with caution.  If print_stdout is True, prints info out to stdout as well as returning the
+    tuple.
+
+    "
+                :arguments 
+                  ( ("func" variable nil (reparse-symbol function_parameters) [2970 2974])
+                    ("print_stdout" variable nil (reparse-symbol function_parameters) [2976 2988]))                  )
+                nil [2953 3596])
+            ("test_asymptotic_time" function
+               (:documentation "Takes a sorting function and tests it for various n, returning a dictionary mapping n times
+    to values akin to a numpy Series. Each test is run for the best-of-5 of 5 randomly-permuted
+    lists of the numbers 1 to n. vals gives the values to use as the n in each case."
+                :arguments 
+                  ( ("func" variable nil (reparse-symbol function_parameters) [3623 3627])
+                    ("vals" variable nil (reparse-symbol function_parameters) [3629 3633]))                  )
+                nil [3598 4100]))          
+      :file "sorting_harness.py"
+      :pointmax 4100
+      :fsize 4099
+      :lastmodtime '(22579 8999 662552 460000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file implements merge sort, a divide-and-conquer algorithm that splits a list up into
+chunks, sorts them, and then recombines. It runs in worst-case O(n log n) time, the fastest possible
+for comparison-based sorting algorithms. It is also stable in this version, making it a good choice
+for algorithms that require it. Note that the list is modified, but the sort itself is not in-place:
+it just creates a new list and then returns that as well as modifying the original argument, for
+parity with the other sorting algorithms.\"\"\"" code nil nil [1 538])
+            ("operator" include nil nil [540 563])
+            ("merge_sort" function
+               (:documentation "Sorts l in place using merge sort. If lt_func is given, it is used to compare elements instead of
+    <. If descending is True, sort high to low.
+    "
+                :arguments 
+                  ( ("l" variable nil (reparse-symbol function_parameters) [581 582])
+                    ("lt_func" variable nil (reparse-symbol function_parameters) [584 591])
+                    ("descending" variable nil (reparse-symbol function_parameters) [596 606]))                  )
+                nil [566 817])
+            ("helper_sort" function
+               (:documentation "Version of merge sort that doesn't modify the original input, for use with the greater
+    merge_sort function. Returns the list l sorted."
+                :arguments 
+                  ( ("l" variable nil (reparse-symbol function_parameters) [835 836])
+                    ("lt_func" variable nil (reparse-symbol function_parameters) [838 845])
+                    ("descending" variable nil (reparse-symbol function_parameters) [850 860]))                  )
+                nil [819 1257])
+            ("merge" function
+               (:documentation "Merges together sorted lists l1 and l2 into a new sorted list and returns it. Uses the
+    comparison function provided if desired."
+                :arguments 
+                  ( ("l1" variable nil (reparse-symbol function_parameters) [1269 1271])
+                    ("l2" variable nil (reparse-symbol function_parameters) [1273 1275])
+                    ("lt_func" variable nil (reparse-symbol function_parameters) [1277 1284])
+                    ("descending" variable nil (reparse-symbol function_parameters) [1289 1299]))                  )
+                nil [1259 1984]))          
+      :file "merge_sort.py"
+      :pointmax 1987
+      :fsize 1986
+      :lastmodtime '(22542 14997 420037 265000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file implements heap sort, an algorithm that uses a partially-ordered data structure, a
+heap, to efficiently sort a list (O(n log n) worst case). It runs in-place.\"\"\"" code nil nil [1 175])
+            ("operator" include nil nil [178 201])
+            ("swap" function
+               (:documentation "Swaps the elements at indices i1 and i2 in l. Returns None."
+                :arguments 
+                  ( ("l" variable nil (reparse-symbol function_parameters) [213 214])
+                    ("i1" variable nil (reparse-symbol function_parameters) [216 218])
+                    ("i2" variable nil (reparse-symbol function_parameters) [220 222]))                  )
+                nil [204 345])
+            ("custom_max" function
+               (:documentation "Returns the index whose element in l is the largest, according to the given lt_func and
+    min_order: if min_order is True, then returns the minimum instead."
+                :arguments 
+                  ( ("l" variable nil (reparse-symbol function_parameters) [362 363])
+                    ("ind1" variable nil (reparse-symbol function_parameters) [365 369])
+                    ("ind2" variable nil (reparse-symbol function_parameters) [371 375])
+                    ("ind3" variable nil (reparse-symbol function_parameters) [377 381])
+                    ("lt_func" variable nil (reparse-symbol function_parameters) [383 390])
+                    ("min_order" variable nil (reparse-symbol function_parameters) [392 401]))                  )
+                nil [347 1023])
+            ("heapify" function
+               (:documentation "Modifies l in-place to be a heap in the standard binary tree form: the left child of the element
+    h[i-1] is at h[2i-1], and the right child appears in h[2i]. If those don't exist, the children
+    don't either.  Uses the classic sift-up method of assuming the tree is just a \"bad\" heap, and
+    swapping to make it work, sifting down to keep the heap property each time.. Uses the comparison
+    function if given, and makes a min_heap if descending is True. Works in linear time on the
+    length of the list.
+
+    "
+                :arguments 
+                  ( ("l" variable nil (reparse-symbol function_parameters) [1037 1038])
+                    ("lt_func" variable nil (reparse-symbol function_parameters) [1040 1047])
+                    ("min_heap" variable nil (reparse-symbol function_parameters) [1052 1060]))                  )
+                nil [1025 3611])
+            ("rebuild_heap" function
+               (:documentation "Modifies h in-place assuming it is a heap except for root, sifting the root down through the
+    heap until it finds a place, using the given comparison function and ordering if provided.
+
+    If length is -1, defaults to the entire list. If it isn't, it only operates up to and NOT
+    including the given index."
+                :arguments 
+                  ( ("h" variable nil (reparse-symbol function_parameters) [3630 3631])
+                    ("lt_func" variable nil (reparse-symbol function_parameters) [3633 3640])
+                    ("min_heap" variable nil (reparse-symbol function_parameters) [3645 3653])
+                    ("length" variable nil (reparse-symbol function_parameters) [3661 3667]))                  )
+                nil [3613 5023])
+            ("heap_sort" function
+               (:documentation "Sorts l in-place using the given comparison function and order, using heap sort. Defaults to
+    ascending sort with the normal Python < operator."
+                :arguments 
+                  ( ("l" variable nil (reparse-symbol function_parameters) [5039 5040])
+                    ("lt_func" variable nil (reparse-symbol function_parameters) [5042 5049])
+                    ("descending" variable nil (reparse-symbol function_parameters) [5054 5064]))                  )
+                nil [5025 5532]))          
+      :file "heap_sort.py"
+      :pointmax 5533
+      :fsize 5532
+      :lastmodtime '(22579 9017 158626 874000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "quick_sort.py"
+      :pointmax 2776
+      :fsize 2684
+      :lastmodtime '(22551 37786 723126 846000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file implements counting sort, one of the rare breed of O(n) algorithms that are not
+comparison-based but assume something about the input. In this case, counting sort assumes that the
+input is some combination of the numbers 0 to n, and then sorts them. This makes it very good for a
+very select group of problems. It is not in-place but is stable.
+
+The reason counting sort is so effective is because it uses one particularly useful bit of
+information: the number of numbers less than or equal to a given element is that element's placement
+in the list, off by one. This means that counting sort doesn't worry about building a list as a tree
+might, but simply places elements in the correct place.
+
+This implements the algorithm used in Introduction to Algorithms by Cormen.\"\"\"" code nil nil [1 788])
+            ("counting_sort" function
+               (:documentation "Sorts the input_range, a combination of the numbers 0 to n where n is the length of the
+    input, into a sorted range. If reverse is True, sorts from high to low. Returns a list."
+                :arguments 
+                  ( ("input_range" variable nil (reparse-symbol function_parameters) [809 820])
+                    ("reverse" variable nil (reparse-symbol function_parameters) [822 829]))                  )
+                nil [791 1738]))          
+      :file "counting_sort.py"
+      :pointmax 1738
+      :fsize 1737
+      :lastmodtime '(22579 9091 484942 996000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "test_sorts.py"
+      :pointmax 985
+      :fsize 1001
+      :lastmodtime '(22579 13391 221241 13000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "test_bubble_sort.py"
+      :pointmax 827
+      :fsize 826
+      :lastmodtime '(22614 65057 386257 11000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!sorting-algorithms!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
