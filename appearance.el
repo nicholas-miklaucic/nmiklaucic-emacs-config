@@ -69,15 +69,8 @@
 ;; more pretty symbols
 (add-hook 'prog-mode-hook
 	  (lambda ()
-	    (push '("<=" . ?≤) prettify-symbols-alist)
-	    (push '(">=" . ?≥) prettify-symbols-alist)
-	    (push '("!=" . ?≠) prettify-symbols-alist)
 	    (push '("neq" . ?≠) prettify-symbols-alist)
 	    (push '("\infty" . ?∞) prettify-symbols-alist)
-	    (push '("<-" . ?←) prettify-symbols-alist)
-	    (push '("->" . ?→) prettify-symbols-alist)
-	    (push '("<==" . ?⇐) prettify-symbols-alist)
-	    (push '("==>" . ?⇒) prettify-symbols-alist)
 	    ))
 	    
 (global-prettify-symbols-mode +1)
