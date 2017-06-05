@@ -1,0 +1,62 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"Plots the evolution of a double pendulum system.\"\"\"" code nil nil [1 55])
+            ("math" include nil nil [57 82])
+            ("PIL" include nil nil [84 105])
+            ("equations" include nil nil [107 123])
+            ("pixel_to_coord" function
+               (:documentation "Given an x and y (where y is top-down and x is left-right from the top-eft), returns a new
+    coordinate in the coordinate system where (0, 0) is the center and x goes from left to right (so
+    it can take negative values) and y goes top-down (so it can also take negative values).
+
+    "
+                :arguments 
+                  ( ("x" variable nil (reparse-symbol function_parameters) [145 146])
+                    ("y" variable nil (reparse-symbol function_parameters) [148 149])
+                    ("width" variable nil (reparse-symbol function_parameters) [151 156])
+                    ("height" variable nil (reparse-symbol function_parameters) [158 164]))                  )
+                nil [126 552])
+            ("coord_to_pixel" function
+               (:documentation "Goes from (0, 0) is top-middle x-y system to standard PIL x-y indexing. Also converts to
+    integers."
+                :arguments 
+                  ( ("x" variable nil (reparse-symbol function_parameters) [573 574])
+                    ("y" variable nil (reparse-symbol function_parameters) [576 577])
+                    ("width" variable nil (reparse-symbol function_parameters) [579 584])
+                    ("height" variable nil (reparse-symbol function_parameters) [586 592]))                  )
+                nil [554 807])
+            ("calculate_end_coordinate" function
+               (:documentation "Given the length of both pendula and their angles, returns the coordinate of the end."
+                :arguments 
+                  ( ("t1" variable nil (reparse-symbol function_parameters) [838 840])
+                    ("t2" variable nil (reparse-symbol function_parameters) [842 844])
+                    ("l" variable nil (reparse-symbol function_parameters) [846 847]))                  )
+                nil [809 1127])
+            ("plot_double_pendulum" function
+               (:documentation "Plots a double pendulum with the given initial conditions (as a tuple t1, t2, p1, p2, m, l) at
+    each step of length steplength (in seconds) for the given number of steps. Precision is the
+    number of \"hidden\" steps to use for each plotted step: because the system is chaotic,
+    guesstimates often show their inaccuracy quickly. Saves to the given filename.
+    "
+                :arguments 
+                  ( ("filename" variable nil (reparse-symbol function_parameters) [1154 1162])
+                    ("dims" variable nil (reparse-symbol function_parameters) [1164 1168])
+                    ("initials" variable nil (reparse-symbol function_parameters) [1170 1178])
+                    ("steps" variable nil (reparse-symbol function_parameters) [1180 1185])
+                    ("steplength" variable nil (reparse-symbol function_parameters) [1187 1197])
+                    ("precision" variable nil (reparse-symbol function_parameters) [1203 1212]))                  )
+                nil [1129 2382]))          
+      :file "plot_double_pendulum.py"
+      :pointmax 2474
+      :fsize 2473
+      :lastmodtime '(22735 8462 40363 321000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!math-pics!double-pendulum!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

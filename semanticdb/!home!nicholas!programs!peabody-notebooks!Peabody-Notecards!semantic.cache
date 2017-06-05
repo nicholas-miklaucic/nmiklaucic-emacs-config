@@ -1,0 +1,123 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"Given a sentence, return a spell-checked version, with the desired corpus of words sorted by
+frequency.\"\"\"" code nil nil [1 110])
+            ("numpy" include nil nil [112 130])
+            ("words" variable nil nil [132 142])
+            ("with" code nil nil [143 260])
+            ("levenshtein" function (:arguments 
+              ( ("source" variable nil (reparse-symbol function_parameters) [505 511])
+                ("target" variable nil (reparse-symbol function_parameters) [513 519]))              ) nil [489 1728])
+            ("correct" function
+               (:documentation "Returns the closest words in the list of words we have, sorted by likelihood."
+                :arguments 
+                  ( ("input_word" variable nil (reparse-symbol function_parameters) [1881 1891]))                  )
+                nil [1869 2356]))          
+      :file "spellcheck.py"
+      :pointmax 2356
+      :fsize 4686
+      :lastmodtime '(22794 38147 10557 214000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file uses Burkhard-Keller trees to efficiently compute approximate string matches from a
+dictionary.\"\"\"" code nil nil [1 112])
+            ("numpy" include nil nil [115 133])
+            ("BKTree" type
+               (:documentation "A Burkhard-Keller tree."
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("\"\"\"Given a list of words, forms a BK Tree. Wordlist cannot be empty.\"\"\"" code nil (reparse-symbol indented_block_body) [226 297])
+                            ("if" code nil (reparse-symbol indented_block_body) [306 383])
+                            ("self" variable nil (reparse-symbol indented_block_body) [391 420])
+                            ("for" code nil (reparse-symbol indented_block_body) [429 478]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [201 205])
+                            ("wordlist" variable nil (reparse-symbol function_parameters) [207 215]))                          
+                        :documentation "Given a list of words, forms a BK Tree. Wordlist cannot be empty."
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [188 478])
+                    ("add" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [491 495])
+                            ("word" variable nil (reparse-symbol function_parameters) [497 501]))                          
+                        :documentation "Adds a word to the BK-tree.")
+                        (reparse-symbol indented_block_body) [483 1127])
+                    ("query" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1143 1147])
+                            ("target" variable nil (reparse-symbol function_parameters) [1149 1155])
+                            ("n" variable nil (reparse-symbol function_parameters) [1157 1158]))                          
+                        :documentation "Target is the string to fuzzy-match. n is the desired maximum distance to vary. Returns a
+        list, sorted by closest-first but besides that unordered, of the words that fit the
+        criteria.")
+                        (reparse-symbol indented_block_body) [1133 2201])
+                    ("save_words" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2222 2226])
+                            ("filename" variable nil (reparse-symbol function_parameters) [2228 2236]))                          
+                        :documentation "Saves the BK-Tree's words in a list to a file. DOES NOT save the tree's exact structure,
+        just the words it has in it.")
+                        (reparse-symbol indented_block_body) [2207 2705])
+                    ("read_words_from_file" function
+                       (:documentation "Reads in a newline-separated list of words and creates a BK-tree."
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [2752 2755])
+                            ("filename" variable nil (reparse-symbol function_parameters) [2757 2765]))                          
+                        :decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2710 2978])
+                    ("levenshtein" function
+                       (:typemodifiers ("static")
+                        :arguments 
+                          ( ("source" variable nil (reparse-symbol function_parameters) [3261 3267])
+                            ("target" variable nil (reparse-symbol function_parameters) [3269 3275]))                          
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [2983 4643]))                  
+                :type "class")
+                nil [136 4643]))          
+      :file "bk_tree.py"
+      :pointmax 4643
+      :fsize 4642
+      :lastmodtime '(22794 36790 762667 177000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"Processes the name list into a text file format.\"\"\"" code nil nil [1 55])
+            ("with" code nil nil [57 318]))          
+      :file "name_list_processor.py"
+      :pointmax 318
+      :fsize 317
+      :lastmodtime '(22794 35426 552307 441000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("pandas" include nil nil [1 20])
+            ("spellcheck" include nil nil [22 61])
+            ("df" variable nil nil [63 91])
+            ("fields" variable nil nil [92 142])
+            ("for" code nil nil [144 215])
+            ("df" code nil nil [217 238]))          
+      :file "process_test_csv.py"
+      :pointmax 239
+      :fsize 238
+      :lastmodtime '(22794 37840 411813 87000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!peabody-notebooks!Peabody-Notecards!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

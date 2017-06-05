@@ -13,23 +13,26 @@ a DataFrame. Caches a version in a file for easier reading that updates daily.\"
             ("numpy" include nil nil [223 241])
             ("pandas" include nil nil [242 261])
             ("quandl" include nil nil [262 275])
-            ("DJIA_CACHE_PATHNAME" variable nil nil [277 316])
-            ("cachepath" variable nil nil [319 356])
             ("get_stock_data" function
-               (:documentation "Gets the log-price of the good as a time series, where quandl_name is the Quandl identifier
-    for the dataset and cachepath is the Path object that represents a cache file."
+               (:documentation "Gets the log-price of the good as a time series, where quandl_name is the Quandl identifier for
+    the dataset and cachepath is the Path object that represents a cache file.  Col represents the
+    desired column to use: if None, simply gets the first one.  Force_reload, if True, will get the
+    data from the Internet even if the cache is up to date.
+    "
                 :arguments 
-                  ( ("quandl_name" variable nil (reparse-symbol function_parameters) [378 389])
-                    ("cachepath" variable nil (reparse-symbol function_parameters) [391 400]))                  )
-                nil [359 1250])
-            ("djia" variable nil nil [1252 1307])
-            ("rhod" variable nil nil [1308 1365])
-            ("csco" variable nil nil [1366 1426]))          
+                  ( ("quandl_name" variable nil (reparse-symbol function_parameters) [297 308])
+                    ("cachepath" variable nil (reparse-symbol function_parameters) [310 319])
+                    ("col" variable nil (reparse-symbol function_parameters) [321 324])
+                    ("force_reload" variable nil (reparse-symbol function_parameters) [331 343]))                  )
+                nil [278 1448])
+            ("djia" variable nil nil [1450 1511])
+            ("rhod" variable nil nil [1512 1596])
+            ("csco" variable nil nil [1597 1668]))          
       :file "get_stock_data.py"
-      :pointmax 1427
-      :fsize 1426
-      :lastmodtime '(22697 49 560440 326000)
-      :unmatched-syntax '((INDENT_BLOCK 962 . 1135) (NEWLINE 961 . 962) (COLON 917 . 918) (TRY 709 . 712) (AS 913 . 915) (INDENT_BLOCK 1014 . 1187) (NEWLINE 1013 . 1014) (COLON 969 . 970) (TRY 761 . 764) (AS 965 . 967) (NAME 1360 . 1364) ($EOI 1367 . 1367) (INDENT_BLOCK 1014 . 1187) (NEWLINE 1013 . 1014) (COLON 969 . 970) (TRY 761 . 764) (AS 965 . 967) (INDENT_BLOCK 1014 . 1187) (NEWLINE 1013 . 1014) (COLON 969 . 970) (TRY 761 . 764) (AS 965 . 967) (INDENT_BLOCK 1014 . 1187) (NEWLINE 1013 . 1014) (COLON 969 . 970) (TRY 761 . 764) (AS 965 . 967) (NAME 1317 . 1321) ($EOI 1338 . 1338) (INDENT_BLOCK 1027 . 1200) (NEWLINE 1026 . 1027) (COLON 982 . 983) (TRY 761 . 764) (AS 978 . 980) (INDENT_BLOCK 1027 . 1200) (NEWLINE 1026 . 1027) (COLON 982 . 983) (TRY 761 . 764) (AS 978 . 980) (INDENT_BLOCK 1027 . 1200) (NEWLINE 1026 . 1027) (COLON 982 . 983) (TRY 761 . 764) (AS 978 . 980)))
+      :pointmax 1669
+      :fsize 1668
+      :lastmodtime '(22720 26069 59795 322000)
+      :unmatched-syntax nil)
     (semanticdb-table "semanticdb-table"
       :major-mode python-mode
       :tags 
@@ -76,54 +79,56 @@ and a common error function.\"\"\"" code nil nil [1 229])
             ("functools" include nil nil [231 260])
             ("numpy" include nil nil [262 280])
             ("sklearn.linear_model" include nil nil [281 330])
-            ("get_stock_data" include nil nil [332 363])
+            ("m_bounds" variable nil nil [612 633])
+            ("omega_bounds" variable nil nil [674 696])
+            ("phi_bounds" variable nil nil [729 756])
+            ("bounds" variable nil nil [757 832])
             ("model_mse" function
                (:documentation "Takes a function that maps the integers 0..n-1 to values and data with n entries and does
     mean squared error."
                 :arguments 
-                  ( ("modelfunc" variable nil (reparse-symbol function_parameters) [380 389])
-                    ("data" variable nil (reparse-symbol function_parameters) [391 395]))                  )
-                nil [366 638])
+                  ( ("modelfunc" variable nil (reparse-symbol function_parameters) [910 919])
+                    ("data" variable nil (reparse-symbol function_parameters) [921 925]))                  )
+                nil [896 1157])
             ("lppl" function
                (:documentation "Returns the monster expression
-    
     A + B(t_c-t)^m + C(t_c-t)^m * cos(omega * log (t_c - t) - phi)
 
-    If t_c <= t, returns ValueError.
+    If t_c <= t, raises ValueError.
     "
                 :arguments 
-                  ( ("a" variable nil (reparse-symbol function_parameters) [649 650])
-                    ("b" variable nil (reparse-symbol function_parameters) [652 653])
-                    ("c" variable nil (reparse-symbol function_parameters) [655 656])
-                    ("m" variable nil (reparse-symbol function_parameters) [658 659])
-                    ("omega" variable nil (reparse-symbol function_parameters) [661 666])
-                    ("phi" variable nil (reparse-symbol function_parameters) [668 671])
-                    ("t_c" variable nil (reparse-symbol function_parameters) [673 676])
-                    ("t" variable nil (reparse-symbol function_parameters) [678 679]))                  )
-                nil [640 1048])
+                  ( ("a" variable nil (reparse-symbol function_parameters) [1168 1169])
+                    ("b" variable nil (reparse-symbol function_parameters) [1171 1172])
+                    ("c" variable nil (reparse-symbol function_parameters) [1174 1175])
+                    ("m" variable nil (reparse-symbol function_parameters) [1177 1178])
+                    ("omega" variable nil (reparse-symbol function_parameters) [1180 1185])
+                    ("phi" variable nil (reparse-symbol function_parameters) [1187 1190])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [1192 1195])
+                    ("t" variable nil (reparse-symbol function_parameters) [1197 1198]))                  )
+                nil [1159 1561])
             ("get_lppl_func" function
                (:documentation "Returns a function that takes in a parameter t and returns the full LPPL."
                 :arguments 
-                  ( ("a" variable nil (reparse-symbol function_parameters) [1068 1069])
-                    ("b" variable nil (reparse-symbol function_parameters) [1071 1072])
-                    ("c" variable nil (reparse-symbol function_parameters) [1074 1075])
-                    ("m" variable nil (reparse-symbol function_parameters) [1077 1078])
-                    ("omega" variable nil (reparse-symbol function_parameters) [1080 1085])
-                    ("phi" variable nil (reparse-symbol function_parameters) [1087 1090])
-                    ("t_c" variable nil (reparse-symbol function_parameters) [1092 1095]))                  )
-                nil [1050 1236])
+                  ( ("a" variable nil (reparse-symbol function_parameters) [1581 1582])
+                    ("b" variable nil (reparse-symbol function_parameters) [1584 1585])
+                    ("c" variable nil (reparse-symbol function_parameters) [1587 1588])
+                    ("m" variable nil (reparse-symbol function_parameters) [1590 1591])
+                    ("omega" variable nil (reparse-symbol function_parameters) [1593 1598])
+                    ("phi" variable nil (reparse-symbol function_parameters) [1600 1603])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [1605 1608]))                  )
+                nil [1563 1749])
             ("reformulated_slaved_lppl" function
                (:documentation "Uses a reformulated version of the LPPL that has four linear parameters. Returns a new
     function that takes in an input t (0 <= t < t_c) and evaluates at that number."
                 :arguments 
-                  ( ("a" variable nil (reparse-symbol function_parameters) [1267 1268])
-                    ("b" variable nil (reparse-symbol function_parameters) [1270 1271])
-                    ("c1" variable nil (reparse-symbol function_parameters) [1273 1275])
-                    ("c2" variable nil (reparse-symbol function_parameters) [1277 1279])
-                    ("m" variable nil (reparse-symbol function_parameters) [1281 1282])
-                    ("omega" variable nil (reparse-symbol function_parameters) [1284 1289])
-                    ("t_c" variable nil (reparse-symbol function_parameters) [1291 1294]))                  )
-                nil [1238 1778])
+                  ( ("a" variable nil (reparse-symbol function_parameters) [1780 1781])
+                    ("b" variable nil (reparse-symbol function_parameters) [1783 1784])
+                    ("c1" variable nil (reparse-symbol function_parameters) [1786 1788])
+                    ("c2" variable nil (reparse-symbol function_parameters) [1790 1792])
+                    ("m" variable nil (reparse-symbol function_parameters) [1794 1795])
+                    ("omega" variable nil (reparse-symbol function_parameters) [1797 1802])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [1804 1807]))                  )
+                nil [1751 2291])
             ("optimal_nonlinear_lppl" function
                (:documentation "Given the three nonlinear parameters, uses linear regression to globally solve for the four
     slaved linear variables and returns a tuple with the optimal LPPL function and its MSE. Data is
@@ -131,24 +136,24 @@ and a common error function.\"\"\"" code nil nil [1 229])
     n-length input dataset.
     "
                 :arguments 
-                  ( ("data" variable nil (reparse-symbol function_parameters) [1807 1811])
-                    ("m" variable nil (reparse-symbol function_parameters) [1813 1814])
-                    ("omega" variable nil (reparse-symbol function_parameters) [1816 1821])
-                    ("t_c" variable nil (reparse-symbol function_parameters) [1823 1826]))                  )
-                nil [1780 2857])
+                  ( ("data" variable nil (reparse-symbol function_parameters) [2320 2324])
+                    ("m" variable nil (reparse-symbol function_parameters) [2326 2327])
+                    ("omega" variable nil (reparse-symbol function_parameters) [2329 2334])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [2336 2339]))                  )
+                nil [2293 3370])
             ("naive_nonlinear_lppl" function
                (:documentation "Uses the naive (comparatively) LPPL function to generate a less tractable LPPL."
                 :arguments 
-                  ( ("data" variable nil (reparse-symbol function_parameters) [2884 2888])
-                    ("m" variable nil (reparse-symbol function_parameters) [2890 2891])
-                    ("omega" variable nil (reparse-symbol function_parameters) [2893 2898])
-                    ("phi" variable nil (reparse-symbol function_parameters) [2900 2903])
-                    ("t_c" variable nil (reparse-symbol function_parameters) [2905 2908]))                  )
-                nil [2859 3623]))          
+                  ( ("data" variable nil (reparse-symbol function_parameters) [3397 3401])
+                    ("m" variable nil (reparse-symbol function_parameters) [3403 3404])
+                    ("omega" variable nil (reparse-symbol function_parameters) [3406 3411])
+                    ("phi" variable nil (reparse-symbol function_parameters) [3413 3416])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [3418 3421]))                  )
+                nil [3372 4136]))          
       :file "general_fit_funcs.py"
-      :pointmax 3623
-      :fsize 3622
-      :lastmodtime '(22676 6227 237144 375000)
+      :pointmax 4136
+      :fsize 4137
+      :lastmodtime '(22720 31878 708750 23000)
       :unmatched-syntax nil)
     (semanticdb-table "semanticdb-table"
       :major-mode python-mode
@@ -299,41 +304,131 @@ code.\"\"\"" code nil nil [1 107])
       :fsize 1669
       :lastmodtime '(22683 31791 267373 148000)
       :unmatched-syntax nil)
-
-
-
     (semanticdb-table "semanticdb-table"
       :major-mode python-mode
       :tags 
         '( ("\"\"\"Fits the LPPL with naive least-squares methods without any preprocessing or optimization.\"\"\"" code nil nil [1 96])
             ("numpy" include nil nil [99 117])
             ("scipy.optimize" include nil nil [118 139])
-            ("general_fit_funcs" include nil nil [141 175])
+            ("general_fit_funcs" include nil nil [141 184])
+            ("test_model_fitting" include nil nil [185 224])
+            ("numpy_lppl" function
+               (:documentation "Vectorized version of LPPL"
+                :arguments 
+                  ( ("t" variable nil (reparse-symbol function_parameters) [884 885])
+                    ("a" variable nil (reparse-symbol function_parameters) [887 888])
+                    ("b" variable nil (reparse-symbol function_parameters) [890 891])
+                    ("c" variable nil (reparse-symbol function_parameters) [893 894])
+                    ("m" variable nil (reparse-symbol function_parameters) [896 897])
+                    ("omega" variable nil (reparse-symbol function_parameters) [899 904])
+                    ("phi" variable nil (reparse-symbol function_parameters) [906 909])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [911 914]))                  )
+                nil [869 1061])
             ("fit_basic_LPPL" function
                (:documentation "Given a vector y taken to be the values at each point t=0, t=1, etc., fits an LPPL function
     to that dataset and returns the optimal parameters (in a numpy array [A, B, C, m, omega, phi,
-    t_c. No slaving or other processing
+    t_c]). No slaving or other processing
     is done, just straight curve-fitting."
                 :arguments 
-                  ( ("y" variable nil (reparse-symbol function_parameters) [838 839]))                  )
-                nil [819 1805]))          
+                  ( ("y" variable nil (reparse-symbol function_parameters) [1082 1083]))                  )
+                nil [1063 1753])
+            ("basic_LPPL_model" function
+               (:documentation "Given a vector y, returns a function that maps the indices of y to the projected model."
+                :arguments 
+                  ( ("y" variable nil (reparse-symbol function_parameters) [1776 1777]))                  )
+                nil [1755 1923])
+            ("test_all" code nil nil [1924 1950]))          
       :file "fit_basic_lppl.py"
-      :pointmax 1805
-      :fsize 1805
-      :lastmodtime '(22683 39292 115251 237000)
+      :pointmax 1951
+      :fsize 1951
+      :lastmodtime '(22720 31796 133315 914000)
       :unmatched-syntax nil)
-
     (semanticdb-table "semanticdb-table"
       :file "plot_higher_d_functions.py"
       :fsize 2243
       :lastmodtime '(22676 6616 462958 413000))
     (semanticdb-table "semanticdb-table"
       :major-mode python-mode
-      :tags nil
-      :file "randomized_search_gradient_descent.py"
-      :pointmax 1
-      :fsize 0
-      :lastmodtime '(22683 17531 110623 34000)
+      :tags 
+        '( ("\"\"\"Simple file that tests a model fitting function (input data -> function) on three sample
+datasets.\"\"\"" code nil nil [1 105])
+            ("conveniences" include nil nil [107 142])
+            ("general_fit_funcs" include nil nil [143 182])
+            ("get_stock_data" include nil nil [183 226])
+            ("test_great_depression" function
+               (:documentation "Tests for the bubble prior to the Great Depression"
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [255 260]))                  )
+                nil [229 552])
+            ("test_rhodium" function
+               (:documentation "Tests for the bubble prior to the rhodium crash of 2008."
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [571 576]))                  )
+                nil [554 833])
+            ("test_cisco_dotcom" function
+               (:documentation "Tests for the dot-com bubble prior to the crash of the stock price of Cisco, Inc. (2000)."
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [857 862]))                  )
+                nil [835 1162])
+            ("test_all" function
+               (:documentation "Tests each one in series."
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [1177 1182]))                  )
+                nil [1164 1307]))          
+      :file "test_model_fitting.py"
+      :pointmax 1307
+      :fsize 1306
+      :lastmodtime '(22720 31950 246126 103000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file implements a basic genetic algorithm to fit an LPPL function.
+It uses the slaved form first, and then uses a genetic algorithm to fit the remaining values. What
+this entails is creating an initial population randomly, selecting the best model or models, and
+then \"mutating\" to generate new random values slightly closer to the original than the previous
+iteration. This continues until convergence. Once the genetic algorithm has reached roughly the
+right area, it uses generic gradient descent to rapidly converge on the most optimal local value.\"\"\"" code nil nil [1 564])
+            ("random" include nil nil [567 592])
+            ("tqdm" include nil nil [594 615])
+            ("general_fit_funcs" include nil nil [617 679])
+            ("test_model_fitting" include nil nil [680 719])
+            ("is_within" function
+               (:documentation "Returns True if every parameter in model1 is contained in the bounds."
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [736 741])
+                    ("bounds" variable nil (reparse-symbol function_parameters) [743 749]))                  )
+                nil [722 1003])
+            ("mutate" function
+               (:documentation "Returns a new randomly-mutated model with deviations in the inputs. Throws out models that
+    would not meet the bounds."
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [1016 1021])
+                    ("strength" variable nil (reparse-symbol function_parameters) [1023 1031])
+                    ("bounds" variable nil (reparse-symbol function_parameters) [1033 1039]))                  )
+                nil [1005 1525])
+            ("genetic_only_model" function
+               (:documentation "Attempts to fit a model using a genetic algorithm. N_iterations is self-explanatory. Each
+    iteration consists of taking n_chosen of the population from the current set, generating random
+    mutations of each, and replenishing the set of values to keep the number of models constant. The
+    default is to start with 10 models and 2 chosen, so each chosen has five mutations.
+    Mutation_strength controls how \"jumpy\" the mutations are, as a ratio of the values
+    themselves: the default, at max, allows for 10% deviation from the original. Returns the model
+    data as a list [A, B, C, m, omega, phi, t_c].
+
+    "
+                :arguments 
+                  ( ("inputdata" variable nil (reparse-symbol function_parameters) [1550 1559])
+                    ("n_iterations" variable nil (reparse-symbol function_parameters) [1561 1573])
+                    ("n_initial" variable nil (reparse-symbol function_parameters) [1578 1587])
+                    ("n_chosen" variable nil (reparse-symbol function_parameters) [1592 1600])
+                    ("mutation_strength" variable nil (reparse-symbol function_parameters) [1604 1621]))                  )
+                nil [1527 3209])
+            ("test_all" code nil nil [3211 3239]))          
+      :file "genetic_algorithm_fit.py"
+      :pointmax 3240
+      :fsize 3239
+      :lastmodtime '(22720 28197 738450 181000)
       :unmatched-syntax nil))
   :file "!home!nicholas!Documents!data-blog!code!stock-crashes!semantic.cache"
   :semantic-tag-version "2.0"

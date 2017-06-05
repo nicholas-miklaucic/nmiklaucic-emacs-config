@@ -1,0 +1,18 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags 
+        '( ("genTable" function nil nil [1 385]))          
+      :file "main.js"
+      :pointmax 414
+      :fsize 1726
+      :lastmodtime '(22813 8319 396634 570000)
+      :unmatched-syntax '((VARIABLE 387 . 394) (PAREN_BLOCK 400 . 412))))
+  :file "!home!nicholas!programs!brandon-musical-set-theory!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

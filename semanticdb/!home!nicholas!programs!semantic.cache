@@ -181,9 +181,155 @@ outputs very quickly, and has interesting behavior.\"\"\"" code nil nil [1 255])
       :lastmodtime '(22614 4949 249855 486000)
       :unmatched-syntax nil)
     (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
       :file "prime.py"
+      :pointmax 2208
       :fsize 2207
-      :lastmodtime '(22399 23508 0 0)))
+      :lastmodtime '(22399 23508 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file uses a constraint solver to solve a classic problem: place 7 dots on a 7x7 board such
+that the distance between each pair of dots is different.\"\"\"" code nil nil [1 160])
+            ("Numberjack" include nil nil [162 186])
+            ("x_coords" variable nil nil [189 217])
+            ("y_coords" variable nil nil [218 246])
+            ("pairs" variable nil nil [247 257])
+            ("for" code nil nil [258 503])
+            ("model" variable nil nil [504 582])
+            ("solver" variable nil nil [589 619])
+            ("if" code nil nil [620 707])
+            ("print" code nil nil [708 780]))          
+      :file "steinerproblem.py"
+      :pointmax 781
+      :fsize 780
+      :lastmodtime '(22412 28924 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("subprocess" include nil nil [1 36])
+            ("sys" include nil nil [37 57])
+            ("if" code nil nil [59 140])
+            ("if" code nil nil [141 1795]))          
+      :file "night_mode.py"
+      :pointmax 1795
+      :fsize 1794
+      :lastmodtime '(22751 12290 785866 606000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"Makes a list of colors, defined variously, into a base 16 color scheme.\"\"\"" code nil nil [1 78])
+            ("colour" include nil nil [80 104])
+            ("numpy" include nil nil [105 131])
+            ("gen_first_bases" function
+               (:documentation "Returns a list: a gradient of 8 color hexes"
+                :arguments 
+                  ( ("hue" variable nil (reparse-symbol function_parameters) [154 157])
+                    ("sat" variable nil (reparse-symbol function_parameters) [159 162])
+                    ("start" variable nil (reparse-symbol function_parameters) [164 169])
+                    ("end" variable nil (reparse-symbol function_parameters) [171 174]))                  )
+                nil [134 354])
+            ("gen_colors" function
+               (:documentation "Generates the HSV for each hue with the sat and val"
+                :arguments 
+                  ( ("hues" variable nil (reparse-symbol function_parameters) [371 375])
+                    ("sat" variable nil (reparse-symbol function_parameters) [377 380])
+                    ("val" variable nil (reparse-symbol function_parameters) [382 385]))                  )
+                nil [356 557])
+            ("make_theme_spec" function
+               (:documentation "Prints a copy-pastable defvars thing for the given stuff."
+                :arguments 
+                  ( ("name" variable nil (reparse-symbol function_parameters) [579 583])
+                    ("base_hue" variable nil (reparse-symbol function_parameters) [585 593])
+                    ("base_sat" variable nil (reparse-symbol function_parameters) [595 603])
+                    ("start" variable nil (reparse-symbol function_parameters) [605 610])
+                    ("end" variable nil (reparse-symbol function_parameters) [612 615])
+                    ("hues" variable nil (reparse-symbol function_parameters) [617 621])
+                    ("sat" variable nil (reparse-symbol function_parameters) [623 626])
+                    ("val" variable nil (reparse-symbol function_parameters) [628 631]))                  )
+                nil [559 1178])
+            ("make_theme_spec" code nil nil [1180 1282]))          
+      :file "make-theme.py"
+      :pointmax 1283
+      :fsize 1282
+      :lastmodtime '(22719 20035 475473 68000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"Attempts to use an n-gram model to predict what names people find good or bad, in the most
+general possible way.\"\"\"" code nil nil [1 119])
+            ("numpy" include nil nil [122 140])
+            ("pandas" include nil nil [141 160])
+            ("ngrams" function
+               (:documentation "Returns a list of lists of ngrams: for example, the n-grams of \"word\" would be
+    [[\"w\", \"o\", \"r\", \"d\"], [\"wo\", \"or\", \"rd\"], [\"wor\", \"ord\"], [\"word\"]].
+    "
+                :arguments 
+                  ( ("word" variable nil (reparse-symbol function_parameters) [174 178]))                  )
+                nil [163 484])
+            ("get_names_and_values" function
+               (:documentation "For each word in the corpus, runs the val_func to determine its value as a name, and returns
+    a Pandas DataFrame with the names in one column and its values in another."
+                :arguments 
+                  ( ("corpus" variable nil (reparse-symbol function_parameters) [511 517])
+                    ("val_func" variable nil (reparse-symbol function_parameters) [519 527]))                  )
+                nil [486 859])
+            ("human_input_val_func" function
+               (:documentation "Uses the simplest method to gauge how good a word is: asks the user for 0 or 1 and returns
+    that."
+                :arguments 
+                  ( ("word" variable nil (reparse-symbol function_parameters) [886 890]))                  )
+                nil [861 1154]))          
+      :file "find-good-names.py"
+      :pointmax 1164
+      :fsize 1163
+      :lastmodtime '(22722 1310 883917 709000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("argparse" include nil nil [1 16])
+            ("pathlib" include nil nil [17 41])
+            ("tqdm" include nil nil [43 64])
+            ("fontforge" include nil nil [66 82])
+            ("parser" variable nil nil [84 118])
+            ("parser" code nil nil [119 198])
+            ("parser" code nil nil [199 279])
+            ("args" variable nil nil [280 306])
+            ("Path" code nil nil [359 368])
+            ("Path" code nil nil [408 417])
+            ("num_fonts" variable nil nil [419 466])
+            ("for" code nil nil [467 717])
+            ("print" code nil nil [718 741]))          
+      :file "font-installer-script.py"
+      :pointmax 742
+      :fsize 741
+      :lastmodtime '(22823 32400 208538 23000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("argparse" include nil nil [1 16])
+            ("pathlib" include nil nil [17 41])
+            ("tqdm" include nil nil [43 64])
+            ("fontforge" include nil nil [66 82])
+            ("parser" variable nil nil [84 118])
+            ("parser" code nil nil [119 198])
+            ("args" variable nil nil [199 225])
+            ("Path" code nil nil [278 287])
+            ("style_names" variable nil nil [288 384])
+            ("num_fonts" variable nil nil [385 432])
+            ("for" code nil nil [433 891]))          
+      :file "family-name-changer.py"
+      :pointmax 891
+      :fsize 1000
+      :lastmodtime '(22823 30315 49733 256000)
+      :unmatched-syntax nil))
   :file "!home!nicholas!programs!semantic.cache"
   :semantic-tag-version "2.0"
   :semanticdb-version "2.2")

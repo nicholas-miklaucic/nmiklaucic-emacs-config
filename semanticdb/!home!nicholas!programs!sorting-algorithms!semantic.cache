@@ -250,8 +250,8 @@ This implements the algorithm used in Introduction to Algorithms by Cormen.\"\"\
       :tags nil
       :file "test_bubble_sort.py"
       :pointmax 827
-      :fsize 826
-      :lastmodtime '(22614 65057 386257 11000)
+      :fsize 933
+      :lastmodtime '(22614 65311 373213 298000)
       :unmatched-syntax nil))
   :file "!home!nicholas!programs!sorting-algorithms!semantic.cache"
   :semantic-tag-version "2.0"

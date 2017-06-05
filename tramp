@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <17/02/21 15:30:15 /home/nicholas/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <17/06/03 16:38:18 /home/nicholas/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -24,7 +24,7 @@
   ("touch-t" t)
   ("touch" "\\touch"))
  (["sudo" "root" "localhost.localdomain" nil nil]
-  ("uname" "Linux 4.9.8-201.fc25.x86_64")
+  ("uname" "Linux 4.9.13-201.fc25.x86_64")
   ("locale" "LC_ALL=en_US.utf8")
   ("test" "test")
   ("remote-path"
@@ -41,7 +41,10 @@
   ("gid-string" "root")
   ("readlink" "\\readlink")
   ("uid-integer" 0)
+  ("git" "\\git")
   ("ls" "/usr/bin/ls --color=never")
   ("tmpdir" "/tmp")
   ("touch-t" t)
-  ("touch" "\\touch")))
+  ("touch" "\\touch")
+  ("ls-dired" t)
+  ("trash" nil)))

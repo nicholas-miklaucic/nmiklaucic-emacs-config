@@ -1,0 +1,29 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file does some processing of the MU chart, like finding the best dual mains by different
+metrics.\"\"\"" code nil nil [1 109])
+            ("pandas" include nil nil [112 131])
+            ("itertools" include nil nil [132 166])
+            ("mu_chart" variable nil nil [169 220])
+            ("mu_chart" code nil nil [258 299])
+            ("mu_chart" code nil nil [300 342])
+            ("mu_chart" code nil nil [343 425])
+            ("mu_chart" variable nil nil [426 457])
+            ("DUAL_MAINS" variable nil nil [460 475])
+            ("for" code nil nil [477 698])
+            ("DUAL_MAINS" code nil nil [700 754])
+            ("for" code nil nil [755 807]))          
+      :file "analysis.py"
+      :pointmax 807
+      :fsize 806
+      :lastmodtime '(22643 1901 843485 832000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!ssf2-mu-analysis!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

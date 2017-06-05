@@ -3,6 +3,20 @@
 (setq elpy-rpc-python-command "python3")
 (elpy-use-cpython)
 (setq python-shell-interpreter "python3")
+(setq python-shell-interpreter-interactive-arg "-i")
+
+;; remove garbled color text
+(use-package ansi-color
+  :init
+  (defun display-ansi-colors ()
+    (interactive)
+    (let ((inhibit-read-only t))
+      (ansi-color-apply-on-region (point-min) (point-max))))
+  (add-hook 'python-shell-send-setup-code 'display-ansi-colors)
+  )
+
+(add-hook 'compilation-mode-hook 'ansi-color-for-comint-mode-on)
+
 
 (require 'python-django)
 (global-set-key (kbd "C-x j") 'python-django-open-project)

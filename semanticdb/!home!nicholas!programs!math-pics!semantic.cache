@@ -1,0 +1,91 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file creates an image that showcases some of the interesting complexity behind the Collatz
+sequence.\"\"\"" code nil nil [1 112])
+            ("functools" include nil nil [114 145])
+            ("PIL" include nil nil [147 180])
+            ("sympy" include nil nil [181 204])
+            ("" code nil nil [217 223])
+            ("collatz_length" function
+               (:documentation "Returns number of iterations of the Collatz sequence needed to go to one. For example, the
+    number 6 goes 6 -> 3 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1, so it would return 7."
+                :arguments 
+                  ( ("num" variable nil (reparse-symbol function_parameters) [243 246]))                  )
+                nil [224 555])
+            ("float_to_hsv" function (:arguments 
+              ( ("num" variable nil (reparse-symbol function_parameters) [574 577]))              ) nil [557 662])
+            ("float_to_greyscale" function (:arguments 
+              ( ("num" variable nil (reparse-symbol function_parameters) [687 690]))              ) nil [664 767])
+            ("colorfunc1" function (:arguments 
+              ( ("num" variable nil (reparse-symbol function_parameters) [784 787])
+                ("norm" variable nil (reparse-symbol function_parameters) [789 793]))              ) nil [769 850])
+            ("mathfunc2" function (:arguments 
+              ( ("num" variable nil (reparse-symbol function_parameters) [866 869]))              ) nil [852 909])
+            ("make_seq_image" function
+               (:documentation "Makes an mxn image of pixels, where each pixel is color-coded to represent its number.  The exact
+    coding is determined by colorfunc, which is a function that accepts an integer and optional
+    other arguments and returns an RGB tuple. Returns the image.
+    "
+                :arguments 
+                  ( ("m" variable nil (reparse-symbol function_parameters) [930 931])
+                    ("n" variable nil (reparse-symbol function_parameters) [933 934])
+                    ("mathfunc" variable nil (reparse-symbol function_parameters) [936 944])
+                    ("colorfunc" variable nil (reparse-symbol function_parameters) [946 955]))                  )
+                nil [911 1464])
+            ("make_seq_image" code nil nil [1466 1515]))          
+      :file "collatz.py"
+      :pointmax 1516
+      :fsize 1539
+      :lastmodtime '(22712 20440 166509 102000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file creates an image that showcases some of the interesting complexity behind the Collatz
+sequence.\"\"\"" code nil nil [1 112])
+            ("functools" include nil nil [114 145])
+            ("PIL" include nil nil [147 180])
+            ("sympy" include nil nil [181 204])
+            ("" code nil nil [217 223])
+            ("collatz_length" function
+               (:documentation "Returns number of iterations of the Collatz sequence needed to go to one. For example, the
+    number 6 goes 6 -> 3 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1, so it would return 7."
+                :arguments 
+                  ( ("num" variable nil (reparse-symbol function_parameters) [243 246]))                  )
+                nil [224 555])
+            ("float_to_hsv" function (:arguments 
+              ( ("num" variable nil (reparse-symbol function_parameters) [574 577]))              ) nil [557 662])
+            ("float_to_greyscale" function (:arguments 
+              ( ("num" variable nil (reparse-symbol function_parameters) [687 690]))              ) nil [664 767])
+            ("colorfunc1" function (:arguments 
+              ( ("num" variable nil (reparse-symbol function_parameters) [784 787])
+                ("norm" variable nil (reparse-symbol function_parameters) [789 793]))              ) nil [769 850])
+            ("b" code nil nil [851 852])
+            ("mathfunc2" function (:arguments 
+              ( ("num" variable nil (reparse-symbol function_parameters) [867 870]))              ) nil [853 910])
+            ("make_seq_image" function
+               (:documentation "Makes an mxn image of pixels, where each pixel is color-coded to represent its number.  The exact
+    coding is determined by colorfunc, which is a function that accepts an integer and optional
+    other arguments and returns an RGB tuple. Returns the image.
+    "
+                :arguments 
+                  ( ("m" variable nil (reparse-symbol function_parameters) [931 932])
+                    ("n" variable nil (reparse-symbol function_parameters) [934 935])
+                    ("mathfunc" variable nil (reparse-symbol function_parameters) [937 945])
+                    ("colorfunc" variable nil (reparse-symbol function_parameters) [947 956]))                  )
+                nil [912 1465])
+            ("make_seq_image" code nil nil [1467 1516]))          
+      :file "imggenerator.py"
+      :pointmax 1517
+      :fsize 1516
+      :lastmodtime '(22712 45556 830134 255000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!math-pics!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

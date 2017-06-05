@@ -1,0 +1,53 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"Decodes a weirdo image.\"\"\"" code nil nil [1 28])
+            ("binascii" include nil nil [30 45])
+            ("PIL" include nil nil [47 68])
+            ("im" variable nil nil [70 98])
+            ("chunked_data" variable nil nil [101 134])
+            ("data" variable nil nil [135 144])
+            ("for" code nil nil [145 207])
+            ("int_to_str" function (:arguments 
+              ( ("i" variable nil (reparse-symbol function_parameters) [223 224]))              ) nil [208 426])
+            ("data" variable nil nil [435 463])
+            ("b_str" variable nil nil [464 510])
+            ("b" variable nil nil [511 533])
+            ("with" code nil nil [535 635]))          
+      :file "tree-decoder.py"
+      :pointmax 635
+      :fsize 634
+      :lastmodtime '(22773 26539 476807 958000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"Cracks an RSA 256 public key.\"\"\"" code nil nil [1 36])
+            ("base64" include nil nil [39 52])
+            ("fractions" include nil nil [53 78])
+            ("sympy.ntheory" include nil nil [80 115])
+            ("modulus_base64" variable nil nil [117 200])
+            ("modulus" variable nil nil [201 276])
+            ("exponent_bin" variable nil nil [278 301])
+            ("exponent" variable nil nil [302 338])
+            ("e" variable nil nil [339 351])
+            ("modulus_factors" variable nil nil [353 523])
+            ("p" variable nil nil [525 530])
+            ("for" code nil nil [531 583])
+            ("q" variable nil nil [583 606])
+            ("tot" variable nil nil [608 615])
+            ("for" code nil nil [616 669])
+            ("d" variable nil nil [670 790]))          
+      :file "rsa-cracker.py"
+      :pointmax 791
+      :fsize 790
+      :lastmodtime '(22773 29933 558888 439000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!PACTF-2017-Bartik!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

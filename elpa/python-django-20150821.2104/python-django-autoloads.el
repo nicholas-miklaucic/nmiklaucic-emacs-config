@@ -3,8 +3,8 @@
 ;;; Code:
 (add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "python-django" "python-django.el" (22542 51516
-;;;;;;  952210 633000))
+;;;### (autoloads nil "python-django" "python-django.el" (22719 39987
+;;;;;;  955249 100000))
 ;;; Generated autoloads from python-django.el
 
 (autoload 'python-django-open-project "python-django" "\

@@ -36,79 +36,219 @@ size, not other shapes.\"\"\"" code nil nil [1 127])
                         :constructor-flag t)
                         (reparse-symbol indented_block_body) [298 711])
                     ("from_existing_position" function
-                       (:documentation "Given a 2D numpy matrix of any size, initializes a board to fit that matrix."
+                       (:documentation "Given a 2D numpy matrix of any size, initializes a board to fit that matrix. It is
+    assumed that the given format is top-down (looking like numpy would print it)."
                         :arguments 
                           ( ("cls" variable nil (reparse-symbol function_parameters) [760 763])
                             ("board" variable nil (reparse-symbol function_parameters) [765 770]))                          
                         :decorators 
                           ( ("classmethod" function (:type "decorator") nil nil))                          )
-                        (reparse-symbol indented_block_body) [716 1051])
+                        (reparse-symbol indented_block_body) [716 1140])
                     ("__repr__" function
                        (:parent "dummy"
                         :arguments 
-                          ( ("self" variable nil (reparse-symbol function_parameters) [1069 1073]))                          )
-                        (reparse-symbol indented_block_body) [1056 1133])
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1158 1162]))                          )
+                        (reparse-symbol indented_block_body) [1145 1222])
                     ("__str__" function
                        (:parent "dummy"
                         :arguments 
-                          ( ("self" variable nil (reparse-symbol function_parameters) [1150 1154]))                          )
-                        (reparse-symbol indented_block_body) [1138 1586])
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1239 1243]))                          )
+                        (reparse-symbol indented_block_body) [1227 1675])
                     ("place_piece" function
                        (:parent "dummy"
                         :arguments 
-                          ( ("self" variable nil (reparse-symbol function_parameters) [1607 1611])
-                            ("is_red" variable nil (reparse-symbol function_parameters) [1613 1619])
-                            ("x" variable nil (reparse-symbol function_parameters) [1621 1622])
-                            ("y" variable nil (reparse-symbol function_parameters) [1624 1625])
-                            ("err_on_replace" variable nil (reparse-symbol function_parameters) [1627 1641]))                          
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1696 1700])
+                            ("is_red" variable nil (reparse-symbol function_parameters) [1702 1708])
+                            ("x" variable nil (reparse-symbol function_parameters) [1710 1711])
+                            ("y" variable nil (reparse-symbol function_parameters) [1713 1714])
+                            ("err_on_replace" variable nil (reparse-symbol function_parameters) [1716 1730]))                          
                         :documentation "Places a piece in the given location using 1-indexed coordinates (y is the row and x is the
-        column, so (1, 1) would be the lower-left and (3, 2) would be one step up and two to the
+        column, so (1, 1) would be the upper-left and (3, 2) would be one step down and two to the
         right. If is_red, places a red piece (value -1), otherwise plays with value -1.
 
         If err_on_replace, raises a ValueError if the move would overwrite a different non-empty
         value.
         ")
-                        (reparse-symbol indented_block_body) [1591 2420])
+                        (reparse-symbol indented_block_body) [1680 2481])
                     ("coords_to_string" function
                        (:parent "dummy"
                         :arguments 
-                          ( ("self" variable nil (reparse-symbol function_parameters) [2446 2450])
-                            ("x" variable nil (reparse-symbol function_parameters) [2452 2453])
-                            ("y" variable nil (reparse-symbol function_parameters) [2455 2456]))                          
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2507 2511])
+                            ("x" variable nil (reparse-symbol function_parameters) [2513 2514])
+                            ("y" variable nil (reparse-symbol function_parameters) [2516 2517]))                          
                         :documentation "Returns a string with the Hex notational convenience described by the (x, y) point given. The
         column is now denoted as a letter (a ValueError will be raised if the width of the board is
         greater than 26), and the height is now 1-index descending the board. The top left is a1;
         the square one to the right and two down is b3.
         ")
-                        (reparse-symbol indented_block_body) [2425 3026])
+                        (reparse-symbol indented_block_body) [2486 3069])
                     ("string_to_coords" function
                        (:parent "dummy"
                         :arguments 
-                          ( ("self" variable nil (reparse-symbol function_parameters) [3052 3056])
-                            ("string" variable nil (reparse-symbol function_parameters) [3058 3064]))                          
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3095 3099])
+                            ("string" variable nil (reparse-symbol function_parameters) [3101 3107]))                          
                         :documentation "Returns the (x, y) tuple that the string describes. Uses a Hex notational system where
         letters are columns a-z left-to-right and the rows are 1-n top-to-bottom, so a1 is the top
         left corner. The letter must come first, but case is ignored.")
-                        (reparse-symbol indented_block_body) [3031 3830])
-                    ("make_move_from_str" function
+                        (reparse-symbol indented_block_body) [3074 3855])
+                    ("get_border_coords" function
                        (:parent "dummy"
                         :arguments 
-                          ( ("self" variable nil (reparse-symbol function_parameters) [3858 3862])
-                            ("is_red" variable nil (reparse-symbol function_parameters) [3864 3870])
-                            ("string" variable nil (reparse-symbol function_parameters) [3872 3878])
-                            ("err_on_replace" variable nil (reparse-symbol function_parameters) [3880 3894]))                          
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3882 3886])
+                            ("x" variable nil (reparse-symbol function_parameters) [3888 3889])
+                            ("y" variable nil (reparse-symbol function_parameters) [3891 3892]))                          
+                        :documentation "Returns a tuple of tuples (x', y') such that x' and y' border x and y. Adjusts for
+        literal corner-cases. X and y are 1-indexed from the top left.")
+                        (reparse-symbol indented_block_body) [3860 4341])
+                    ("place_piece_from_str" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4371 4375])
+                            ("is_red" variable nil (reparse-symbol function_parameters) [4377 4383])
+                            ("string" variable nil (reparse-symbol function_parameters) [4385 4391])
+                            ("err_on_replace" variable nil (reparse-symbol function_parameters) [4393 4407]))                          
                         :documentation "Given a Hex coordinate string (like \"a3\") and the color, places the piece, raising
         ValueError if there is an occupied square in that place and err_on_replace is True.")
-                        (reparse-symbol indented_block_body) [3835 4172]))                  
+                        (reparse-symbol indented_block_body) [4346 4685])
+                    ("get_piece" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4704 4708])
+                            ("x" variable nil (reparse-symbol function_parameters) [4710 4711])
+                            ("y" variable nil (reparse-symbol function_parameters) [4713 4714]))                          
+                        :documentation "Returns -1 for Red, 0 for empty, and 1 for Blue at the current location, where x and y
+        are 1-indexed and (1, 1) is the top left.")
+                        (reparse-symbol indented_block_body) [4690 4908])
+                    ("get_piece_at_str" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4934 4938])
+                            ("string" variable nil (reparse-symbol function_parameters) [4940 4946]))                          
+                        :documentation "Returns -1 for Red, 0 for empty, and 1 for Blue at the current location.")
+                        (reparse-symbol indented_block_body) [4913 5117])
+                    ("remove_piece" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5139 5143])
+                            ("x" variable nil (reparse-symbol function_parameters) [5145 5146])
+                            ("y" variable nil (reparse-symbol function_parameters) [5148 5149]))                          
+                        :documentation "Sets the square at the given coordinates (1-indexed) to 0.")
+                        (reparse-symbol indented_block_body) [5122 5262])
+                    ("remove_piece_at_str" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5291 5295])
+                            ("string" variable nil (reparse-symbol function_parameters) [5297 5303]))                          
+                        :documentation "Sets the square at the given Hex-notation coordinates to 0.")
+                        (reparse-symbol indented_block_body) [5267 5438])
+                    ("pieces_where" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5460 5464])
+                            ("func" variable nil (reparse-symbol function_parameters) [5466 5470]))                          
+                        :documentation "Returns an iterable of tuples (x, y) in the usual 1-indexed coordinate system such that
+        each coordinate satisfies the function (f(x, y) -> bool).")
+                        (reparse-symbol indented_block_body) [5443 5840])
+                    ("game_status" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5861 5865]))                          
+                        :documentation "Returns -1 if Red has won, 1 if Blue has won, and 0 if the game is ongoing. If both Red
+        and Blue have won, Red gets precedence.")
+                        (reparse-symbol indented_block_body) [5845 10444]))                  
                 :type "class")
-                nil [233 4172])
-            ("a" variable nil nil [4174 4365])
-            ("b" variable nil nil [4366 4401]))          
+                nil [233 10444]))          
       :file "board.py"
-      :pointmax 4402
-      :fsize 4407
-      :lastmodtime '(22704 45844 922297 974000)
+      :pointmax 10729
+      :fsize 10734
+      :lastmodtime '(22709 1595 786797 138000)
+      :unmatched-syntax '((NAME 9405 . 9421) (IF 9427 . 9429) (ELSE 9452 . 9456) (NAME 8167 . 8183) (IF 8189 . 8191) (ELSE 8212 . 8216) (NAME 2229 . 2233) (IF 2259 . 2261) (ELSE 2269 . 2273)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("unittest" include nil nil [1 16])
+            ("numpy" include nil nil [18 36])
+            ("board" include nil nil [38 61])
+            ("BoardTest" type
+               (:superclasses ("unittest.TestCase")
+                :members 
+                  ( ("setUp" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [114 118]))                          )
+                        (reparse-symbol indented_block_body) [104 389])
+                    ("test_game_status" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [415 419]))                          )
+                        (reparse-symbol indented_block_body) [394 477]))                  
+                :type "class")
+                nil [64 477])
+            ("if" code nil nil [479 526]))          
+      :file "test_board.py"
+      :pointmax 526
+      :fsize 525
+      :lastmodtime '(22707 50628 109391 954000)
       :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "ai.py"
+      :pointmax 2864
+      :fsize 2863
+      :lastmodtime '(22709 1686 719289 329000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"A simple AI class that simply plays random moves!\"\"\"" code nil nil [1 56])
+            ("random" include nil nil [59 84])
+            ("ai" include nil nil [114 131])
+            ("game" include nil nil [132 153])
+            ("RandomAI" type
+               (:documentation "Simply makes random moves. Saves the game to a file afterwards."
+                :superclasses ("AI")
+                :members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [298 330]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [267 271])
+                            ("games_played" variable nil (reparse-symbol function_parameters) [273 285]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [254 331])
+                    ("after_game_hook" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [356 360])
+                            ("game" variable nil (reparse-symbol function_parameters) [362 366]))                          )
+                        (reparse-symbol indented_block_body) [336 459])
+                    ("play_move" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [478 482])
+                            ("is_red" variable nil (reparse-symbol function_parameters) [484 490])
+                            ("board" variable nil (reparse-symbol function_parameters) [492 497]))                          )
+                        (reparse-symbol indented_block_body) [464 751])
+                    ("choose_to_swap" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [775 779])
+                            ("board" variable nil (reparse-symbol function_parameters) [781 786]))                          )
+                        (reparse-symbol indented_block_body) [756 839]))                  
+                :type "class")
+                nil [156 839])
+            ("if" code nil nil [841 1020]))          
+      :file "random_ai.py"
+      :pointmax 1020
+      :fsize 1019
+      :lastmodtime '(22709 678 158081 457000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "game.py"
+      :fsize 4869
+      :lastmodtime '(22708 52961 177207 973000))
 )
   :file "!home!nicholas!Documents!data-blog!code!hex-ai!semantic.cache"
   :semantic-tag-version "2.0"
