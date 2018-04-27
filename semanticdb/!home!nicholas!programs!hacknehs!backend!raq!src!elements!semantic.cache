@@ -1,0 +1,25 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "sentiment.py"
+      :pointmax 828
+      :fsize 827
+      :lastmodtime '(23037 65019 232488 218000)
+      :unmatched-syntax nil)
+
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "related_topics.py"
+      :pointmax 11798
+      :fsize 11888
+      :lastmodtime '(23037 65019 232488 218000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!hacknehs!backend!raq!src!elements!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

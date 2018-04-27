@@ -4,6 +4,7 @@
 ;; Base16: (https://github.com/chriskempson/base16)
 
 ;;; Authors:
+;; Nicholas Miklaucic (nicholas-miklaucic.github.io)
 ;; Scheme: Chris Kempson (http://chriskempson.com)
 ;; Template: Kaleb Elwert <belak@coded.io>
 
@@ -16,7 +17,7 @@
     :base01 "#fafafa"
     :base02 "#e0e0e0"
     :base03 "#9e9e9e"
-    :base04 "#0288d1"
+    :base04 "#9e9e9e"
     :base05 "#757575"
     :base06 "#424242"
     :base07 "#e0e0e0"

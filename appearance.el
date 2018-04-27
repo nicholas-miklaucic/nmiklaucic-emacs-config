@@ -2,20 +2,27 @@
 (scroll-bar-mode 0)
 (tool-bar-mode 0)
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(add-to-list 'custom-theme-load-path "/home/nicholas/.emacs.d/themes")
 
 ;; this is now managed by a Python shell commandd
 ;; on startup, read in a file for what to do
 ;; it will change automatically
 
-;; ;; this is the cool bit--change themes on time of days
-;; ;; other main locale: Andover, MA, 42.65 N, -71.13 E
-;; ;; Charlotte NC is 35.22 N, -80.84 E
-;; (setq calendar-current-location-name "Andover MA")
-;; (setq calendar-longitude -71.13)
-;; (setq calendar-latitude 42.65)
-;; (require 'theme-changer)
-;; (change-theme 'material-light 'material)
+;; this is the cool bit--change themes on time of days
+;; other main locale: Andover, MA, 42.65 N, -71.13 E
+;; Charlotte NC is 35.22 N, -80.84 E
+(setq calendar-current-location-name "Andover MA")
+(setq calendar-longitude -71.13)
+(setq calendar-latitude 42.65)
+(require 'theme-changer)
+(change-theme 'base16-material-light 'base16-material-dark)
+
+(defun custom-powerline-reset (theme &optional no-confirm no-enable)
+  "Version that allows for advice hooks to work."
+  (interactive)
+  (powerline-reset)
+  )
+(add-function :after (symbol-function 'load-theme) #'custom-powerline-reset)
 
 (defun get-string-from-file (filePath)
   "Return filePath's file content."
@@ -23,16 +30,33 @@
     (insert-file-contents filePath)
     (buffer-string)))
 
-(remove-hook 'post-command-hook 'linum-update-current t)
-(load-theme (intern (substring (get-string-from-file "/home/nicholas/.emacs.d/curr_theme") 0 -1)))
+(defun switch-dark ()
+  (interactive)
+  (disable-theme 'base16-material-light)
+  (load-theme 'base16-material-dark t)
+  (powerline-reset)
+  )
+
+(defun switch-light ()
+  (interactive)
+  (disable-theme 'base16-material-dark)
+  (load-theme 'base16-material-light t)
+  (powerline-reset)
+  )
+
 
 ;; font
-(set-face-attribute 'default nil :font "Fira Code Retina 12")
+(set-face-attribute 'default nil :font "IBM Plex Mono 18" :height 140 :weight 'regular)
+(setq line-spacing 1)
 
-(use-package spaceline-config
+;; make comments appear in italics so it looks nice
+(set-face-attribute 'font-lock-comment-face nil :slant 'italic)
+		    
+(setq redisplay-dont-pause t)
+
+(use-package powerline
   :config
-  (spaceline-spacemacs-theme)
-  (spaceline-helm-mode)
+  (powerline-default-theme)
   )
 
 ;; pretty symbols in LaTeX
@@ -75,12 +99,12 @@
 	    
 (global-prettify-symbols-mode +1)
 
+(add-hook 'prog-mode-hook 'nlinum-mode)
+
 (define-globalized-minor-mode my-global-rainbow-mode rainbow-mode
   (lambda () (rainbow-mode 1)))
 
 (my-global-rainbow-mode 1)
-
-(smooth-scrolling-mode)
 
 ;; prompts
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -91,6 +115,7 @@
   (remq 'process-kill-buffer-query-function
 	kill-buffer-query-functions))
 
+(setq scroll-conservatively 101) ;; move minimum when cursor exits view, instead of recentering
 
 ;; tooltips
 (tooltip-mode -1)
@@ -236,8 +261,36 @@
 (add-hook 'prog-mode-hook
           #'add-fira-code-symbol-keywords)
 
-(add-hook 'prog-mode-hook 'linum-mode)
-
 ;; rainbow-delimiters config
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+
+;; eshell stuff
+(setq eshell-cmpl-cycle-completions nil
+      eshell-save-history-on-exit t
+      eshell-cmpl-dir-ignore "\\`\\(\\.\\.?\\|CVS\\|\\.svn\\|\\.git\\)/\\'")
+
+
+
+(require 'em-cmpl)
+(require 'em-prompt)
+(require 'em-term)
+;; TODO: for some reason requiring this here breaks it, but
+;; requiring it after an eshell session is started works fine.
+;; (require 'eshell-vc)
+(setenv "PAGER" "cat")
+					; (set-face-attribute 'eshell-prompt nil :foreground "turquoise1")
+(add-hook 'eshell-mode-hook ;; for some reason this needs to be a hook
+	  '(lambda () (define-key eshell-mode-map "\C-a" 'eshell-bol)))
+(add-to-list 'eshell-visual-commands "ssh")
+(add-to-list 'eshell-visual-commands "tail")
+(add-to-list 'eshell-command-completions-alist
+	     '("gunzip" "gz\\'"))
+(add-to-list 'eshell-command-completions-alist
+	     '("tar" "\\(\\.tar|\\.tgz\\|\\.tar\\.gz\\)\\'"))
+(add-to-list 'eshell-output-filter-functions 'eshell-handle-ansi-color)
+(autoload 'epe-theme-lambda "eshell-prompt-extras")
+(setq eshell-highlight-prompt nil
+      eshell-prompt-function 'epe-theme-lambda)
+
+(switch-dark)

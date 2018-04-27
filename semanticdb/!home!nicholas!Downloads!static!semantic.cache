@@ -1,0 +1,47 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file demonstrates a solution to the problem: a full plaintext recovery without using the
+private/ folder with the actual key data, using only data that any competitor would be able to
+access.\"\"\"" code nil nil [1 203])
+            ("math" include nil nil [206 217])
+            ("cryptography.hazmat.backends" include nil nil [219 275])
+            ("cryptography.hazmat.primitives" include nil nil [276 340])
+            ("cryptography.hazmat.primitives.asymmetric" include nil nil [341 398])
+            ("PUB_EXP" variable nil nil [400 415])
+            ("keys" variable nil nil [462 471])
+            ("for" code nil nil [472 643])
+            ("moduli" variable nil nil [644 693])
+            ("pairs" variable nil nil [781 791])
+            ("for" code nil nil [792 945])
+            ("assert" code nil nil [990 1014])
+            ("assert" code nil nil [1015 1092])
+            ("p_list" variable nil nil [1231 1271])
+            ("q_list" variable nil nil [1272 1312])
+            ("for" code nil nil [1314 1504])
+            ("xgcd" function (:arguments 
+              ( ("b" variable nil (reparse-symbol function_parameters) [1680 1681])
+                ("a" variable nil (reparse-symbol function_parameters) [1683 1684]))              ) nil [1671 1859])
+            ("mulinv" function (:arguments 
+              ( ("b" variable nil (reparse-symbol function_parameters) [1911 1912])
+                ("n" variable nil (reparse-symbol function_parameters) [1914 1915]))              ) nil [1900 1979])
+            ("gen_key" function (:arguments 
+              ( ("e" variable nil (reparse-symbol function_parameters) [2074 2075])
+                ("p" variable nil (reparse-symbol function_parameters) [2077 2078])
+                ("q" variable nil (reparse-symbol function_parameters) [2080 2081]))              ) nil [2062 2560])
+            ("keys" variable nil nil [2594 2657])
+            ("with" code nil nil [2701 3279])
+            ("print" code nil nil [3280 3320]))          
+      :file "solution.py"
+      :pointmax 3339
+      :fsize 3338
+      :lastmodtime '(23252 52486 681472 726000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Downloads!static!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

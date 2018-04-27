@@ -1,0 +1,54 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This class reads in a lot of text and finds words that are seen as similar to a given keyword.\"\"\"" code nil nil [1 101])
+            ("rake_nltk" include nil nil [102 128])
+            ("KeywordExtractor" type
+               (:members 
+                  ( ("__init__" function
+                       (:suite 
+                          ( ("pass" code nil (reparse-symbol indented_block_body) [187 191]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [172 176]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [159 192])
+                    ("get_name" function nil (reparse-symbol indented_block_body) [197 249])
+                    ("get_human_readable_name" function nil (reparse-symbol indented_block_body) [254 311])
+                    ("process" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [328 332])
+                            ("topicrawdata" variable nil (reparse-symbol function_parameters) [334 346]))                          )
+                        (reparse-symbol indented_block_body) [316 444])
+                    ("preprocess_string" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [471 475])
+                            ("string" variable nil (reparse-symbol function_parameters) [477 483]))                          
+                        :documentation "Removes punctuation, lowercases everything, etc.")
+                        (reparse-symbol indented_block_body) [449 720])
+                    ("process_string" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [744 748])
+                            ("string" variable nil (reparse-symbol function_parameters) [750 756]))                          )
+                        (reparse-symbol indented_block_body) [725 976]))                  
+                :type "class")
+                nil [131 976])
+            ("k" variable nil nil [979 1001])
+            ("text" variable nil nil [1002 16816])
+            ("print" code nil nil [16817 16869]))          
+      :file "keyword_extractor.py"
+      :pointmax 16870
+      :fsize 16896
+      :lastmodtime '(23037 64347 87309 390000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!hacknehs!backend!raq2!src!elements!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,45 @@
+
+;; base16-The-Pink-Cloud-Antibes-1916.jpg.el -- A base16 colorscheme
+
+;;; Commentary:
+;; Base16: (https://github.com/chriskempson/base16)
+
+;;; Authors:
+;; Author: Nicholas Miklaucic (nicholas-miklaucic@github.io)
+;; This code is computer-generated from an image.
+
+;;; Code:
+
+(require 'base16-theme)
+
+(defvar base16-The-Pink-Cloud-Antibes-1916.jpg-colors
+  '(:base00 "#ffffe8"
+    :base01 "#eae7c2"
+    :base02 "#bab89e"
+    :base03 "#8c8b7b"
+    :base04 "#606059"
+    :base05 "#38393a"
+    :base06 "#13151d"
+    :base07 "#000000"
+    :base08 "#8094ae"
+    :base09 "#8093b6"
+    :base0A "#848cde"
+    :base0B "#c28078"
+    :base0C "#e06e55"
+    :base0D "#ab8d47"
+    :base0E "#819870"
+    :base0F "#869684")
+  "All colors for Base16 The-Pink-Cloud-Antibes-1916.jpg are defined here.")
+
+;; Define the theme
+(deftheme base16-The-Pink-Cloud-Antibes-1916.jpg)
+
+;; Add all the faces to the theme
+(base16-theme-define 'base16-The-Pink-Cloud-Antibes-1916.jpg base16-The-Pink-Cloud-Antibes-1916.jpg-colors)
+
+;; Mark the theme as provided
+(provide-theme 'base16-The-Pink-Cloud-Antibes-1916.jpg)
+
+(provide 'base16-The-Pink-Cloud-Antibes-1916.jpg-theme)
+
+;;; base16-The-Pink-Cloud-Antibes-1916.jpg-theme.el ends here

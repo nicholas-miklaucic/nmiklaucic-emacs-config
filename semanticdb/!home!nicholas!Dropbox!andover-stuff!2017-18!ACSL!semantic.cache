@@ -1,0 +1,28 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"Solves ACSL Program #1: ACSL Ninety-Nine\"\"\"" code nil nil [124 170])
+            ("p1_cards" variable nil nil [172 185])
+            ("p2_cards" variable nil nil [186 199])
+            ("curr_game" variable nil nil [201 215])
+            ("curr_points" variable nil nil [216 231])
+            ("line1" variable nil nil [233 273])
+            ("p1_cards" variable nil nil [274 294])
+            ("p2_cards" variable nil nil [295 315])
+            ("cards_points" variable nil nil [317 349])
+            ("median_card" function (:arguments 
+              ( ("cards" variable nil (reparse-symbol function_parameters) [368 373]))              ) nil [352 471])
+            ("for" code nil nil [473 1690]))          
+      :file "round1.py"
+      :pointmax 1690
+      :fsize 1689
+      :lastmodtime '(23086 63019 514009 484000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!ACSL!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

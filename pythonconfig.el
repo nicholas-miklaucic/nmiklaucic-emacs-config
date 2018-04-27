@@ -1,9 +1,8 @@
 ;; Deals with Python
 (elpy-enable)
 (setq elpy-rpc-python-command "python3")
-(elpy-use-cpython)
-(setq python-shell-interpreter "python3")
-(setq python-shell-interpreter-interactive-arg "-i")
+(setq python-shell-interpreter "/home/nicholas/anaconda3/bin/ipython3"
+      python-shell-interpreter-args "-i --simple-prompt")
 
 ;; remove garbled color text
 (use-package ansi-color
@@ -18,8 +17,8 @@
 (add-hook 'compilation-mode-hook 'ansi-color-for-comint-mode-on)
 
 
-(require 'python-django)
-(global-set-key (kbd "C-x j") 'python-django-open-project)
+;; (require 'python-django)
+;; (global-set-key (kbd "C-x j") 'python-django-open-project)
 
 
 (add-to-list 'load-path "~/.emacs.d/lisp/anaconda-mode/anaconda-mode/")
@@ -27,16 +26,26 @@
 (add-hook 'python-mode-hook 'anaconda-mode)
 (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
 
-(setq gud-pdb-command-name "python3 -m pdb")
-(global-set-key (kbd "C-c d") 'realgud:pdb)
+(defun py-doc ()
+  (interactive)
+  (setq-local helm-dash-docsets '("Python 3" "Pandas" "NumPy")))
+
+(add-hook 'python-mode-hook 'py-doc)
 
 (require 'py-isort)
 (add-hook 'before-save-hook 'py-isort-before-save)
 
-(use-package ein
-  :bind (("C-c C-j C-n" . ein:notebooklist-new-notebook-with-name)
-	 ("C-c C-j C-o" . ein:notebooklist-open))
-  )
+;; (use-package ein
+;;   :bind (("C-c C-j C-n" . ein:notebooklist-new-notebook-with-name)
+;; 	 ("C-c C-j C-o" . ein:notebooklist-open))
+;;   :config
+;;   (require 'ein-loaddefs)
+;;   (require 'ein-notebook)
+;;   (require 'ein-subpackages)
+;;   (setq ein:use-auto-complete-superpack t)
+;;   (setq ein:jupyter-default-server-command "~/anaconda3/bin/jupyter")
+;;   (setq ein:jupyter-default-notebook-directory "~")
+;;   )
  
 (defun profile-current-python-file ()
   (interactive)

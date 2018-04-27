@@ -1,0 +1,25 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file implements the population balance measure of compactness for given district plan,
+region, and population function.\"\"\"" code nil nil [1 131])
+            ("pop_unbalance" function
+               (:documentation "Computes the sum of squared distances to the population barycenter for each person in the
+    region listed in the iterable points and the population density function pop_func."
+                :arguments 
+                  ( ("pop_func" variable nil (reparse-symbol function_parameters) [151 159])
+                    ("points" variable nil (reparse-symbol function_parameters) [161 167]))                  )
+                nil [133 357]))          
+      :file "pop_balance.py"
+      :pointmax 361
+      :fsize 356
+      :lastmodtime '(23234 42981 282285 768000)
+      :unmatched-syntax '((NAME 357 . 362) ($EOI 362 . 362))))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!Spring Term!MTH630!population-balance!code!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

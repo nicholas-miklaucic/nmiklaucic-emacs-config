@@ -1,0 +1,16 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "curve.json"
+      :pointmax 490
+      :fsize 489
+      :lastmodtime '(23246 57443 168543 43000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!PACTF!problems!the-lottery-part-three!lottery-three!target!debug!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

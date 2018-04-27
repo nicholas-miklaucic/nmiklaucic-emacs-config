@@ -1,0 +1,43 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("pdb" include nil nil [18 28])
+            ("sys" include nil nil [29 39])
+            ("HEAD" code nil nil [48 52])
+            ("HEAD" code nil nil [61 65])
+            ("django.shortcuts" include nil nil [67 102])
+            ("sys" code nil nil [104 137])
+            ("sys" code nil nil [176 209])
+            ("manager" include nil nil [210 237])
+            ("pdb" include nil nil [238 248])
+            ("sessions" variable nil nil [272 285])
+            ("create_or_get_graph" function (:arguments 
+              ( ("id_" variable nil (reparse-symbol function_parameters) [311 314]))              ) nil [287 426])
+            ("sessions" variable nil nil [427 440])
+            ("create_or_get_graph" function (:arguments 
+              ( ("id_" variable nil (reparse-symbol function_parameters) [466 469]))              ) nil [442 581])
+            ("Landing" function (:arguments 
+              ( ("request" variable nil (reparse-symbol function_parameters) [620 627]))              ) nil [608 677])
+            ("HEAD" code nil nil [730 734])
+            ("HEAD" code nil nil [743 747]))          
+      :file "views.py"
+      :pointmax 1096
+      :fsize 527
+      :lastmodtime '(23038 6542 60469 380000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "urls.py"
+      :pointmax 204
+      :fsize 203
+      :lastmodtime '(23038 6542 60469 380000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!programs!hacknehs!frontend!RAQ_Visualization!RAQ!MainSite!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

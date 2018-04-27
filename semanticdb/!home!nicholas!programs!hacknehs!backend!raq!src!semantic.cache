@@ -1,0 +1,21 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file allows for the processing of sentiment data (positive-negative connotation) from
+arbitrary string input data, returning a connotation value from -1 (very negative) to 1 (very
+positive).
+
+\"\"\"" code nil nil [1 204]))          
+      :file "sentiment_analysis.py"
+      :pointmax 230
+      :fsize 229
+      :lastmodtime '(23037 58850 763649 241000)
+      :unmatched-syntax '((DEF 207 . 210) ($EOI 211 . 211) ($EOI 99 . 99))))
+  :file "!home!nicholas!programs!hacknehs!backend!raq!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

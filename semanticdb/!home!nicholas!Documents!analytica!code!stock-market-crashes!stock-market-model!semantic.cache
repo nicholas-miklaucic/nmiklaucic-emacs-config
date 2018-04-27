@@ -1,0 +1,19 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"A model of the JLS market.\"\"\"" code nil nil [1 33])
+            ("numpy" include nil nil [35 53]))          
+      :file "model.py"
+      :pointmax 57
+      :fsize 33
+      :lastmodtime '(23201 55685 924238 93000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Documents!analytica!code!stock-market-crashes!stock-market-model!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

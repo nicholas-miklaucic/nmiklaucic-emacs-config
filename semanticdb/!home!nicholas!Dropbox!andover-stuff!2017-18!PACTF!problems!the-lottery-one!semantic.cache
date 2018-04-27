@@ -1,0 +1,60 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file breaks the Java RNG as a cryptographically-secure one, by showing how to derive the
+state from three inputs!
+
+Java's RNG is a linear congruential RNG using a multiplier m and increment i, whose specific values
+I omit here. Java simply computes mx + i mod 2 ^ 48, sets that as the state, and then uses the first
+32 bits for the output. (Note that the last couple digits really suck in terms of randomness, and
+the last one simply alternates, so truncating is a good idea!) Reverse-engineering is trivial given
+a single full input, because that's the whole state of the RNG!
+
+With some bits hidden, it becomes different: one has to brute force the ending bits. There are 65536
+possible states for the first one, which uniquely determines the second number without needing to
+know its state: there are 65536 ^ 2 possible second numbers, so there is unlikely to be major
+overlap. Assuming the R in RNG really is right, which is just approximation, there's a roughly 1 /
+65536 chance of this, and that multiplies for each subsequent number.
+\"\"\"" code nil nil [1 1053])
+            ("java_rng" include nil nil [1055 1090])
+            ("find_vals" function
+               (:documentation "Returns (m, i) for the LCRNG."
+                :arguments 
+                  ( ("rng" variable nil (reparse-symbol function_parameters) [1236 1239]))                  )
+                nil [1222 1424])
+            ("rng" variable nil nil [1425 1440])
+            ("print" code nil nil [1441 1462])
+            ("reverse_engineer_rng" function
+               (:documentation "Given numbers from an RNG, returns a list of possible RNGs that produce possible
+    continuations. Nums must have at least 2 elements."
+                :arguments 
+                  ( ("nums" variable nil (reparse-symbol function_parameters) [1550 1554]))                  )
+                nil [1525 3188]))          
+      :file "java_rng_cracker.py"
+      :pointmax 3631
+      :fsize 3630
+      :lastmodtime '(23248 7683 830311 595000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :file "java_rng.py"
+      :fsize 2573
+      :lastmodtime '(23201 53964 339436 849000))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("grade" function (:arguments 
+              ( ("key" variable nil (reparse-symbol function_parameters) [11 14])
+                ("submission" variable nil (reparse-symbol function_parameters) [16 26]))              ) nil [1 241]))          
+      :file "grader.py"
+      :pointmax 241
+      :fsize 240
+      :lastmodtime '(23248 7801 797993 808000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!PACTF!problems!the-lottery-one!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

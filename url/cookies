@@ -1,0 +1,15 @@
+;; Emacs-W3 HTTP cookies file
+;; Automatically generated file!!! DO NOT EDIT!!!
+
+(setq url-cookie-storage
+ '((".bower.io"
+  [url-cookie "__cfduid" "d6745faf0a437323937b4049275e556bc1511310515" "22 Nov 18 00:28:35 [GMT]" "/" ".bower.io" nil]
+  [url-cookie "HttpOnly" nil "22 Nov 18 00:28:35 [GMT]" "/" ".bower.io" nil]))
+)
+(setq url-cookie-secure-storage
+ 'nil)
+
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; End:

@@ -1,0 +1,114 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file creates a problem case for a problem that utilizes Euclid's algorithm to \"crack\" RSA
+when the keys are poorly chosen. It generates a given amount of RSA keys, such that each one
+individually is secure but if you take the GCD of all of the moduli you are able to solve it: that
+is, each private key's has one of its factors appear in another key. The end \"problem\" is decrypting
+a nested encryption using all of the keys!
+
+Note: at least for now, you can only use an even number of keys to make life easier.
+
+Second note: this can take a while! Generation of keys can be hard, especially with 4096-bit RSA.\"\"\"" code nil nil [1 622])
+            ("math" include nil nil [624 635])
+            ("random" include nil nil [636 662])
+            ("cryptography.hazmat.backends" include nil nil [726 782])
+            ("cryptography.hazmat.primitives" include nil nil [783 847])
+            ("cryptography.hazmat.primitives.asymmetric" include nil nil [848 905])
+            ("tqdm" include nil nil [926 947])
+            ("N_KEYS" variable nil nil [1219 1230])
+            ("KEYSIZE" variable nil nil [1334 1348])
+            ("PUB_EXPONENT" variable nil nil [1661 1681])
+            ("\"t00 many c00ks sp0il the br0th\"" code nil nil [1802 1834])
+            ("assert" code nil nil [1984 2007])
+            ("NUM_SHARED" code nil nil [2009 2033])
+            ("NUM_UNIQUE" variable nil nil [2071 2090])
+            ("gen_prime_pair" function
+               (:documentation "Generates a key and, as a corollary, a random prime pair (p, q) such that pq = n where n has the
+    given amount of bits, or close, as a tuple (key, (p, q)).
+    "
+                :arguments 
+                  ( ("keysize" variable nil (reparse-symbol function_parameters) [2407 2414]))                  )
+                nil [2388 2842])
+            ("SHARED_PRIMES" variable nil nil [3116 3134])
+            ("UNIQUE_PRIMES_A" variable nil nil [3135 3155])
+            ("UNIQUE_PRIMES_B" variable nil nil [3156 3176])
+            ("KEYS" variable nil nil [3177 3186])
+            ("for" code nil nil [3188 3355])
+            ("for" code nil nil [3356 3853])
+            ("xgcd" function (:arguments 
+              ( ("b" variable nil (reparse-symbol function_parameters) [4028 4029])
+                ("a" variable nil (reparse-symbol function_parameters) [4031 4032]))              ) nil [4019 4207])
+            ("mulinv" function (:arguments 
+              ( ("b" variable nil (reparse-symbol function_parameters) [4259 4260])
+                ("n" variable nil (reparse-symbol function_parameters) [4262 4263]))              ) nil [4248 4327])
+            ("for" code nil nil [4487 5136])
+            ("shuffle" code nil nil [5339 5352])
+            ("for" code nil nil [5514 6073])
+            ("ciphertext" variable nil nil [6159 6176])
+            ("for" code nil nil [6178 6621])
+            ("with" code nil nil [6627 6691])
+            ("print" code nil nil [6692 6710]))          
+      :file "problem_creator.py"
+      :pointmax 6711
+      :fsize 6710
+      :lastmodtime '(23199 4553 179385 17000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file demonstrates a solution to the problem: a full plaintext recovery without using the
+private/ folder with the actual key data, using only data that any competitor would be able to
+access.\"\"\"" code nil nil [1 203])
+            ("math" include nil nil [206 217])
+            ("cryptography.hazmat.backends" include nil nil [219 275])
+            ("cryptography.hazmat.primitives" include nil nil [276 340])
+            ("cryptography.hazmat.primitives.asymmetric" include nil nil [341 398])
+            ("PUB_EXP" variable nil nil [400 415])
+            ("keys" variable nil nil [462 471])
+            ("for" code nil nil [472 638])
+            ("moduli" variable nil nil [639 688])
+            ("pairs" variable nil nil [776 786])
+            ("for" code nil nil [787 940])
+            ("assert" code nil nil [985 1009])
+            ("assert" code nil nil [1010 1087])
+            ("p_list" variable nil nil [1226 1266])
+            ("q_list" variable nil nil [1267 1307])
+            ("for" code nil nil [1309 1499])
+            ("xgcd" function (:arguments 
+              ( ("b" variable nil (reparse-symbol function_parameters) [1675 1676])
+                ("a" variable nil (reparse-symbol function_parameters) [1678 1679]))              ) nil [1666 1854])
+            ("mulinv" function (:arguments 
+              ( ("b" variable nil (reparse-symbol function_parameters) [1906 1907])
+                ("n" variable nil (reparse-symbol function_parameters) [1909 1910]))              ) nil [1895 1974])
+            ("gen_key" function (:arguments 
+              ( ("e" variable nil (reparse-symbol function_parameters) [2069 2070])
+                ("p" variable nil (reparse-symbol function_parameters) [2072 2073])
+                ("q" variable nil (reparse-symbol function_parameters) [2075 2076]))              ) nil [2057 2555])
+            ("keys" variable nil nil [2589 2652])
+            ("with" code nil nil [2696 3268])
+            ("print" code nil nil [3269 3309]))          
+      :file "solution.py"
+      :pointmax 3328
+      :fsize 3327
+      :lastmodtime '(23199 8276 785450 717000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("grade" function (:arguments 
+              ( ("key" variable nil (reparse-symbol function_parameters) [11 14])
+                ("submission" variable nil (reparse-symbol function_parameters) [16 26]))              ) nil [1 219]))          
+      :file "grader.py"
+      :pointmax 219
+      :fsize 218
+      :lastmodtime '(23200 9364 366671 803000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!PACTF!problems!rsa-gcd!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,167 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"Implements a basic binary tree: a tree where each node can have two children.\"\"\"" code nil nil [1 84])
+            ("Tree" type
+               (:members 
+                  ( ("Node" type
+                       (:members 
+                          ( ("__init__" function
+                               (:suite 
+                                  ( ("self" variable nil (reparse-symbol indented_block_body) [195 211])
+                                    ("self" variable nil (reparse-symbol indented_block_body) [224 242])
+                                    ("self" variable nil (reparse-symbol indented_block_body) [255 277]))                                  
+                                :parent "dummy"
+                                :arguments 
+                                  ( ("self" variable nil (reparse-symbol function_parameters) [135 139])
+                                    ("content" variable nil (reparse-symbol function_parameters) [141 148])
+                                    ("left" variable nil (reparse-symbol function_parameters) [155 159])
+                                    ("right" variable nil (reparse-symbol function_parameters) [168 173]))                                  
+                                :constructor-flag t)
+                                (reparse-symbol indented_block_body) [122 278])
+                            ("add_Content" function
+                               (:parent "dummy"
+                                :arguments 
+                                  ( ("self" variable nil (reparse-symbol function_parameters) [303 307])
+                                    ("content" variable nil (reparse-symbol function_parameters) [309 316]))                                  )
+                                (reparse-symbol indented_block_body) [287 354])
+                            ("add_left" function
+                               (:parent "dummy"
+                                :arguments 
+                                  ( ("self" variable nil (reparse-symbol function_parameters) [376 380])
+                                    ("node" variable nil (reparse-symbol function_parameters) [382 386]))                                  )
+                                (reparse-symbol indented_block_body) [363 571])
+                            ("add_right" function
+                               (:parent "dummy"
+                                :arguments 
+                                  ( ("self" variable nil (reparse-symbol function_parameters) [594 598])
+                                    ("node" variable nil (reparse-symbol function_parameters) [600 604]))                                  )
+                                (reparse-symbol indented_block_body) [580 793])
+                            ("remove_Node" function
+                               (:parent "dummy"
+                                :arguments 
+                                  ( ("self" variable nil (reparse-symbol function_parameters) [927 931])
+                                    ("node" variable nil (reparse-symbol function_parameters) [933 937]))                                  )
+                                (reparse-symbol indented_block_body) [911 1361])
+                            ("contains_Depth" function
+                               (:parent "dummy"
+                                :arguments 
+                                  ( ("self" variable nil (reparse-symbol function_parameters) [1388 1392])
+                                    ("node" variable nil (reparse-symbol function_parameters) [1394 1398]))                                  )
+                                (reparse-symbol indented_block_body) [1369 1738])
+                            ("contains_Breadth" function
+                               (:parent "dummy"
+                                :arguments 
+                                  ( ("self" variable nil (reparse-symbol function_parameters) [1768 1772])
+                                    ("node" variable nil (reparse-symbol function_parameters) [1774 1778]))                                  )
+                                (reparse-symbol indented_block_body) [1747 2226])
+                            ("height" function
+                               (:parent "dummy"
+                                :arguments 
+                                  ( ("self" variable nil (reparse-symbol function_parameters) [2246 2250]))                                  )
+                                (reparse-symbol indented_block_body) [2235 2422]))                          
+                        :type "class")
+                        (reparse-symbol indented_block_body) [102 2422])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" variable nil (reparse-symbol indented_block_body) [2468 2484]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2440 2444])
+                            ("root" variable nil (reparse-symbol function_parameters) [2446 2450]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [2427 2485])
+                    ("add_Root" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2503 2507])
+                            ("node" variable nil (reparse-symbol function_parameters) [2509 2513]))                          )
+                        (reparse-symbol indented_block_body) [2490 2721])
+                    ("add_Node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2739 2743])
+                            ("node" variable nil (reparse-symbol function_parameters) [2745 2749]))                          )
+                        (reparse-symbol indented_block_body) [2726 3080])
+                    ("remove_Node" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3101 3105])
+                            ("node" variable nil (reparse-symbol function_parameters) [3107 3111]))                          )
+                        (reparse-symbol indented_block_body) [3085 3163])
+                    ("contains_Depth" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3187 3191])
+                            ("node" variable nil (reparse-symbol function_parameters) [3193 3197]))                          )
+                        (reparse-symbol indented_block_body) [3168 3501])
+                    ("print_Tree_Depth" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3526 3530]))                          )
+                        (reparse-symbol indented_block_body) [3505 3743])
+                    ("print_Tree_Breadth" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3821 3825]))                          )
+                        (reparse-symbol indented_block_body) [3798 4079])
+                    ("contains_Breadth" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4155 4159])
+                            ("node" variable nil (reparse-symbol function_parameters) [4161 4165]))                          )
+                        (reparse-symbol indented_block_body) [4134 4565])
+                    ("print_Tree_Depth" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4591 4595]))                          )
+                        (reparse-symbol indented_block_body) [4570 4803])
+                    ("print_Tree_Breadth" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4831 4835]))                          )
+                        (reparse-symbol indented_block_body) [4808 5109]))                  
+                :type "class")
+                nil [86 5109]))          
+      :file "binarytree.py"
+      :pointmax 5109
+      :fsize 5263
+      :lastmodtime '(23169 55816 383211 111000)
+      :unmatched-syntax '((INDENT_BLOCK 3233 . 3338) (IF 3208 . 3210) (NEWLINE 3232 . 3233) (INDENT_BLOCK 3006 . 3059) (IF 2784 . 2786) (IF 2894 . 2896) (NEWLINE 3005 . 3006) (INDENT_BLOCK 1438 . 1555) (IF 1413 . 1415) (NEWLINE 1437 . 1438) (INDENT_BLOCK 3233 . 3338) (IF 3208 . 3210) (NEWLINE 3232 . 3233) (INDENT_BLOCK 3006 . 3059) (IF 2784 . 2786) (IF 2894 . 2896) (NEWLINE 3005 . 3006) (INDENT_BLOCK 1438 . 1555) (IF 1413 . 1415) (NEWLINE 1437 . 1438) (INDENT_BLOCK 3148 . 3253) (IF 3123 . 3125) (NEWLINE 3147 . 3148) (INDENT_BLOCK 2921 . 2974) (IF 2699 . 2701) (IF 2809 . 2811) (NEWLINE 2920 . 2921) (INDENT_BLOCK 1353 . 1470) (IF 1328 . 1330) (NEWLINE 1352 . 1353)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("binarytree" include nil nil [1 28])
+            ("nary_Node" type
+               (:superclasses ("Node")
+                :type "class")
+                nil [63 113]))          
+      :file "narytree.py"
+      :pointmax 135
+      :fsize 141
+      :lastmodtime '(23169 55794 348107 268000)
+      :unmatched-syntax '(($EOI 136 . 136)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "binarysearchtree.py"
+      :pointmax 1064
+      :fsize 1098
+      :lastmodtime '(23169 55863 558433 510000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "avltree.py"
+      :pointmax 1265
+      :fsize 1300
+      :lastmodtime '(23169 55926 937732 423000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!Winter Term!CSC630!pystructures!src!pyobjects!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

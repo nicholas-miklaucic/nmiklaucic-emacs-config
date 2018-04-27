@@ -1,0 +1,16 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "main.ng_meta.json"
+      :pointmax 1435
+      :fsize 1434
+      :lastmodtime '(23014 25125)
+      :unmatched-syntax nil))
+  :file "!sudo:root@nicholas-dell-XPS-13-9360:!usr!share!lightdm-webkit!themes!litarvan!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

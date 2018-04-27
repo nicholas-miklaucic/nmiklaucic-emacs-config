@@ -1,0 +1,535 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+This file provides convenience functions that allow for easily plotting datasets, curve fits of
+datasets, and other stuff.
+\"\"\"" code nil nil [1 131])
+            ("matplotlib.pyplot" include nil nil [133 164])
+            ("numpy" include nil nil [165 183])
+            ("plot_time_series" function
+               (:documentation "Given a DataFrame of a time series, plots it going forward as a line graph. If take_log is
+    True, plots the natural logarithm instead of the series itself."
+                :arguments 
+                  ( ("df" variable nil (reparse-symbol function_parameters) [207 209]))                  )
+                nil [186 483])
+            ("plot_time_series_and_function" function
+               (:documentation "Given a DataFrame of a time series and a function that acts on a numerical index of that
+    DataFrame (from 0 to the length of the DataFrame minus 1), plots both curves."
+                :arguments 
+                  ( ("func" variable nil (reparse-symbol function_parameters) [519 523])
+                    ("df" variable nil (reparse-symbol function_parameters) [525 527]))                  )
+                nil [485 895])
+            ("plot_residuals" function
+               (:documentation "Given a time series and a function that acts on a numerical index of that time series, as
+    above, plots the residuals and returns them as a new DataFrame."
+                :arguments 
+                  ( ("func" variable nil (reparse-symbol function_parameters) [916 920])
+                    ("df" variable nil (reparse-symbol function_parameters) [922 924]))                  )
+                nil [897 1313]))          
+      :file "plotting.py"
+      :pointmax 1313
+      :fsize 1312
+      :lastmodtime '(23080 15776 414496 114000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "test_predictive_power.py~"
+      :pointmax 137
+      :fsize 136
+      :lastmodtime '(23051 3865 603113 461000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+This file wraps calls to download and cache various data sources relating to market crashes.
+\"\"\"" code nil nil [1 101])
+            ("configparser" include nil nil [102 121])
+            ("datetime" include nil nil [122 162])
+            ("io" include nil nil [163 186])
+            ("pathlib" include nil nil [187 211])
+            ("numpy" include nil nil [213 231])
+            ("pandas" include nil nil [232 251])
+            ("quandl" include nil nil [252 265])
+            ("requests" include nil nil [266 281])
+            ("ALPHA_VANTAGE_TEMPLATE" variable nil nil [283 438])
+            ("BTC_DATA_FILE" variable nil nil [440 475])
+            ("BTC_DATA_TIMESTAMP_FILE" variable nil nil [476 533])
+            ("DJIA_DATA_FILE" variable nil nil [534 567])
+            ("DJIA_DATA_TIMESTAMP_FILE" variable nil nil [568 623])
+            ("RHOD_DATA_FILE" variable nil nil [624 657])
+            ("RHOD_DATA_TIMESTAMP_FILE" variable nil nil [658 713])
+            ("download_alpha_vantage_data" function
+               (:documentation "Takes in arguments for an API call to Alpha Vantage and returns a Pandas DataFrame time
+    series with the required data, or throws an error."
+                :arguments 
+                  ( ("function" variable nil (reparse-symbol function_parameters) [748 756])
+                    ("symbol" variable nil (reparse-symbol function_parameters) [763 769])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [776 784]))                  )
+                nil [716 1511])
+            ("get_cache_data" function
+               (:documentation "Returns a Pandas DataFrame containing whatever data the input function returns for as long back
+    as can be done. Gets data from the Internet and the data to a file force_reload is True or it's
+    been more than a day since the function was called (unless force_cache is True), and otherwise
+    reads it in from the file.  cache_file and timestamp_file are names to use for caching and
+    timestamping.
+    "
+                :arguments 
+                  ( ("getter_func" variable nil (reparse-symbol function_parameters) [1532 1543])
+                    ("cache_file" variable nil (reparse-symbol function_parameters) [1545 1555])
+                    ("timestamp_filepath" variable nil (reparse-symbol function_parameters) [1557 1575])
+                    ("force_reload" variable nil (reparse-symbol function_parameters) [1577 1589])
+                    ("force_cache" variable nil (reparse-symbol function_parameters) [1616 1627]))                  )
+                nil [1513 3102])
+            ("btc_getter" function (:documentation "Gets BTC/USD trading prices for as long as can be done.") nil [3104 3329])
+            ("djia_getter" function (:documentation "Gets the full Dow Jones Industrial Average index.") nil [3331 3576])
+            ("rhod_getter" function (:documentation "Gets rhodium trading prices for as long as can be done.") nil [3578 3831]))          
+      :file "get_stock_data.py~"
+      :pointmax 4225
+      :fsize 4218
+      :lastmodtime '(23075 15597 580826 478000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+This file provides functions for the log-periodic power law function that the JLS model uses, along
+with a symbolic gradient for use in curve-fitting and nonlinear optimization.
+\"\"\"" code nil nil [1 186])
+            ("numpy" include nil nil [187 205])
+            ("lppl_func_from_params" function
+               (:documentation "Given parameters, outputs a numpy vectorized function that computes the log-periodic power
+    law. Note that putting in t_c to this function will return NaN!"
+                :arguments 
+                  ( ("log_p_c" variable nil (reparse-symbol function_parameters) [234 241])
+                    ("b_0" variable nil (reparse-symbol function_parameters) [243 246])
+                    ("b_1" variable nil (reparse-symbol function_parameters) [248 251])
+                    ("kappa" variable nil (reparse-symbol function_parameters) [253 258])
+                    ("beta" variable nil (reparse-symbol function_parameters) [260 264])
+                    ("omega" variable nil (reparse-symbol function_parameters) [266 271])
+                    ("phi" variable nil (reparse-symbol function_parameters) [273 276])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [278 281]))                  )
+                nil [208 836])
+            ("transformed_lppl_from_params" function
+               (:documentation "Returns a numpy vectorized function for the transformed version of the LPPL."
+                :arguments 
+                  ( ("A" variable nil (reparse-symbol function_parameters) [871 872])
+                    ("B" variable nil (reparse-symbol function_parameters) [874 875])
+                    ("C_1" variable nil (reparse-symbol function_parameters) [877 880])
+                    ("C_2" variable nil (reparse-symbol function_parameters) [882 885])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [887 890])
+                    ("m" variable nil (reparse-symbol function_parameters) [892 893])
+                    ("w" variable nil (reparse-symbol function_parameters) [895 896]))                  )
+                nil [838 1664])
+            ("lppl" function
+               (:documentation "Just calculates the LPPL for the given parameters."
+                :arguments 
+                  ( ("t" variable nil (reparse-symbol function_parameters) [1675 1676])
+                    ("log_p_c" variable nil (reparse-symbol function_parameters) [1678 1685])
+                    ("b_0" variable nil (reparse-symbol function_parameters) [1687 1690])
+                    ("b_1" variable nil (reparse-symbol function_parameters) [1692 1695])
+                    ("kappa" variable nil (reparse-symbol function_parameters) [1697 1702])
+                    ("beta" variable nil (reparse-symbol function_parameters) [1704 1708])
+                    ("omega" variable nil (reparse-symbol function_parameters) [1710 1715])
+                    ("phi" variable nil (reparse-symbol function_parameters) [1717 1720])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [1722 1725]))                  )
+                nil [1666 1874])
+            ("transformed_lppl" function
+               (:documentation "Calculates the LPPL for the given parameters, using a slightly different transformed version
+    of the LPPL."
+                :arguments 
+                  ( ("t" variable nil (reparse-symbol function_parameters) [1897 1898])
+                    ("A" variable nil (reparse-symbol function_parameters) [1900 1901])
+                    ("B" variable nil (reparse-symbol function_parameters) [1903 1904])
+                    ("C_1" variable nil (reparse-symbol function_parameters) [1906 1909])
+                    ("C_2" variable nil (reparse-symbol function_parameters) [1911 1914])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [1916 1919])
+                    ("m" variable nil (reparse-symbol function_parameters) [1921 1922])
+                    ("w" variable nil (reparse-symbol function_parameters) [1924 1925]))                  )
+                nil [1876 2118]))          
+      :file "lppl_func.py~"
+      :pointmax 2118
+      :fsize 2117
+      :lastmodtime '(23075 15615 570541 275000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "plot_objective_func.py~"
+      :pointmax 406
+      :fsize 405
+      :lastmodtime '(23075 15633 930315 666000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file uses a combination of grid search and standard gradient-based algorithms to try and
+find global minima of functions that display highly complex nonlinear behavior.\"\"\"" code nil nil [1 180])
+            ("scipy.optimize" include nil nil [183 225])
+            ("fit_lppl_fancy" include nil nil [227 284])
+            ("get_stock_data" include nil nil [285 315])
+            ("data" variable nil nil [317 334])
+            ("custom_minimize" function
+               (:documentation "Minimizes the given function of the form f(x, args) where x is a 1-D array containing all the
+    variables and args are given. Ns is how many cases to subdivide each part of the range into, and
+    the ranges are given as (low, high) pairs. Kwargs get passed to scipy.optimize.brute."
+                :arguments 
+                  ( ("func" variable nil (reparse-symbol function_parameters) [357 361])
+                    ("ranges" variable nil (reparse-symbol function_parameters) [363 369])
+                    ("args" variable nil (reparse-symbol function_parameters) [371 375])
+                    ("Ns" variable nil (reparse-symbol function_parameters) [377 379])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [384 392]))                  )
+                nil [337 921])
+            ("ranges" variable nil nil [923 965])
+            ("res" variable nil nil [966 1020]))          
+      :file "custom_minimize.py~"
+      :pointmax 1021
+      :fsize 812
+      :lastmodtime '(23075 16440 539956 385000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+This file provides functions for the log-periodic power law function that the JLS model uses, along
+with a symbolic gradient for use in curve-fitting and nonlinear optimization.
+\"\"\"" code nil nil [1 186])
+            ("numpy" include nil nil [187 205])
+            ("lppl_func_from_params" function
+               (:documentation "Given parameters, outputs a numpy vectorized function that computes the log-periodic power
+    law. Note that putting in t_c to this function will return NaN!"
+                :arguments 
+                  ( ("log_p_c" variable nil (reparse-symbol function_parameters) [234 241])
+                    ("b_0" variable nil (reparse-symbol function_parameters) [243 246])
+                    ("b_1" variable nil (reparse-symbol function_parameters) [248 251])
+                    ("kappa" variable nil (reparse-symbol function_parameters) [253 258])
+                    ("beta" variable nil (reparse-symbol function_parameters) [260 264])
+                    ("omega" variable nil (reparse-symbol function_parameters) [266 271])
+                    ("phi" variable nil (reparse-symbol function_parameters) [273 276])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [278 281]))                  )
+                nil [208 836])
+            ("transformed_lppl_from_params" function
+               (:documentation "Returns a numpy vectorized function for the transformed version of the LPPL."
+                :arguments 
+                  ( ("A" variable nil (reparse-symbol function_parameters) [871 872])
+                    ("B" variable nil (reparse-symbol function_parameters) [874 875])
+                    ("C_1" variable nil (reparse-symbol function_parameters) [877 880])
+                    ("C_2" variable nil (reparse-symbol function_parameters) [882 885])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [887 890])
+                    ("m" variable nil (reparse-symbol function_parameters) [892 893])
+                    ("w" variable nil (reparse-symbol function_parameters) [895 896]))                  )
+                nil [838 1664])
+            ("lppl" function
+               (:documentation "Just calculates the LPPL for the given parameters."
+                :arguments 
+                  ( ("t" variable nil (reparse-symbol function_parameters) [1675 1676])
+                    ("log_p_c" variable nil (reparse-symbol function_parameters) [1678 1685])
+                    ("b_0" variable nil (reparse-symbol function_parameters) [1687 1690])
+                    ("b_1" variable nil (reparse-symbol function_parameters) [1692 1695])
+                    ("kappa" variable nil (reparse-symbol function_parameters) [1697 1702])
+                    ("beta" variable nil (reparse-symbol function_parameters) [1704 1708])
+                    ("omega" variable nil (reparse-symbol function_parameters) [1710 1715])
+                    ("phi" variable nil (reparse-symbol function_parameters) [1717 1720])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [1722 1725]))                  )
+                nil [1666 1874])
+            ("transformed_lppl" function
+               (:documentation "Calculates the LPPL for the given parameters, using a slightly different transformed version
+    of the LPPL."
+                :arguments 
+                  ( ("t" variable nil (reparse-symbol function_parameters) [1897 1898])
+                    ("A" variable nil (reparse-symbol function_parameters) [1900 1901])
+                    ("B" variable nil (reparse-symbol function_parameters) [1903 1904])
+                    ("C_1" variable nil (reparse-symbol function_parameters) [1906 1909])
+                    ("C_2" variable nil (reparse-symbol function_parameters) [1911 1914])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [1916 1919])
+                    ("m" variable nil (reparse-symbol function_parameters) [1921 1922])
+                    ("w" variable nil (reparse-symbol function_parameters) [1924 1925]))                  )
+                nil [1876 2118]))          
+      :file "lppl_func.py"
+      :pointmax 2119
+      :fsize 2117
+      :lastmodtime '(23080 54035 773484 965000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file uses a combination of grid search and standard gradient-based algorithms to try and
+find global minima of functions that display highly complex nonlinear behavior.\"\"\"" code nil nil [1 180])
+            ("scipy.optimize" include nil nil [183 249])
+            ("custom_minimize" function
+               (:documentation "Minimizes the given function of the form f(x, args) where x is a 1-D array containing all the
+    variables and args are given. Ns is how many cases to subdivide each part of the range into, and
+    the ranges are given as (low, high) pairs. Kwargs get passed to scipy.optimize.brute."
+                :arguments 
+                  ( ("func" variable nil (reparse-symbol function_parameters) [272 276])
+                    ("ranges" variable nil (reparse-symbol function_parameters) [278 284])
+                    ("args" variable nil (reparse-symbol function_parameters) [286 290])
+                    ("Ns" variable nil (reparse-symbol function_parameters) [292 294])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [299 307]))                  )
+                nil [252 837])
+            ("custom_diff_evolution" function
+               (:documentation "Minimizes the function as above, but now with a slightly different method. Returns an
+     OptimizeResult object. Args and kwargs passed to scipy.optimize.differential_evolution.
+    "
+                :arguments 
+                  ( ("func" variable nil (reparse-symbol function_parameters) [865 869])
+                    ("ranges" variable nil (reparse-symbol function_parameters) [871 877])
+                    ("args" variable nil (reparse-symbol function_parameters) [879 883])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [888 896]))                  )
+                nil [839 1157]))          
+      :file "custom_minimize.py"
+      :pointmax 1157
+      :fsize 1156
+      :lastmodtime '(23080 46707 951235 609000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+This file wraps calls to download and cache various data sources relating to market crashes.
+\"\"\"" code nil nil [1 101])
+            ("configparser" include nil nil [102 121])
+            ("datetime" include nil nil [122 162])
+            ("io" include nil nil [163 186])
+            ("pathlib" include nil nil [187 211])
+            ("numpy" include nil nil [213 231])
+            ("pandas" include nil nil [232 251])
+            ("quandl" include nil nil [252 265])
+            ("requests" include nil nil [266 281])
+            ("ALPHA_VANTAGE_TEMPLATE" variable nil nil [283 438])
+            ("BTC_DATA_FILE" variable nil nil [440 475])
+            ("BTC_DATA_TIMESTAMP_FILE" variable nil nil [476 533])
+            ("DJIA_DATA_FILE" variable nil nil [534 567])
+            ("DJIA_DATA_TIMESTAMP_FILE" variable nil nil [568 623])
+            ("RHOD_DATA_FILE" variable nil nil [624 657])
+            ("RHOD_DATA_TIMESTAMP_FILE" variable nil nil [658 713])
+            ("download_alpha_vantage_data" function
+               (:documentation "Takes in arguments for an API call to Alpha Vantage and returns a Pandas DataFrame time
+    series with the required data, or throws an error."
+                :arguments 
+                  ( ("function" variable nil (reparse-symbol function_parameters) [748 756])
+                    ("symbol" variable nil (reparse-symbol function_parameters) [763 769])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [776 784]))                  )
+                nil [716 1511])
+            ("get_cache_data" function
+               (:documentation "Returns a Pandas DataFrame containing whatever data the input function returns for as long back
+    as can be done. Gets data from the Internet and the data to a file force_reload is True or it's
+    been more than a day since the function was called (unless force_cache is True), and otherwise
+    reads it in from the file.  cache_file and timestamp_file are names to use for caching and
+    timestamping.
+    "
+                :arguments 
+                  ( ("getter_func" variable nil (reparse-symbol function_parameters) [1532 1543])
+                    ("cache_file" variable nil (reparse-symbol function_parameters) [1545 1555])
+                    ("timestamp_filepath" variable nil (reparse-symbol function_parameters) [1557 1575])
+                    ("force_reload" variable nil (reparse-symbol function_parameters) [1577 1589])
+                    ("force_cache" variable nil (reparse-symbol function_parameters) [1616 1627]))                  )
+                nil [1513 3102])
+            ("btc_getter" function (:documentation "Gets BTC/USD trading prices for as long as can be done.") nil [3104 3329])
+            ("djia_getter" function (:documentation "Gets the full Dow Jones Industrial Average index.") nil [3331 3576])
+            ("rhod_getter" function (:documentation "Gets rhodium trading prices for as long as can be done.") nil [3578 3831])
+            ("btc" variable nil nil [3935 4032])
+            ("djia" variable nil nil [4033 4128])
+            ("rhod" variable nil nil [4129 4224]))          
+      :file "get_stock_data.py"
+      :pointmax 4225
+      :fsize 4224
+      :lastmodtime '(23075 15860 513847 331000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"
+This file uses the ideas developed in a paper that explained how to transform the fitting of a
+seven-variable nonlinear function into a three-variable nonlinear optimization problem and a
+four-variable linear optimization problem, a much nicer method! This allows for better and faster
+fits of the LPPL curve to a given dataset.
+
+The paper's URL: https://arxiv.org/pdf/1108.0099.pdf
+\"\"\"" code nil nil [1 391])
+            ("numpy" include nil nil [393 411])
+            ("sklearn.linear_model" include nil nil [412 461])
+            ("lppl_func" include nil nil [463 479])
+            ("plotting" include nil nil [480 495])
+            ("custom_minimize" include nil nil [496 539])
+            ("get_stock_data" include nil nil [540 570])
+            ("data" variable nil nil [572 589])
+            ("model_mse" function
+               (:documentation "Given a series of data and a model function to describe it, get the MSE of the model: the root of
+    the mean of the squared residuals.
+    "
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [606 610])
+                    ("model_func" variable nil (reparse-symbol function_parameters) [612 622]))                  )
+                nil [592 885])
+            ("get_linear_vars" function
+               (:documentation "Given a 1-dimensional series, returns a new three-dimensional array whose three columns
+    match up to the linear terms in the linear transformation of the LPPL model. Their corresponding
+    parameters are respectively B, C_1, and C_2, and A is the intercept."
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [907 911])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [913 916])
+                    ("m" variable nil (reparse-symbol function_parameters) [918 919])
+                    ("w" variable nil (reparse-symbol function_parameters) [921 922]))                  )
+                nil [887 1443])
+            ("derive_linear_vars" function
+               (:documentation "Given the three nonlinear parameters in the transformed LPPL function, returns the best
+    linear coefficients B, C_1, and C_2 (along with intercept, A) as an array in order A, B, C_1,
+    C_2."
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [1468 1472])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [1474 1477])
+                    ("m" variable nil (reparse-symbol function_parameters) [1479 1480])
+                    ("w" variable nil (reparse-symbol function_parameters) [1482 1483]))                  )
+                nil [1445 1981])
+            ("nonlinear_cost" function
+               (:documentation "Given the three nonlinear parameters in the new LPPL function, returns the sum of squares of
+    the residuals of the best model that uses these three parameters using a linear multivariate
+    regression analysis."
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [2002 2006])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [2008 2011])
+                    ("m" variable nil (reparse-symbol function_parameters) [2013 2014])
+                    ("w" variable nil (reparse-symbol function_parameters) [2016 2017]))                  )
+                nil [1983 2391])
+            ("brute_min_func" function
+               (:documentation "Returns the cost of the fitted LPPL with the given input parameters (in the order t_c, m, w)
+    in the form that scipy.optimize.brute wants."
+                :arguments 
+                  ( ("nonlinear_vars" variable nil (reparse-symbol function_parameters) [2412 2426])
+                    ("data" variable nil (reparse-symbol function_parameters) [2428 2432]))                  )
+                nil [2393 2745])
+            ("m_w_min_func" function
+               (:documentation "Given specified data and a t_c, gets the cost of a model fit around an input array of the
+    form (m, w). Used as an input to scipy.optimize.minimize, which expects this format."
+                :arguments 
+                  ( ("m_w_arr" variable nil (reparse-symbol function_parameters) [2764 2771])
+                    ("data" variable nil (reparse-symbol function_parameters) [2773 2777])
+                    ("t_c" variable nil (reparse-symbol function_parameters) [2779 2782]))                  )
+                nil [2747 3021])
+            ("derive_m_and_w" function
+               (:documentation "Given specified t_c and the input data, gets the m and w that best match as an array."
+                :arguments 
+                  ( ("t_c" variable nil (reparse-symbol function_parameters) [3042 3045])
+                    ("data" variable nil (reparse-symbol function_parameters) [3047 3051])
+                    ("Ns" variable nil (reparse-symbol function_parameters) [3053 3055]))                  )
+                nil [3023 3312])
+            ("t_c_min_func" function
+               (:documentation "Given t_c, the data, and nothing else, gets the cost of a model fit first to m and w, and
+    then fit to the remaining linear parameters. Used for scipy.optimize.minimize, which expects
+    this format.
+    Ns is how many things to try for each parameter in the grid search: the algorithm is obviously
+    therefore O(N ^ 2), so don't mess with it too much!"
+                :arguments 
+                  ( ("t_c" variable nil (reparse-symbol function_parameters) [3331 3334])
+                    ("data" variable nil (reparse-symbol function_parameters) [3336 3340])
+                    ("Ns" variable nil (reparse-symbol function_parameters) [3342 3344]))                  )
+                nil [3314 4023])
+            ("fit_transformed_lppl_params" function
+               (:documentation "Returns a solution array [A, B, C_1, C_2, t_c, m, w] used for the transformed LPPL function.
+    t_c_max is the largest value of t_c that will be searched for at the start: if None, it will
+    default to twice the number of elements in the dataset. Ns is how many things to try for each
+    dimension: there are 3 of them, so increasing it will make it slower!
+    "
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [4057 4061])
+                    ("t_c_max" variable nil (reparse-symbol function_parameters) [4063 4070])
+                    ("Ns" variable nil (reparse-symbol function_parameters) [4077 4079]))                  )
+                nil [4025 4866])
+            ("fit_transformed_lppl" function
+               (:documentation "Returns a function that attempts to model the input dataset. If t_c_max is provided, used as
+    an upper bound on t_c: twice the length of the dataset is used otherwise. Ns is how many
+    different places to search in the grid on each dimension, so doubling it makes the algorithm 8
+    times slower!"
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [4893 4897])
+                    ("t_c_max" variable nil (reparse-symbol function_parameters) [4899 4906])
+                    ("Ns" variable nil (reparse-symbol function_parameters) [4913 4915]))                  )
+                nil [4868 5333])
+            ("model_r2" function
+               (:documentation "Given a series of data and a model function to describe it, gets the R^2 value of the model:
+    1 - (the variance of the residuals / the variance of the outcomes)."
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [5348 5352])
+                    ("model_func" variable nil (reparse-symbol function_parameters) [5354 5364]))                  )
+                nil [5335 5769])
+            ("fit_best_subset" function
+               (:documentation "Tries a certain number of different subset lengths of the input dataset and fits them to an
+    LPPL model, returning the one that best matches the input data. Outer_Ns determines how many
+    different subset lengths to try, and inner_Ns determines how thorough the grid search is when in
+    a specific model. Returns a 3-tuple (ind, params, r2) with the index such that data[-ind:]
+    produced the best results, the model parameters, and the r2 value."
+                :arguments 
+                  ( ("data" variable nil (reparse-symbol function_parameters) [5791 5795])
+                    ("inner_Ns" variable nil (reparse-symbol function_parameters) [5797 5805])
+                    ("outer_Ns" variable nil (reparse-symbol function_parameters) [5810 5818]))                  )
+                nil [5771 6713])
+            ("model_func" variable nil nil [6768 6827])
+            ("plotting" code nil nil [6828 6890])
+            ("plotting" code nil nil [6891 6938]))          
+      :file "fit_lppl_fancy.py"
+      :pointmax 6939
+      :fsize 10471
+      :lastmodtime '(23081 59718 356729 239000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file contains useful functions for estimating the significance and quality of generalized
+regressions on data. They are all of the form func(model, data) -> val, where model and data are two
+numpy Series or similar objects with the same length and 1 dimension.\"\"\"" code nil nil [1 272])
+            ("numpy" include nil nil [275 293])
+            ("errors" function
+               (:documentation "Returns the errors: the difference between the model and the data, either positive or
+    negative, for each corresponding pair of the model and data."
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [307 312])
+                    ("data" variable nil (reparse-symbol function_parameters) [314 318]))                  )
+                nil [296 506])
+            ("mse" function
+               (:documentation "Returns the mean squared error of the model."
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [516 521])
+                    ("data" variable nil (reparse-symbol function_parameters) [523 527]))                  )
+                nil [508 630])
+            ("variance" function
+               (:documentation "Returns the sum of squares of the residuals."
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [645 650])
+                    ("data" variable nil (reparse-symbol function_parameters) [652 656]))                  )
+                nil [632 758])
+            ("standard_error" function
+               (:documentation "Gets the standard error of the regression: the average deviation of the data values from
+    their estimates."
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [779 784])
+                    ("data" variable nil (reparse-symbol function_parameters) [786 790]))                  )
+                nil [760 961])
+            ("covariance" function
+               (:documentation "Gets the covariance matrix of the residuals of the regression, as a matrix."
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [978 983])
+                    ("data" variable nil (reparse-symbol function_parameters) [985 989]))                  )
+                nil [963 1117])
+            ("exp_standard_error" function
+               (:documentation "Gets the standard error of the regression, but applies the exp function to both input sets
+    first: this weights large errors a lot!"
+                :arguments 
+                  ( ("model" variable nil (reparse-symbol function_parameters) [1142 1147])
+                    ("data" variable nil (reparse-symbol function_parameters) [1149 1153]))                  )
+                nil [1119 1356]))          
+      :file "regression_stats.py"
+      :pointmax 1356
+      :fsize 1355
+      :lastmodtime '(23081 59608 936460 251000)
+      :unmatched-syntax '((DEF 1119 . 1122) ($EOI 1123 . 1123))))
+  :file "!home!nicholas!Documents!analytica!code!stock-market-crashes!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

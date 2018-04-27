@@ -1,0 +1,277 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file gets a color scheme from an image, under some tweaks and restrictions.
+
+The essential algorithm is as follows: downscale the image if it's large (won't destroy any data we
+need), additionally combining very close colors to each other. Then, convert each color into
+HSV. After quantization of the various values, collect colors whose values are the same, pick the n
+most common, and then you're done!
+\"\"\"" code nil nil [1 417])
+            ("matplotlib.pyplot" include nil nil [419 450])
+            ("numpy" include nil nil [451 469])
+            ("sklearn.cluster" include nil nil [470 492])
+            ("colormath.color_conversions" include nil nil [493 546])
+            ("colormath.color_objects" include nil nil [547 602])
+            ("mpl_toolkits.mplot3d" include nil nil [603 642])
+            ("rgb_to_lab" function (:arguments 
+              ( ("r" variable nil (reparse-symbol function_parameters) [682 683])
+                ("g" variable nil (reparse-symbol function_parameters) [685 686])
+                ("b" variable nil (reparse-symbol function_parameters) [688 689]))              ) nil [667 816])
+            ("tuple_to_hex" function
+               (:documentation "Returns an RGB six-character hex string from a color tuple (0-1)."
+                :arguments 
+                  ( ("rgb" variable nil (reparse-symbol function_parameters) [835 838]))                  )
+                nil [818 997])
+            ("lab_to_hex" function
+               (:documentation "Converts a LAB color to a hex RGB value, clamped, with illuminant D65."
+                :arguments 
+                  ( ("lab" variable nil (reparse-symbol function_parameters) [1014 1017]))                  )
+                nil [999 1224])
+            ("image_to_labs" function
+               (:documentation "Takes an Image object and returns a list of LAB colors representing each pixel, after
+    some resizing down to the given dimensions (only if the given image is larger)."
+                :arguments 
+                  ( ("im" variable nil (reparse-symbol function_parameters) [1244 1246])
+                    ("width" variable nil (reparse-symbol function_parameters) [1248 1253])
+                    ("height" variable nil (reparse-symbol function_parameters) [1259 1265]))                  )
+                nil [1226 1920])
+            ("xyz_to_hex_helper" function (:arguments 
+              ( ("x" variable nil (reparse-symbol function_parameters) [1944 1945])
+                ("y" variable nil (reparse-symbol function_parameters) [1947 1948])
+                ("z" variable nil (reparse-symbol function_parameters) [1950 1951]))              ) nil [1922 1989])
+            ("plotrgb" function (:arguments 
+              ( ("ax" variable nil (reparse-symbol function_parameters) [2003 2005]))              ) nil [1991 2261])
+            ("plotcielab" function (:arguments 
+              ( ("ax" variable nil (reparse-symbol function_parameters) [2278 2280]))              ) nil [2263 2583])
+            ("color_scheme_from_image" function
+               (:documentation "Returns a list containing a light neutral color, a dark neutral color, and n_colors other accent
+    colors in sequence. Scaling size affects what the image gets resized to before calculations:
+    smaller values are much faster. If return_hex is True, will return string RGB hexes: if False,
+    it will return LAB color objects.
+    "
+                :arguments 
+                  ( ("image" variable nil (reparse-symbol function_parameters) [2613 2618])
+                    ("n_colors" variable nil (reparse-symbol function_parameters) [2620 2628])
+                    ("scaling_size" variable nil (reparse-symbol function_parameters) [2632 2644])
+                    ("return_hex" variable nil (reparse-symbol function_parameters) [2657 2667]))                  )
+                nil [2585 4561]))          
+      :file "color_analysis.py"
+      :pointmax 4694
+      :fsize 4693
+      :lastmodtime '(23053 52925 614815 360000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This Python file simply provides a function change_background that accepts a file path to an
+image and makes that image the desktop background. Replacement of this file can make any files that
+use it distro-agnostic\"\"\"" code nil nil [1 222])
+            ("subprocess" include nil nil [224 241])
+            ("change_background" function
+               (:documentation "Sets the XFCE desktop background to the image at the given filename as a string."
+                :arguments 
+                  ( ("im_path" variable nil (reparse-symbol function_parameters) [266 273]))                  )
+                nil [244 515]))          
+      :file "change_background.py"
+      :pointmax 515
+      :fsize 514
+      :lastmodtime '(23034 24726 699361 424000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file allows for Emacs to be switched to an arbitrary color theme via some cleverness and use
+of the base16 theming tool.
+
+\"\"\"" code nil nil [1 134])
+            ("os" include nil nil [136 145])
+            ("subprocess" include nil nil [146 163])
+            ("string" include nil nil [164 196])
+            ("PIL" include nil nil [198 219])
+            ("base16_theme_generator" include nil nil [221 288])
+            ("color_analysis" include nil nil [289 339])
+            ("theme_file_string" variable nil nil [341 1462])
+            ("EMACS_THEME_INIT_FILE" variable nil nil [1464 1524])
+            ("change_emacs_theme" function
+               (:documentation "Changes the Emacs theme to a newly-created theme with the given theme name, defined from a
+    file located in the given directory with the colors given in theme_colors. Theme_colors has to
+    be a list of 16 colors following the base16 format. IF force_recalc is True, will regenerate the
+    file regardless of if one already exists."
+                :arguments 
+                  ( ("theme_name" variable nil (reparse-symbol function_parameters) [1550 1560])
+                    ("theme_colors" variable nil (reparse-symbol function_parameters) [1562 1574])
+                    ("theme_dir" variable nil (reparse-symbol function_parameters) [1576 1585])
+                    ("force_recalc" variable nil (reparse-symbol function_parameters) [1644 1656]))                  )
+                nil [1527 2659])
+            ("change_emacs_theme_from_image_path" function
+               (:documentation "Changes Emacs to the specified base 16 color scheme. Default is to use a filename-derived naming
+    scheme and therefore not need to remake a theme over and over. Theme_dir should stay the same
+    for that to happen. im_filename is a string path to a file.
+    If force_recalc, recalculates theme even if it already exists.
+    Kwargs get passed to the gen_base16_theme function.
+    "
+                :arguments 
+                  ( ("im_filename" variable nil (reparse-symbol function_parameters) [2700 2711])
+                    ("theme_name" variable nil (reparse-symbol function_parameters) [2713 2723])
+                    ("theme_dir" variable nil (reparse-symbol function_parameters) [2769 2778])
+                    ("force_recalc" variable nil (reparse-symbol function_parameters) [2852 2864])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [2872 2880]))                  )
+                nil [2661 3675])
+            ("change_emacs_theme_from_image_lightness" function
+               (:documentation "Simply checks if the average lightness of the image is dark or light. If it's light, then it
+    uses the given light theme: otherwise, it usees the given dark theme."
+                :arguments 
+                  ( ("im_filename" variable nil (reparse-symbol function_parameters) [3721 3732])
+                    ("light_theme_name" variable nil (reparse-symbol function_parameters) [3734 3750])
+                    ("dark_theme_name" variable nil (reparse-symbol function_parameters) [3820 3835]))                  )
+                nil [3677 4538])
+            ("change_emacs_theme_from_image_path" code nil nil [4540 4694]))          
+      :file "change_emacs_colors.py"
+      :pointmax 4695
+      :fsize 4694
+      :lastmodtime '(23053 59342 288324 625000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file allows the generation of a base16 color theme from an arbitrary image. It selects 10
+colors from the image (using a color histogram) to define the background and foreground. It then
+samples to image to determine whether the theme should be dark or light. From those chosen colors,
+it selects the darkest and the lightest to use as background and foreground. It then modifies those
+colors to create derivatives for the various neutral highlighting colors. To finish, it selects the
+remaining 8 colors as accents, corrects them all to the same luminance, and then uses those as
+accent colors, sorted by hue.\"\"\"" code nil nil [1 622])
+            ("math" include nil nil [624 646])
+            ("colormath.color_conversions" include nil nil [648 701])
+            ("colormath.color_objects" include nil nil [702 757])
+            ("PIL" include nil nil [758 779])
+            ("scipy.special" include nil nil [780 810])
+            ("color_analysis" include nil nil [812 874])
+            ("mean_lightness" function
+               (:documentation "Given a list of lab colors, gets their mean lightness."
+                :arguments 
+                  ( ("lab_colors" variable nil (reparse-symbol function_parameters) [896 906]))                  )
+                nil [877 1073])
+            ("equalize_luminance" function
+               (:documentation "Given a list of LAB colors, returns a new list where each color has been set to the same
+    lightness (meaning they appear to the human eye about as bright, in the CIELAB color space) but
+    without changing the color hue and saturation (broadly: this is not HSV or HSL, it's
+    CIELAB). If a new lightness is not given, it is assumed to be the mean.
+
+    "
+                :arguments 
+                  ( ("lab_colors" variable nil (reparse-symbol function_parameters) [1098 1108])
+                    ("new_luma" variable nil (reparse-symbol function_parameters) [1110 1118]))                  )
+                nil [1075 1758])
+            ("create_base16_gradations" function
+               (:documentation "Given two base colors in the form of RGB tuples (0-255), returns a list of 8 RGB tuples that span
+    from one to the other and past it: the first color is bg_color, and the fifth fg_color. The
+    rest are interpolated from those two in a way such that a nice-looking theme is created. Might
+    create out-of-gamut colors.
+    "
+                :arguments 
+                  ( ("bg_lab" variable nil (reparse-symbol function_parameters) [1789 1795])
+                    ("fg_lab" variable nil (reparse-symbol function_parameters) [1797 1803]))                  )
+                nil [1760 3411])
+            ("scale_down_saturation" function
+               (:documentation "Scales the a and b coordinates of the given color to make the color more or less
+    saturated. If scale > 1, it might be an invalid color!"
+                :arguments 
+                  ( ("lab_color" variable nil (reparse-symbol function_parameters) [3439 3448])
+                    ("scaling_factor" variable nil (reparse-symbol function_parameters) [3450 3464]))                  )
+                nil [3413 3746])
+            ("scale_up_saturation" function
+               (:documentation "Scales the a and b coordinates of a given color towards the extrema to increase saturation. This
+    is done by scaling a and b to between -1 and 1, raising them to the inverse of whatever exponent
+    is supplied as a scaling factor (treating negatives correctly), and then rescaling.
+    "
+                :arguments 
+                  ( ("lab_color" variable nil (reparse-symbol function_parameters) [3772 3781])
+                    ("scaling_factor" variable nil (reparse-symbol function_parameters) [3783 3797]))                  )
+                nil [3748 4662])
+            ("gen_base16_theme" function
+               (:documentation "Given a PIL Image, creates a color scheme from them. The darkest and lightest are used for
+    neutrals, and the rest are used as accents. Returns the color scheme as a list of 16 hex strings
+    (without the # mark) if hex_format is True, otherwise returning LAB colors. If force_color is
+    either \"light\" or \"dark\", forces the color scheme to be light or dark regardless of the average
+    image color. Kwargs get passed to color_scheme_from_image.
+    "
+                :arguments 
+                  ( ("image" variable nil (reparse-symbol function_parameters) [4685 4690])
+                    ("hex_format" variable nil (reparse-symbol function_parameters) [4692 4702])
+                    ("force_color" variable nil (reparse-symbol function_parameters) [4709 4720])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [4727 4735]))                  )
+                nil [4664 6964]))          
+      :file "base16_theme_generator.py"
+      :pointmax 7111
+      :fsize 7110
+      :lastmodtime '(23053 54591 445677 265000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file creates a base16 scheme in the Mustache format from a given list of base16 colors.\"\"\"" code nil nil [1 99])
+            ("string" include nil nil [102 134])
+            ("PIL" include nil nil [136 157])
+            ("base16_theme_generator" include nil nil [159 210])
+            ("SCHEME_TEMPLATE" variable nil nil [213 481])
+            ("save_scheme" function
+               (:documentation "Given a list of base16 colors and an output directory (a string ending in '/'), makes a scheme
+    and copies it over."
+                :arguments 
+                  ( ("out_dir" variable nil (reparse-symbol function_parameters) [500 507])
+                    ("name" variable nil (reparse-symbol function_parameters) [509 513])
+                    ("base16_colors" variable nil (reparse-symbol function_parameters) [515 528])
+                    ("author" variable nil (reparse-symbol function_parameters) [530 536]))                  )
+                nil [484 828])
+            ("save_scheme_from_image" function
+               (:documentation "Given an image, creates a colorscheme from it and saves that to a scheme file. Given name
+    overrides filename as default. Kwargs get passed to gen_base16_theme. Returns the filepath of
+    the scheme file"
+                :arguments 
+                  ( ("out_dir" variable nil (reparse-symbol function_parameters) [857 864])
+                    ("infile" variable nil (reparse-symbol function_parameters) [866 872])
+                    ("author" variable nil (reparse-symbol function_parameters) [874 880])
+                    ("name" variable nil (reparse-symbol function_parameters) [903 907])
+                    ("kwargs" variable nil (reparse-symbol function_parameters) [914 922]))                  )
+                nil [830 1476])
+            ("get_colors_from_scheme" function
+               (:documentation "Given a YAML-style scheme, gets the colors for that theme and returns them as a list of hex
+    codes."
+                :arguments 
+                  ( ("scheme_file" variable nil (reparse-symbol function_parameters) [1505 1516]))                  )
+                nil [1478 2050]))          
+      :file "create_base16_scheme.py"
+      :pointmax 2050
+      :fsize 2049
+      :lastmodtime '(23054 7199 359650 615000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file changes terminal colors to match the theme.\"\"\"" code nil nil [1 60])
+            ("subprocess" include nil nil [63 80])
+            ("create_base16_scheme" include nil nil [82 137])
+            ("THEME_DIR" variable nil nil [139 190])
+            ("change_guake_theme_from_schema" function
+               (:documentation "Given a schema of base16 colors, changes the Guake theme to that set. If luminosity is set to
+    either \"dark\" or \"light\", uses that: otherwise, processes it automatically from the theme.
+    "
+                :arguments 
+                  ( ("schema_file" variable nil (reparse-symbol function_parameters) [228 239])
+                    ("luminosity" variable nil (reparse-symbol function_parameters) [241 251]))                  )
+                nil [193 1318]))          
+      :file "change_terminal_colors.py"
+      :pointmax 1318
+      :fsize 1317
+      :lastmodtime '(23054 10181 882612 447000)
+      :unmatched-syntax '((NAME 531 . 537) (MULT 539 . 540) ($EOI 1318 . 1318))))
+  :file "!home!nicholas!programs!theming-scripts!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,35 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("hashlib" include nil nil [1 24])
+            ("itertools" include nil nil [25 54])
+            ("string" include nil nil [55 101])
+            ("tqdm" include nil nil [175 196])
+            ("HASH" variable nil nil [198 239])
+            ("ans" variable nil nil [241 249])
+            ("for" code nil nil [250 413])
+            ("print" code nil nil [414 421])
+            ("print" code nil nil [422 432])
+            ("print" code nil nil [433 440]))          
+      :file "solver.py"
+      :pointmax 441
+      :fsize 440
+      :lastmodtime '(23233 41162 812275 941000)
+      :unmatched-syntax '(($EOI 441 . 441) ($EOI 408 . 408)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags nil
+      :file "grader.py"
+      :pointmax 1
+      :fsize 209
+      :lastmodtime '(23233 42351 615371 609000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!PACTF!problems!md5-brute-force!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

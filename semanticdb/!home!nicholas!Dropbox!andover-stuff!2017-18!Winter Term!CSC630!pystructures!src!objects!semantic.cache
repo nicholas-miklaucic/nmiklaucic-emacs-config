@@ -1,0 +1,16 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags nil
+      :file "structures.i"
+      :pointmax 421
+      :fsize 441
+      :lastmodtime '(23169 55615 735267 318000)
+      :unmatched-syntax '((string 411 . 420) (symbol 403 . 410) (punctuation 402 . 403) (string 391 . 401) (symbol 383 . 390) (punctuation 382 . 383) (string 370 . 381) (symbol 362 . 369) (punctuation 361 . 362) (string 350 . 360) (symbol 342 . 349) (punctuation 341 . 342) (string 331 . 340) (symbol 323 . 330) (punctuation 322 . 323) (string 312 . 321) (symbol 304 . 311) (punctuation 303 . 304) (string 293 . 302) (symbol 285 . 292) (punctuation 284 . 285) (semantic-list 23 . 233) (punctuation 22 . 23) (symbol 9 . 21) (symbol 2 . 8) (punctuation 1 . 2))))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!Winter Term!CSC630!pystructures!src!objects!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,19 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("grade" function (:arguments 
+              ( ("key" variable nil (reparse-symbol function_parameters) [11 14])
+                ("submission" variable nil (reparse-symbol function_parameters) [16 26]))              ) nil [1 227]))          
+      :file "grader.py"
+      :pointmax 227
+      :fsize 226
+      :lastmodtime '(23175 51028 245177 389000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!PACTF!problems!last-bit-steganography!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,28 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file reads in a CSV of crossword words used in the NYT crosswords from 1996 to 2012. The
+source for this information is at https://github.com/donohoe/nyt-crossword. This file then reads in
+those clues and processes them into a list that can be used to fill a crossword.\"\"\"" code nil nil [1 281])
+            ("csv" include nil nil [283 293])
+            ("collections" include nil nil [294 325])
+            ("wordlist" variable nil nil [327 340])
+            ("with" code nil nil [341 530])
+            ("wordlist" variable nil nil [599 649])
+            ("wordlist" variable nil nil [810 858])
+            ("long_words" variable nil nil [1047 1096])
+            ("wordlist" variable nil nil [1142 1217])
+            ("words" variable nil nil [1245 1270]))          
+      :file "wordlist.py"
+      :pointmax 1271
+      :fsize 1270
+      :lastmodtime '(22998 43887 553681 379000)
+      :unmatched-syntax '((FROM 294 . 298) ($EOI 1249 . 1249))))
+  :file "!home!nicholas!programs!cruciverbalism!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

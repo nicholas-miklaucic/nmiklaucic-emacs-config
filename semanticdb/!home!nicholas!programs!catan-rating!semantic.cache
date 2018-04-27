@@ -1,0 +1,14 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "trueskill.js"
+      :pointmax 689
+      :unmatched-syntax '((SEMICOLON 585 . 586) (VARIABLE 607 . 616) (FUNCTION 626 . 634) (PAREN_BLOCK 634 . 645) (SEMICOLON 459 . 460) (VARIABLE 509 . 518) (FUNCTION 554 . 562) (PAREN_BLOCK 562 . 569) (SEMICOLON 291 . 292) (VARIABLE 361 . 370) (FUNCTION 410 . 418) (PAREN_BLOCK 418 . 432) (VAR 63 . 66) (BRACE_BLOCK 96 . 98) (SEMICOLON 98 . 99) (VARIABLE 128 . 137) (FUNCTION 150 . 158) (PAREN_BLOCK 158 . 166) (VARIABLE 6 . 7) (PAREN_BLOCK 17 . 31) (SEMICOLON 584 . 585) (VARIABLE 606 . 615) (FUNCTION 625 . 633) (PAREN_BLOCK 633 . 644) (SEMICOLON 458 . 459) (VARIABLE 508 . 517) (FUNCTION 553 . 561) (PAREN_BLOCK 561 . 568) (SEMICOLON 290 . 291) (VARIABLE 360 . 369) (FUNCTION 409 . 417) (PAREN_BLOCK 417 . 431) (VAR 62 . 65) (BRACE_BLOCK 95 . 97) (SEMICOLON 97 . 98) (VARIABLE 127 . 136) (FUNCTION 149 . 157) (PAREN_BLOCK 157 . 165) (PAREN_BLOCK 16 . 30))))
+  :file "!home!nicholas!programs!catan-rating!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

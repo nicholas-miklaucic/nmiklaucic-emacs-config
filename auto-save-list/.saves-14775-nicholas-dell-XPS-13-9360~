@@ -1,0 +1,10 @@
+/home/nicholas/.Xmodmap
+/home/nicholas/#.Xmodmap#
+/home/nicholas/bin/fix-scroll.sh
+/home/nicholas/bin/#fix-scroll.sh#
+/usr/share/X11/xkb/rules/base.xml
+/usr/share/X11/xkb/rules/#base.xml#
+/usr/share/xkb
+/usr/share/#xkb#
+/sudo:root@nicholas-dell-XPS-13-9360:/etc/X11/xorg.conf.d/00-keyboard.conf
+/tmp/#!sudo:root@nicholas-dell-XPS-13-9360:!etc!X11!xorg.conf.d!00-keyboard.conf#

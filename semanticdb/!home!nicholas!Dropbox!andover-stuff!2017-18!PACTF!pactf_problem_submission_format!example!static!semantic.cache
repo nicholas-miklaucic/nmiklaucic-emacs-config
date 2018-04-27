@@ -1,0 +1,16 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode js-mode
+      :tags nil
+      :file "optional_file_inclusion.json"
+      :pointmax 22
+      :fsize 21
+      :lastmodtime '(23175 42634 36475 312000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!PACTF!pactf_problem_submission_format!example!static!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

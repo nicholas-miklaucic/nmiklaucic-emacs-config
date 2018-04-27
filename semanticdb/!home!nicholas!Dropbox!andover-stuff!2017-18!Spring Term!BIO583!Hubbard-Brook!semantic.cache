@@ -1,0 +1,23 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("matplotlib.pyplot" include nil nil [1 32])
+            ("numpy" include nil nil [33 51])
+            ("pandas" include nil nil [52 71])
+            ("info" variable nil nil [73 111])
+            ("data" variable nil nil [112 150])
+            ("data" variable nil nil [152 185])
+            ("df" variable nil nil [187 239]))          
+      :file "data-reader.py"
+      :pointmax 240
+      :fsize 239
+      :lastmodtime '(23226 22968 761158 590000)
+      :unmatched-syntax '(($EOI 240 . 240))))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!Spring Term!BIO583!Hubbard-Brook!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

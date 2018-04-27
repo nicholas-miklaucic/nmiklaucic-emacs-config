@@ -1,0 +1,89 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This is an implementation of the Java RNG in Python. That's when you know someone really hates a
+programming language!
+
+The Java RNG algorithm is two lines, so it's pretty easy. Given an internal seed, and a parameter
+bits that is how many bits to output, it executes the following:
+
+seed = (seed * 0x5DEECE66DL + 0xBL) & ((1L << 48) - 1);
+return (int) (seed >>> (48 - bits));
+\"\"\"" code nil nil [1 384])
+            ("unsigned_right_shift" function
+               (:documentation "Computes a >>> b in Java, or an unsigned right shift. Assumes longs, e.g., 64-bit integers."
+                :arguments 
+                  ( ("a" variable nil (reparse-symbol function_parameters) [411 412])
+                    ("b" variable nil (reparse-symbol function_parameters) [414 415]))                  )
+                nil [386 603])
+            ("RNG" type
+               (:documentation "Port of Java's RNG nextInt() function."
+                :members 
+                  ( ("MULTIPLIER" variable nil (reparse-symbol indented_block_body) [734 758])
+                    ("INCREMENT" variable nil (reparse-symbol indented_block_body) [882 896])
+                    ("__init__" function
+                       (:suite 
+                          ( ("self" code nil (reparse-symbol indented_block_body) [1024 1076]))                          
+                        :parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [919 923])
+                            ("seed" variable nil (reparse-symbol function_parameters) [925 929]))                          
+                        :constructor-flag t)
+                        (reparse-symbol indented_block_body) [906 1077])
+                    ("with_seed" function
+                       (:documentation "Initializes the seed without any XOR BS."
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1113 1116])
+                            ("seed" variable nil (reparse-symbol function_parameters) [1118 1122]))                          
+                        :decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1082 1245])
+                    ("nextInt" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1262 1266]))                          
+                        :documentation "Returns a \"random\" 32-bit signed integer, taken as 32 bits from the next PRNG value in
+        two's-complement form.")
+                        (reparse-symbol indented_block_body) [1250 1560])
+                    ("next" function
+                       (:documentation "Returns the next state from the given 48-bit one."
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [1591 1594])
+                            ("state" variable nil (reparse-symbol function_parameters) [1596 1601]))                          
+                        :decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          )
+                        (reparse-symbol indented_block_body) [1565 1742])
+                    ("state_to_int" function
+                       (:typemodifiers ("static")
+                        :decorators 
+                          ( ("staticmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("state" variable nil (reparse-symbol function_parameters) [1782 1787]))                          
+                        :documentation "Returns the int form of the 48-bit state, in Java's rules.")
+                        (reparse-symbol indented_block_body) [1747 2285]))                  
+                :type "class")
+                nil [604 2285]))          
+      :file "java_rng.py"
+      :pointmax 2574
+      :fsize 2573
+      :lastmodtime '(23201 53964 339436 849000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("grade" function (:arguments 
+              ( ("key" variable nil (reparse-symbol function_parameters) [11 14])
+                ("submission" variable nil (reparse-symbol function_parameters) [16 26]))              ) nil [1 247]))          
+      :file "grader.py"
+      :pointmax 247
+      :fsize 246
+      :lastmodtime '(23247 40917 178931 432000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!PACTF!problems!java-rng-sucks!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

@@ -1,0 +1,29 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("\"\"\"This file encodes given English text in a substitution cipher that uses variable-length
+substitutions to reduce the effectiveness of frequency analysis. However, certain characters only
+appear in certain patterns, which is enough to deduce the breakup and then apply standard
+substitution cipher techniques.\"\"\"" code nil nil [1 314])
+            ("string" include nil nil [316 360])
+            ("CIPHER" variable nil nil [385 656])
+            ("encode" function
+               (:documentation "Removes punctuation, maps each character to the substitution cipher, and then returns the
+    full thing, with newlines preserved."
+                :arguments 
+                  ( ("text" variable nil (reparse-symbol function_parameters) [669 673]))                  )
+                nil [658 1018])
+            ("print" code nil nil [1020 1973]))          
+      :file "sub_cipher.py"
+      :pointmax 1974
+      :fsize 2054
+      :lastmodtime '(23255 55622 483041 879000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!PACTF!problems!the-ultimate-show!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

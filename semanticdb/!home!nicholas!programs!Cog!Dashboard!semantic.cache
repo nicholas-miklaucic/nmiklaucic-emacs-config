@@ -1,0 +1,172 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("django.db" include nil nil [1 29])
+            ("django.contrib.auth.models" include nil nil [30 73])
+            ("django.utils" include nil nil [74 107])
+            ("django.utils.timezone" include nil nil [108 156])
+            ("uuid" include nil nil [157 168])
+            ("datetime" include nil nil [169 184])
+            ("decimal" include nil nil [185 212])
+            ("json" include nil nil [213 224])
+            ("django.contrib" include nil nil [225 257])
+            ("django.contrib.auth.models" include nil nil [258 301])
+            ("django.db" include nil nil [302 330])
+            ("oauth2client.contrib.django_util.models" include nil nil [331 399])
+            ("math" include nil nil [400 421])
+            ("logging" include nil nil [422 436])
+            ("glob2" include nil nil [469 481])
+            ("importlib" include nil nil [482 517])
+            ("Profile" type
+               (:superclasses ("models.Model")
+                :members 
+                  ( ("'''
+    One profile per user. Contains information not contained within
+    user object.
+    '''" code nil (reparse-symbol indented_block_body) [552 648])
+                    ("user" variable nil (reparse-symbol indented_block_body) [725 795])
+                    ("description" variable nil (reparse-symbol indented_block_body) [860 917])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [936 940]))                          )
+                        (reparse-symbol indented_block_body) [924 1066]))                  
+                :type "class")
+                nil [519 1066])
+            ("EventManager" type
+               (:superclasses ("models.Manager")
+                :members 
+                  ( ("'''
+    Manager for events.
+    TO-DO: Add more detailed comment.
+    '''" code nil (reparse-symbol indented_block_body) [1107 1180])
+                    ("get_queryset" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1202 1206]))                          )
+                        (reparse-symbol indented_block_body) [1185 1265])
+                    ("get_todays_events" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1292 1296]))                          )
+                        (reparse-symbol indented_block_body) [1270 1567]))                  
+                :type "class")
+                nil [1067 1567])
+            ("Event" type
+               (:superclasses ("models.Model")
+                :members 
+                  ( ("'''
+    Represents a job that has a defined time.
+    '''" code nil (reparse-symbol indented_block_body) [1599 1656])
+                    ("title" variable nil (reparse-symbol indented_block_body) [1698 1738])
+                    ("description" variable nil (reparse-symbol indented_block_body) [1743 1789])
+                    ("profile" variable nil (reparse-symbol indented_block_body) [1794 1856])
+                    ("created_at" variable nil (reparse-symbol indented_block_body) [1861 1907])
+                    ("start_time" variable nil (reparse-symbol indented_block_body) [1943 2001])
+                    ("end_time" variable nil (reparse-symbol indented_block_body) [2006 2060])
+                    ("objects" variable nil (reparse-symbol indented_block_body) [2097 2121])
+                    ("unique_id" variable nil (reparse-symbol indented_block_body) [2126 2203])
+                    ("extension_id" variable nil (reparse-symbol indented_block_body) [2208 2266])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2284 2288]))                          )
+                        (reparse-symbol indented_block_body) [2272 2649]))                  
+                :type "class")
+                nil [1568 2649])
+            ("Unit" type
+               (:superclasses ("models.Model")
+                :members 
+                  ( ("'''
+    Represents a job that has no defined time, though may have
+    a due date.
+    per_unit: the ratio of the unit per time. Like pages per minute
+    num_used: The number of people that have used this unit. Used in
+    update calculation.
+    '''" code nil (reparse-symbol indented_block_body) [2680 2931])
+                    ("title" variable nil (reparse-symbol indented_block_body) [2936 2989])
+                    ("description" variable nil (reparse-symbol indented_block_body) [2994 3040])
+                    ("profile_id" variable nil (reparse-symbol indented_block_body) [3045 3079])
+                    ("ratio" variable nil (reparse-symbol indented_block_body) [3118 3145])
+                    ("M" variable nil (reparse-symbol indented_block_body) [3353 3387])
+                    ("S" variable nil (reparse-symbol indented_block_body) [3429 3463])
+                    ("k" variable nil (reparse-symbol indented_block_body) [3468 3502])
+                    ("time_sum" variable nil (reparse-symbol indented_block_body) [3507 3548])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3594 3598]))                          )
+                        (reparse-symbol indented_block_body) [3582 3627])
+                    ("get_standard_deviation" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3659 3663]))                          )
+                        (reparse-symbol indented_block_body) [3632 3708])
+                    ("update_ratio" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3730 3734])
+                            ("value" variable nil (reparse-symbol function_parameters) [3736 3741]))                          )
+                        (reparse-symbol indented_block_body) [3713 4839]))                  
+                :type "class")
+                nil [2650 4839])
+            ("Task" type
+               (:superclasses ("models.Model")
+                :members 
+                  ( ("'''
+    A job with a predefined length.
+    '''" code nil (reparse-symbol indented_block_body) [4870 4917])
+                    ("title" variable nil (reparse-symbol indented_block_body) [4985 5025])
+                    ("description" variable nil (reparse-symbol indented_block_body) [5030 5076])
+                    ("profile" variable nil (reparse-symbol indented_block_body) [5081 5143])
+                    ("created_at" variable nil (reparse-symbol indented_block_body) [5148 5194])
+                    ("unit" variable nil (reparse-symbol indented_block_body) [5230 5286])
+                    ("c_number" variable nil (reparse-symbol indented_block_body) [5347 5420])
+                    ("priority" variable nil (reparse-symbol indented_block_body) [5476 5508])
+                    ("unique_id" variable nil (reparse-symbol indented_block_body) [5513 5590])
+                    ("start_time" variable nil (reparse-symbol indented_block_body) [5595 5639])
+                    ("end_time" variable nil (reparse-symbol indented_block_body) [5644 5686])
+                    ("__str__" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [5704 5708]))                          )
+                        (reparse-symbol indented_block_body) [5692 6325])
+                    ("create" function
+                       (:decorators 
+                          ( ("classmethod" function (:type "decorator") nil nil))                          
+                        :arguments 
+                          ( ("cls" variable nil (reparse-symbol function_parameters) [6358 6361])
+                            ("title" variable nil (reparse-symbol function_parameters) [6363 6368])
+                            ("profile" variable nil (reparse-symbol function_parameters) [6370 6377])
+                            ("unit" variable nil (reparse-symbol function_parameters) [6379 6383])
+                            ("c_number" variable nil (reparse-symbol function_parameters) [6385 6393])
+                            ("priority" variable nil (reparse-symbol function_parameters) [6395 6403])
+                            ("description" variable nil (reparse-symbol function_parameters) [6405 6416])
+                            ("unique_id" variable nil (reparse-symbol function_parameters) [6421 6430]))                          )
+                        (reparse-symbol indented_block_body) [6330 6810])
+                    ("complete" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [6828 6832])
+                            ("total_time" variable nil (reparse-symbol function_parameters) [6834 6844]))                          )
+                        (reparse-symbol indented_block_body) [6815 7032]))                  
+                :type "class")
+                nil [4840 7032])
+            ("for" code nil nil [7068 7194]))          
+      :file "models.py"
+      :pointmax 7194
+      :fsize 7193
+      :lastmodtime '(22977 34719 377702 16000)
+      :unmatched-syntax '((IMPORT 460 . 466) (MULT 467 . 468) (FROM 437 . 441) (PERIOD 442 . 443)))
+    (semanticdb-table "semanticdb-table"
+      :file "utils.py"
+      :fsize 825
+      :lastmodtime '(22977 34719 407702 267000)))
+  :file "!home!nicholas!programs!Cog!Dashboard!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

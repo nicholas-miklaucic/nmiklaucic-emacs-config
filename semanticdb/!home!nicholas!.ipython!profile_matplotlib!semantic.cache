@@ -1,0 +1,17 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("c" variable nil nil [1799 1839]))          
+      :file "ipython_config.py"
+      :pointmax 23325
+      :fsize 23324
+      :lastmodtime '(23052 26164 845608 683000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!.ipython!profile_matplotlib!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

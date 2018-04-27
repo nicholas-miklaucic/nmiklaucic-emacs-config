@@ -1,0 +1,223 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("configuration" include nil nil [1 21])
+            ("tweepy" include nil nil [22 35])
+            ("userio" include nil nil [36 58])
+            ("twitter_credentials" variable nil nil [60 121])
+            ("auth" variable nil nil [123 253])
+            ("auth" code nil nil [254 378])
+            ("api" variable nil nil [380 402])
+            ("id_cache" variable nil nil [404 417])
+            ("get_id" function (:arguments 
+              ( ("username" variable nil (reparse-symbol function_parameters) [431 439]))              ) nil [420 560])
+            ("get_latest_statuses" function (:arguments 
+              ( ("username" variable nil (reparse-symbol function_parameters) [586 594]))              ) nil [562 719]))          
+      :file "twitter.py"
+      :pointmax 719
+      :fsize 718
+      :lastmodtime '(23128 61477 529738 485000)
+      :unmatched-syntax '(($EOI 719 . 719) ($EOI 720 . 720)))
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("json" include nil nil [1 12])
+            ("os" include nil nil [13 22])
+            ("sys" include nil nil [23 33])
+            ("userio" include nil nil [35 67])
+            ("twitter_credentials" variable nil nil [69 95])
+            ("get_twitter_credentials" function nil nil [156 426])
+            ("accounts" variable nil nil [428 443])
+            ("get_accounts" function nil nil [513 729])
+            ("is_following" function (:arguments 
+              ( ("username" variable nil (reparse-symbol function_parameters) [748 756]))              ) nil [731 902])
+            ("default_config" variable nil nil [904 1219])
+            ("names" variable nil nil [1221 1233])
+            ("get_name" function (:arguments 
+              ( ("handle" variable nil (reparse-symbol function_parameters) [1249 1255]))              ) nil [1236 1529])
+            ("channels" variable nil nil [1531 1546])
+            ("get_channel" function (:arguments 
+              ( ("handle" variable nil (reparse-symbol function_parameters) [1565 1571]))              ) nil [1549 1863])
+            ("generate_config" function nil nil [1927 2144])
+            ("if" code nil nil [2146 2346]))          
+      :file "configuration.py"
+      :pointmax 2346
+      :fsize 2345
+      :lastmodtime '(23128 61940 506725 752000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("colorama" include nil nil [1 33])
+            ("name" variable nil nil [35 60])
+            ("prefix" code nil nil [62 109])
+            ("say" function (:arguments 
+              ( ("message" variable nil (reparse-symbol function_parameters) [120 127]))              ) nil [112 188])
+            ("ok" function (:arguments 
+              ( ("message" variable nil (reparse-symbol function_parameters) [197 204])
+                ("detail" variable nil (reparse-symbol function_parameters) [206 212]))              ) nil [190 376])
+            ("warn" function (:arguments 
+              ( ("message" variable nil (reparse-symbol function_parameters) [387 394])
+                ("detail" variable nil (reparse-symbol function_parameters) [396 402]))              ) nil [378 569])
+            ("error" function (:arguments 
+              ( ("message" variable nil (reparse-symbol function_parameters) [581 588])
+                ("detail" variable nil (reparse-symbol function_parameters) [590 596]))              ) nil [571 759]))          
+      :file "userio.py"
+      :pointmax 759
+      :fsize 758
+      :lastmodtime '(23128 61511 500251 134000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("datetime" include nil nil [1 16])
+            ("httplib" include nil nil [17 31])
+            ("json" include nil nil [32 43])
+            ("tornado" include nil nil [45 59])
+            ("tornado.ioloop" include nil nil [60 81])
+            ("tornado.web" include nil nil [82 100])
+            ("arrow" include nil nil [102 114])
+            ("configuration" include nil nil [115 135])
+            ("flashes" include nil nil [136 150])
+            ("stats" include nil nil [151 163])
+            ("userio" include nil nil [164 197])
+            ("\"\"\"
+You probably don't need to touch this file. Instead, hack away on the
+templates and on `flashes.py`. But keep your hands away from this file
+unless you're absolutely sure!
+\"\"\"" code nil nil [200 379])
+            ("get_ip" function (:arguments 
+              ( ("request" variable nil (reparse-symbol function_parameters) [393 400]))              ) nil [382 520])
+            ("IndexHandler" type
+               (:superclasses ("tornado.web.RequestHandler")
+                :members 
+                  ( ("write_error" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [590 594])
+                            ("status_code" variable nil (reparse-symbol function_parameters) [596 607])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [609 617]))                          )
+                        (reparse-symbol indented_block_body) [574 719])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [732 736]))                          )
+                        (reparse-symbol indented_block_body) [724 1440]))                  
+                :type "class")
+                nil [522 1442])
+            ("StatsHandler" type
+               (:superclasses ("tornado.web.RequestHandler")
+                :members 
+                  ( ("write_error" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1510 1514])
+                            ("status_code" variable nil (reparse-symbol function_parameters) [1516 1527])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [1529 1537]))                          )
+                        (reparse-symbol indented_block_body) [1494 1639])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [1652 1656]))                          )
+                        (reparse-symbol indented_block_body) [1644 2139]))                  
+                :type "class")
+                nil [1442 2141])
+            ("ApiHandler" type
+               (:superclasses ("tornado.web.RequestHandler")
+                :members 
+                  ( ("write_error" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2207 2211])
+                            ("status_code" variable nil (reparse-symbol function_parameters) [2213 2224])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [2226 2234]))                          )
+                        (reparse-symbol indented_block_body) [2191 2336])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2349 2353]))                          )
+                        (reparse-symbol indented_block_body) [2341 3147]))                  
+                :type "class")
+                nil [2141 3149])
+            ("ErrorHandler" type
+               (:superclasses ("tornado.web.RequestHandler")
+                :members 
+                  ( ("write_error" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3217 3221])
+                            ("status_code" variable nil (reparse-symbol function_parameters) [3223 3234])
+                            ("kwargs" variable nil (reparse-symbol function_parameters) [3236 3244]))                          )
+                        (reparse-symbol indented_block_body) [3201 3502])
+                    ("get" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [3515 3519]))                          )
+                        (reparse-symbol indented_block_body) [3507 3757]))                  
+                :type "class")
+                nil [3149 3757])
+            ("if" code nil nil [4006 4156]))          
+      :file "webserver.py"
+      :pointmax 4156
+      :fsize 4155
+      :lastmodtime '(23128 61855 185438 30000)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode python-mode
+      :tags 
+        '( ("datetime" include nil nil [48 63])
+            ("re" include nil nil [64 73])
+            ("threading" include nil nil [74 102])
+            ("configuration" include nil nil [104 124])
+            ("tweepy" include nil nil [125 138])
+            ("twitter" include nil nil [139 153])
+            ("userio" include nil nil [154 187])
+            ("go" function nil nil [247 297])
+            ("get_latest_flashes" function (:arguments 
+              ( ("num" variable nil (reparse-symbol function_parameters) [444 447]))              ) nil [421 564])
+            ("latest_flashes" variable nil nil [731 750])
+            ("rt_regex" variable nil nil [1047 1085])
+            ("generate_flash" function (:arguments 
+              ( ("text" variable nil (reparse-symbol function_parameters) [1107 1111])
+                ("link" variable nil (reparse-symbol function_parameters) [1113 1117])
+                ("source" variable nil (reparse-symbol function_parameters) [1119 1125])
+                ("identifier" variable nil (reparse-symbol function_parameters) [1127 1137])
+                ("time" variable nil (reparse-symbol function_parameters) [1139 1143])
+                ("channel" variable nil (reparse-symbol function_parameters) [1145 1152]))              ) nil [1088 1697])
+            ("is_sorted" variable nil nil [1699 1716])
+            ("push_flash" function (:arguments 
+              ( ("flash" variable nil (reparse-symbol function_parameters) [1734 1739]))              ) nil [1719 1818])
+            ("sort_flashes" function nil nil [1820 1989])
+            ("load_flashes" function nil nil [1991 2853])
+            ("AccountListener" type
+               (:superclasses ("tweepy.StreamListener")
+                :members 
+                  ( ("on_status" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [2918 2922])
+                            ("status" variable nil (reparse-symbol function_parameters) [2924 2930]))                          )
+                        (reparse-symbol indented_block_body) [2904 4004])
+                    ("on_error" function
+                       (:parent "dummy"
+                        :arguments 
+                          ( ("self" variable nil (reparse-symbol function_parameters) [4022 4026])
+                            ("status" variable nil (reparse-symbol function_parameters) [4028 4034]))                          )
+                        (reparse-symbol indented_block_body) [4009 4252]))                  
+                :type "class")
+                nil [2854 4252])
+            ("streamer_entrypoint" function nil nil [4254 4488])
+            ("start_streamer" function nil nil [4490 4665]))          
+      :file "flashes.py"
+      :pointmax 4665
+      :fsize 4666
+      :lastmodtime '(23128 62385 120102 917000)
+      :unmatched-syntax nil))
+  :file "!home!nicholas!Dropbox!andover-stuff!2017-18!Winter Term!CSC630!LibreNews-Server!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
